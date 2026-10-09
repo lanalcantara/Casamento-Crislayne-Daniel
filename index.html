@@ -6,7 +6,7 @@
   <title>Casamento Crislayne & Daniel | 21 de Novembro de 2026</title>
   <meta name="description" content="Com muita alegria, convidamos você para celebrar o nosso casamento! Crislayne & Daniel • 21/11/2026 às 18:00 no Maysa Recepções, Recife - PE.">
   <meta name="keywords" content="Casamento, Crislayne e Daniel, Convite de Casamento, Recife, Maysa Recepções">
-  <meta name="theme-color" content="#1f2d1e">
+  <meta name="theme-color" content="#F5F2EC">
 
   <!-- Open Graph / WhatsApp Sharing Meta Tags -->
   <meta property="og:type" content="website">
@@ -14,15 +14,15 @@
   <meta property="og:description" content="O tempo é eterno para os que amam. Toque para abrir nosso convite de casamento!">
   <meta property="og:image" content="assets/images/noivos_portrait.jpg">
 
-  <!-- Google Fonts -->
+  <!-- Google Fonts for Minimalist Editorial Luxury -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@400;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Great+Vibes&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Pinyon+Script&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Great+Vibes&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Pinyon+Script&display=swap" rel="stylesheet">
 
-  <!-- FontAwesome Icons for Luxury UI -->
+  <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <!-- Canvas Confetti Library for opening celebration -->
+  <!-- Canvas Confetti Library -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
 
   <!-- Supabase JS Client SDK -->
@@ -33,7 +33,7 @@
 </head>
 <body class="wedding-theme">
 
-  <!-- Floating Audio Player Controller -->
+  <!-- Floating Audio Player Controller (Minimalist Sand / Linen) -->
   <aside id="audio-widget" class="audio-widget hidden" aria-label="Controle de Música">
     <button id="audio-toggle-btn" class="audio-btn" title="Pausar / Tocar Música" aria-label="Alternar música de fundo">
       <div class="audio-vinyl">
@@ -48,41 +48,41 @@
       </div>
     </button>
     <div class="audio-tooltip">
-      <span class="track-label">Tocando</span>
+      <span class="track-label">Música dos Noivos</span>
       <span class="track-title">Só Você — Anderson Freire</span>
     </div>
   </aside>
 
-  <!-- HTML5 Audio Element with Exact Song Sources -->
+  <!-- HTML5 Audio Element -->
   <audio id="wedding-audio" preload="auto" loop>
     <source src="assets/audio/so_voce.m4a" type="audio/mp4">
     <source src="assets/audio/so_voce.webm" type="audio/webm">
     <source src="assets/audio/wedding_melody.wav" type="audio/wav">
   </audio>
 
-  <!-- BACKGROUND PARTICLES & PETALS -->
+  <!-- AMBIENT PARTICLES & SUBTLE LINEN GLOW -->
   <div id="ambient-particles" class="ambient-particles"></div>
 
   <!-- ========================================== -->
-  <!-- 1. TELA INICIAL: ENVELOPE INTERATIVO LUXO -->
+  <!-- 1. TELA INICIAL: ENVELOPE LINHO & AREIA    -->
   <!-- ========================================== -->
   <main id="envelope-screen" class="envelope-screen">
     <div class="envelope-scene">
       
-      <!-- Ambient Header over Envelope -->
+      <!-- Minimalist Editorial Header over Envelope -->
       <header class="envelope-header">
-        <span class="envelope-monogram">C & D</span>
+        <span class="envelope-monogram">C &bull; D</span>
         <h1 class="envelope-title">Crislayne &amp; Daniel</h1>
         <p class="envelope-subtitle">Celebração de Casamento</p>
       </header>
 
-      <!-- 3D Realistic Navy Envelope -->
+      <!-- 3D Realistic Artisanal Linen Envelope -->
       <div id="envelope-wrapper" class="envelope-wrapper" role="button" tabindex="0" aria-label="Envelope de casamento fechado. Toque para abrir">
         
         <!-- Background Envelope Pocket Base -->
         <div class="envelope-base">
           <div class="envelope-inner-paper">
-            <!-- Small peek of the wooden card inside -->
+            <!-- Small peek of the cotton card inside -->
             <div class="inner-card-peek">
               <span class="peek-names">Crislayne & Daniel</span>
             </div>
@@ -93,35 +93,34 @@
         <div class="envelope-flap flap-left"></div>
         <div class="envelope-flap flap-right"></div>
         
-        <!-- Bottom Fold Flap with Minimalist Botanical Branch Emboss -->
+        <!-- Bottom Fold Flap with Minimalist Botanical Dried Grass Emboss -->
         <div class="envelope-flap flap-bottom">
           <svg class="envelope-botanical-emboss" viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M100 110 C98 80, 70 60, 45 45 C40 42, 30 38, 20 38" stroke="rgba(255,255,255,0.12)" stroke-width="1.5" stroke-linecap="round"/>
-            <path d="M100 110 C102 80, 130 60, 155 45 C160 42, 170 38, 180 38" stroke="rgba(255,255,255,0.12)" stroke-width="1.5" stroke-linecap="round"/>
-            <!-- Left Leaves -->
-            <path d="M45 45 C40 38, 32 40, 36 48 C40 54, 45 45, 45 45 Z" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.15)" stroke-width="0.8"/>
-            <path d="M65 58 C60 50, 52 52, 56 60 C60 66, 65 58, 65 58 Z" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.15)" stroke-width="0.8"/>
-            <path d="M85 75 C80 67, 72 69, 76 77 C80 83, 85 75, 85 75 Z" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.15)" stroke-width="0.8"/>
-            <!-- Right Leaves -->
-            <path d="M155 45 C160 38, 168 40, 164 48 C160 54, 155 45, 155 45 Z" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.15)" stroke-width="0.8"/>
-            <path d="M135 58 C140 50, 148 52, 144 60 C140 66, 135 58, 135 58 Z" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.15)" stroke-width="0.8"/>
-            <path d="M115 75 C120 67, 128 69, 124 77 C120 83, 115 75, 115 75 Z" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.15)" stroke-width="0.8"/>
+            <path d="M100 112 C98 82, 70 62, 45 47 C40 44, 30 40, 20 40" stroke="rgba(90,75,65,0.18)" stroke-width="1.2" stroke-linecap="round"/>
+            <path d="M100 112 C102 82, 130 62, 155 47 C160 44, 170 40, 180 40" stroke="rgba(90,75,65,0.18)" stroke-width="1.2" stroke-linecap="round"/>
+            <!-- Left Pampas Sprigs -->
+            <path d="M45 47 C40 40, 32 42, 36 50 C40 56, 45 47, 45 47 Z" fill="rgba(90,75,65,0.06)" stroke="rgba(90,75,65,0.15)" stroke-width="0.7"/>
+            <path d="M65 60 C60 52, 52 54, 56 62 C60 68, 65 60, 65 60 Z" fill="rgba(90,75,65,0.06)" stroke="rgba(90,75,65,0.15)" stroke-width="0.7"/>
+            <path d="M85 77 C80 69, 72 71, 76 79 C80 85, 85 77, 85 77 Z" fill="rgba(90,75,65,0.06)" stroke="rgba(90,75,65,0.15)" stroke-width="0.7"/>
+            <!-- Right Pampas Sprigs -->
+            <path d="M155 47 C160 40, 168 42, 164 50 C160 56, 155 47, 155 47 Z" fill="rgba(90,75,65,0.06)" stroke="rgba(90,75,65,0.15)" stroke-width="0.7"/>
+            <path d="M135 60 C140 52, 148 54, 144 62 C140 68, 135 60, 135 60 Z" fill="rgba(90,75,65,0.06)" stroke="rgba(90,75,65,0.15)" stroke-width="0.7"/>
+            <path d="M115 77 C120 69, 128 71, 124 79 C120 85, 115 77, 115 77 Z" fill="rgba(90,75,65,0.06)" stroke="rgba(90,75,65,0.15)" stroke-width="0.7"/>
           </svg>
         </div>
 
         <!-- Top Triangular Flap (Flips open in 3D) -->
         <div class="envelope-flap flap-top" id="envelope-top-flap"></div>
 
-        <!-- Wax Seal + Dried White Flowers Centerpiece -->
+        <!-- Minimalist Ivory Sand Wax Seal with Dried Grass -->
         <div class="envelope-seal-container" id="wax-seal-container">
           <div class="wax-seal-wrapper">
-            <!-- Photorealistic Wax Seal with Dried Flowers Bouquet -->
-            <img src="assets/images/wax_seal.png" alt="Selo de Cera Branco com Flores Secas" class="wax-seal-img" id="wax-seal-img">
+            <img src="assets/images/sand_wax_seal.png" alt="Selo de Cera Marfim com Raminho Seco" class="wax-seal-img" id="wax-seal-img">
             <div class="seal-glow"></div>
           </div>
         </div>
 
-        <!-- Interactive Tap Prompt Button Overlay -->
+        <!-- Minimalist Delicate Tap Prompt Button -->
         <div class="open-prompt-container">
           <button id="btn-open-envelope" class="btn-open-envelope" aria-label="Abrir convite de casamento">
             <span class="prompt-icon-ring">
@@ -135,37 +134,37 @@
       </div>
 
       <footer class="envelope-footer">
-        <p class="envelope-date-hint"><i class="fa-regular fa-calendar-heart"></i> 21 de Novembro de 2026 • Recife, PE</p>
+        <p class="envelope-date-hint"><i class="fa-regular fa-calendar-heart"></i> 21 de Novembro de 2026 &bull; Recife, PE</p>
       </footer>
 
     </div>
   </main>
 
   <!-- ========================================== -->
-  <!-- 2. CONVITE PRINCIPAL: EXPERIÊNCIA VIRTUAL LUXO -->
+  <!-- 2. CONVITE PRINCIPAL: MINIMALISTA ORGÂNICO -->
   <!-- ========================================== -->
   <div id="invitation-main" class="invitation-main hidden">
 
     <div class="invitation-viewport-container">
 
       <!-- ========================================== -->
-      <!-- A. HERO CARD ARTESANAL / BOTÂNICO -->
+      <!-- A. HERO CARD ARTESANAL / ALTA-COSTURA      -->
       <!-- ========================================== -->
       <section class="card-hero-section">
         <div class="wooden-card-frame" id="wooden-card">
 
-          <!-- Corner Watercolor Wildflower Botanical Illustrations -->
+          <!-- Corner Minimalist Dried Pampas Botanical Corner Art -->
           <div class="corner-floral corner-top-left">
-            <img src="assets/images/wildflower_olive_botanical.png" alt="Arranjo Floral Botânico Silvestre" class="floral-img top-left-art">
+            <img src="assets/images/minimal_pampas_corner.png" alt="Arranjo Botânico de Capim dos Pampas" class="floral-img top-left-art">
           </div>
           <div class="corner-floral corner-bottom-right">
-            <img src="assets/images/wildflower_olive_botanical.png" alt="Arranjo Floral Botânico Silvestre" class="floral-img bottom-right-art">
+            <img src="assets/images/minimal_pampas_corner.png" alt="Arranjo Botânico de Capim dos Pampas" class="floral-img bottom-right-art">
           </div>
 
-          <!-- Artisanal Paper Card Content Container -->
+          <!-- Cotton/Linen Paper Card Content Container -->
           <div class="wooden-card-content">
 
-            <!-- Top Romantic Quote (Henry van Dyke) -->
+            <!-- Top Romantic Quote (Henry van Dyke) in Refined Taupe -->
             <div class="card-quote-wrapper">
               <p class="card-quote-text">
                 "O tempo é muito lento para os que esperam<br>
@@ -176,17 +175,17 @@
               </p>
             </div>
 
-            <!-- Couple Names in Big Calligraphy -->
+            <!-- Couple Names in Fluid Calligraphy -->
             <div class="card-names-wrapper">
               <h2 class="card-couple-names">Crislayne &amp; Daniel</h2>
             </div>
 
-            <!-- Invitation Headline -->
-            <p class="card-invitation-phrase">Convidam para sua cerimônia de casamento</p>
+            <!-- Invitation Headline in Minimalist Caps -->
+            <p class="card-invitation-phrase">Convidam para a celebração de seu casamento</p>
 
             <!-- Date & Time Ribbon -->
             <div class="card-date-banner">
-              <span class="card-date-full">21/11/2026 – SÁBADO – ÀS 18:00</span>
+              <span class="card-date-full">21 / 11 / 2026 &bull; SÁBADO &bull; 18:00 HORAS</span>
             </div>
 
             <!-- Venue & Location Details -->
@@ -194,7 +193,7 @@
               <h3 class="venue-name">Maysa Recepções</h3>
               <p class="venue-address">
                 R. Prof. José Amarino dos Réis, 919-881<br>
-                Linha do Tiro, Recife - PE, 52131-320
+                Linha do Tiro &bull; Recife - PE
               </p>
             </div>
 
@@ -220,7 +219,7 @@
 
           </div>
 
-          <!-- Bottom Card Border Ornament -->
+          <!-- Bottom Card Subtle Border Line -->
           <div class="wooden-card-border-ornament"></div>
         </div>
 
@@ -232,19 +231,19 @@
       </section>
 
       <!-- ========================================== -->
-      <!-- B. FOTO DOS NOIVOS EM DESTAQUE -->
+      <!-- B. FOTO DOS NOIVOS (MOLDURA ORGÂNICA)     -->
       <!-- ========================================== -->
       <section class="couple-photo-section" id="noivos">
         <div class="section-container">
           
           <div class="section-heading">
-            <span class="section-ornament">✦ ✦ ✦</span>
+            <span class="section-ornament">&bull; &bull; &bull;</span>
             <span class="section-pretitle">Nosso Amor</span>
             <h2 class="section-title">Crislayne &amp; Daniel</h2>
             <div class="gold-divider"></div>
           </div>
 
-          <!-- Romantic Framed Couple Photo -->
+          <!-- Romantic Framed Couple Photo (Preserving 100% of facial features) -->
           <div class="photo-luxury-frame">
             <div class="frame-backdrop"></div>
             <div class="frame-border-outer">
@@ -255,10 +254,6 @@
               </div>
             </div>
             
-            <!-- Floating Decorative Seals & Florals -->
-            <div class="frame-leaf frame-leaf-1"></div>
-            <div class="frame-leaf frame-leaf-2"></div>
-            
             <div class="photo-caption-tag">
               <i class="fa-solid fa-heart"></i>
               <span>O Começo do Nosso Para Sempre</span>
@@ -267,7 +262,7 @@
 
           <div class="couple-message-box">
             <p class="couple-romantic-text">
-              "Com a benção de Deus e de nossos pais, decidimos unir nossas vidas em uma só. 
+              "Com a bênção de Deus e de nossos pais, decidimos unir nossas vidas em uma só. 
               Sua presença tornará esse dia inesquecível!"
             </p>
           </div>
@@ -276,13 +271,13 @@
       </section>
 
       <!-- ========================================== -->
-      <!-- C. CONTAGEM REGRESSIVA INTERATIVA -->
+      <!-- C. CONTAGEM REGRESSIVA INTERATIVA         -->
       <!-- ========================================== -->
       <section class="countdown-section" id="contagem">
         <div class="section-container">
 
           <div class="section-heading light-heading">
-            <span class="section-pretitle">Falta Pouco!</span>
+            <span class="section-pretitle">Falta Pouco</span>
             <h2 class="section-title">Contagem Regressiva</h2>
             <p class="section-description">Para o dia mais especial de nossas vidas</p>
             <div class="gold-divider"></div>
@@ -326,13 +321,13 @@
       </section>
 
       <!-- ========================================== -->
-      <!-- D. LOCALIZAÇÃO E CERIMÔNIA (GOOGLE MAPS) -->
+      <!-- D. LOCALIZAÇÃO E CERIMÔNIA (GOOGLE MAPS)  -->
       <!-- ========================================== -->
       <section class="location-section" id="localizacao">
         <div class="section-container">
 
           <div class="section-heading">
-            <span class="section-ornament">✦ ✦ ✦</span>
+            <span class="section-ornament">&bull; &bull; &bull;</span>
             <span class="section-pretitle">Onde e Quando</span>
             <h2 class="section-title">Local da Celebração</h2>
             <div class="gold-divider"></div>
@@ -371,7 +366,7 @@
                  rel="noopener noreferrer" 
                  class="btn-location btn-gmaps"
                  id="btn-open-gmaps">
-                <i class="fa-brands fa-google"></i> Abrir no Google Maps
+                <i class="fa-brands fa-google"></i> Ver no Google Maps
               </a>
               
               <a href="https://waze.com/ul?q=Maysa%20Recepções%20Recife" 
@@ -394,7 +389,7 @@
                 src="https://maps.google.com/maps?q=Maysa+Recep%C3%A7%C3%B5es+R.+Prof.+Jos%C3%A9+Amarino+dos+R%C3%A9is,+919-881+-+Linha+do+Tiro,+Recife+-+PE&t=&z=15&ie=UTF8&iwloc=&output=embed"
                 width="100%" 
                 height="220" 
-                style="border:0; border-radius: 12px;" 
+                style="border:0; border-radius: 10px;" 
                 allowfullscreen="" 
                 loading="lazy" 
                 referrerpolicy="no-referrer-when-downgrade">
@@ -418,13 +413,13 @@
       </section>
 
       <!-- ========================================== -->
-      <!-- E. CONFIRMAÇÃO DE PRESENÇA (RSVP) -->
+      <!-- E. CONFIRMAÇÃO DE PRESENÇA (RSVP)         -->
       <!-- ========================================== -->
       <section class="rsvp-section" id="rsvp">
         <div class="section-container">
 
           <div class="section-heading light-heading">
-            <span class="section-pretitle">Sua Presença é Especial</span>
+            <span class="section-pretitle">Sua Presença</span>
             <h2 class="section-title">Confirmação de Presença</h2>
             <p class="section-description">Por favor, confirme sua presença até o dia <strong>01/11/2026</strong> para prepararmos tudo com muito amor e carinho.</p>
             <div class="gold-divider"></div>
@@ -434,11 +429,11 @@
           <div class="rsvp-card">
             
             <div class="rsvp-badge">
-              <i class="fa-solid fa-envelope-circle-check"></i>
+              <i class="fa-solid fa-envelope-open-text"></i>
             </div>
             
             <h3 class="rsvp-card-title">Confirme sua Participação</h3>
-            <p class="rsvp-card-subtitle">Preencha o formulário abaixo para confirmar sua presença</p>
+            <p class="rsvp-card-subtitle">Preencha o formulário abaixo para registrar sua presença</p>
 
             <!-- Success State Message (Initially Hidden) -->
             <div id="rsvp-success-state" class="rsvp-success-box hidden">
@@ -505,7 +500,7 @@
                   <label class="rsvp-radio-card active" id="label-attending-yes">
                     <input type="radio" name="attending" value="sim" checked class="radio-hidden">
                     <div class="radio-content">
-                      <span class="radio-emoji">🎉</span>
+                      <span class="radio-emoji">✨</span>
                       <strong class="radio-title">Sim, com certeza!</strong>
                       <span class="radio-sub">Estarei lá para comemorar</span>
                     </div>
@@ -514,9 +509,9 @@
                   <label class="rsvp-radio-card" id="label-attending-no">
                     <input type="radio" name="attending" value="nao" class="radio-hidden">
                     <div class="radio-content">
-                      <span class="radio-emoji">💔</span>
+                      <span class="radio-emoji">🤍</span>
                       <strong class="radio-title">Não poderei</strong>
-                      <span class="radio-sub">Desejo felicidades ao casal</span>
+                      <span class="radio-sub">Desejo muitas felicidades</span>
                     </div>
                   </label>
                 </div>
@@ -566,7 +561,7 @@
               <div class="form-submit-wrapper">
                 <button type="submit" id="btn-submit-rsvp" class="btn-submit-rsvp">
                   <span class="btn-text">
-                    <i class="fa-solid fa-heart-circle-check"></i> Confirmar Presença
+                    <i class="fa-solid fa-heart"></i> Confirmar Presença
                   </span>
                   <span class="btn-spinner hidden">
                     <i class="fa-solid fa-spinner fa-spin"></i> Enviando confirmação...
@@ -592,23 +587,23 @@
       </section>
 
       <!-- ========================================== -->
-      <!-- F. LISTA DE PRESENTES & PIX (LIMPA E DIRETA) -->
+      <!-- F. LISTA DE PRESENTES & PIX (MINIMALISTA) -->
       <!-- ========================================== -->
       <section class="gifts-section" id="presentes">
         <div class="section-container">
 
           <div class="section-heading">
-            <span class="section-ornament">✦ ✦ ✦</span>
+            <span class="section-ornament">&bull; &bull; &bull;</span>
             <span class="section-pretitle">Mimos &amp; Carinho</span>
             <h2 class="section-title">Lista de Presentes (PIX)</h2>
             <div class="gold-divider"></div>
           </div>
 
           <div class="gifts-intro-card">
-            <i class="fa-solid fa-envelope-open-text gift-intro-icon"></i>
+            <i class="fa-solid fa-gift gift-intro-icon"></i>
             <p class="gift-intro-text">
               O maior presente para nós é compartilhar esse dia tão especial ao seu lado! 
-              Se desejar nos presentear de forma prática para o início da nossa vida a dois, 
+              Se desejar nos presentear de forma prática para o início da nossa nova jornada a dois, 
               você pode utilizar a chave PIX abaixo:
             </p>
           </div>
@@ -628,7 +623,7 @@
               <div class="qr-frame">
                 <img src="assets/images/pix_qrcode.png" alt="QR Code PIX Crislayne Evelin" class="pix-qr-image" id="pix-qr-img">
               </div>
-              <p class="qr-scan-hint"><i class="fa-solid fa-camera"></i> Aponte a câmera do app do seu banco</p>
+              <p class="qr-scan-hint"><i class="fa-solid fa-camera"></i> Aponte a câmera do aplicativo do seu banco</p>
             </div>
 
             <!-- PIX Data Details -->
@@ -652,7 +647,7 @@
             <!-- Copy PIX Key Action Button -->
             <div class="pix-copy-action">
               <button class="btn-copy-pix" id="btn-copy-pix" aria-label="Copiar chave PIX para transferência">
-                <i class="fa-solid fa-copy"></i>
+                <i class="fa-regular fa-copy"></i>
                 <span id="copy-btn-text">Copiar Chave PIX</span>
               </button>
             </div>
@@ -663,7 +658,7 @@
       </section>
 
       <!-- ========================================== -->
-      <!-- G. RODAPÉ DE AGRADECIMENTO -->
+      <!-- G. RODAPÉ DE AGRADECIMENTO                -->
       <!-- ========================================== -->
       <footer class="wedding-footer">
         <div class="footer-content">
@@ -671,8 +666,8 @@
           <p class="footer-verse">"O amor tudo sofre, tudo crê, tudo espera, tudo suporta."</p>
           <span class="footer-ref">1 Coríntios 13:7</span>
           <div class="gold-divider-small"></div>
-          <p class="footer-date">21 • Novembro • 2026 — Recife, PE</p>
-          <p class="footer-made-with">Feito com muito amor para nossos familiares e amigos ❤️</p>
+          <p class="footer-date">21 &bull; Novembro &bull; 2026 — Recife, PE</p>
+          <p class="footer-made-with">Feito com muito carinho para nossos familiares e amigos 🤍</p>
         </div>
       </footer>
 

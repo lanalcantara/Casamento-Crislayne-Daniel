@@ -132,29 +132,29 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add opening animation class to envelope
     envelopeWrapper.classList.add('envelope-opening');
 
-    // Confetti effect with gold, champagne & rose particles
+    // Confetti effect with sand, ivory & champagne particles
     if (typeof confetti === 'function') {
       confetti({
-        particleCount: 50,
+        particleCount: 45,
         spread: 60,
         origin: { y: 0.6 },
-        colors: ['#d4af37', '#f5e4a8', '#ffffff', '#e8d39e', '#e25563']
+        colors: ['#c2a984', '#e8ddcb', '#ffffff', '#b5aba0', '#FAF8F5']
       });
 
       setTimeout(() => {
         confetti({
-          particleCount: 35,
+          particleCount: 30,
           angle: 60,
           spread: 55,
           origin: { x: 0 },
-          colors: ['#d4af37', '#f5e4a8', '#ffffff']
+          colors: ['#c2a984', '#e8ddcb', '#ffffff']
         });
         confetti({
-          particleCount: 35,
+          particleCount: 30,
           angle: 120,
           spread: 55,
           origin: { x: 1 },
-          colors: ['#d4af37', '#f5e4a8', '#ffffff']
+          colors: ['#c2a984', '#e8ddcb', '#ffffff']
         });
       }, 350);
     }
@@ -443,10 +443,10 @@ Data e Hora do Registro: ${payload.data_envio}
       // 4. Trigger celebration confetti
       if (typeof confetti === 'function') {
         confetti({
-          particleCount: 60,
+          particleCount: 50,
           spread: 70,
           origin: { y: 0.7 },
-          colors: ['#d4af37', '#f5e4a8', '#38a169', '#ffffff']
+          colors: ['#c2a984', '#e8ddcb', '#ffffff', '#2F855A', '#FAF8F5']
         });
       }
 
