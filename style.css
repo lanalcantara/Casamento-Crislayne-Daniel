@@ -591,26 +591,27 @@ body {
 .card-corner-floral {
   position: absolute;
   pointer-events: none;
-  z-index: 3;
-  opacity: 0.95;
+  z-index: 1;
+  opacity: 0.92;
 }
 
 .card-corner-floral.corner-top-left {
   top: 0;
   left: 0;
-  width: 180px;
+  width: 165px;
 }
 
 .card-corner-floral.corner-bottom-right {
   bottom: 0;
   right: 0;
-  width: 195px;
+  width: 175px;
 }
 
 .corner-floral-img {
   width: 100%;
   height: auto;
-  filter: drop-shadow(0 2px 5px rgba(40, 20, 10, 0.08));
+  display: block;
+  filter: drop-shadow(0 2px 5px rgba(40, 20, 10, 0.05));
 }
 
 /* Stream of Content inside Single Card */
@@ -627,34 +628,34 @@ body {
 .card-header-block {
   width: 100%;
   margin-bottom: 22px;
+  text-align: center;
 }
 
 .card-monogram-tag {
   font-family: var(--font-cinzel);
-  font-size: 0.9rem;
-  letter-spacing: 4px;
+  font-size: 0.95rem;
+  letter-spacing: 5px;
   color: var(--text-mocha);
   font-weight: 800;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
+  text-align: center;
 }
 
 .card-quote-wrapper {
-  max-width: 330px;
+  max-width: 440px;
   margin: 0 auto;
-  text-align: right;
-  padding: 8px 12px;
-  background: rgba(255, 255, 255, 0.7);
-  border-radius: 8px;
-  backdrop-filter: blur(4px);
+  text-align: center;
+  padding: 0 10px;
 }
 
 .card-quote-text {
   font-family: var(--font-serif-body);
-  font-size: 1.05rem;
-  line-height: 1.5;
+  font-size: 1.15rem;
+  line-height: 1.6;
   color: var(--text-mocha);   /* Deep Dark Coffee #3A2618 */
   font-style: italic;
   font-weight: 600;
+  text-align: center;
 }
 
 .card-quote-text strong {
