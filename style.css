@@ -1,43 +1,46 @@
 /* =========================================================
-   CASAMENTO CRISLAYNE & DANIEL — SINGLE UNIFIED LUXURY WEDDING CARD
-   Palette: Dark Coffee Envelope, Clean Neutral Sand Backdrop,
-            Artisanal Off-White Card with Reference Watercolor Botanical Corners
+   CASAMENTO CRISLAYNE & DANIEL — LUXURY WEDDING INVITATION
+   Identity: Rustic Olive Green Envelope Cover, Clean Sand Viewport Backdrop,
+             Artisanal Off-White Card with Botanical Corner Watercolors
+             & Deep High-Contrast Coffee Typography (#3A2618 / #24140D)
    ========================================================= */
 
 /* --- CSS VARIABLES & DESIGN TOKENS --- */
 :root {
-  /* Outer Neutral Background */
-  --bg-viewport: #EFECE6;
-  --bg-viewport-subtle: #E8E2D8;
+  /* Outer Neutral Backdrop */
+  --bg-viewport: #EBE7DF;
+  --bg-viewport-subtle: #E2DDD4;
 
-  /* Single Central Card (Off-White / Artisanal Linen) */
-  --card-bg: #FAF7F2;
-  --card-surface: #F4EFE6;
-  --card-border: rgba(160, 110, 75, 0.28);
-  --card-border-subtle: rgba(160, 110, 75, 0.16);
+  /* Single Central Card (Clean Off-White / Cotton Paper) */
+  --card-bg: #FAF8F4;
+  --card-surface: #FFFFFF;
+  --card-panel-bg: rgba(255, 255, 255, 0.92);
+  --card-border: rgba(140, 95, 60, 0.35);
+  --card-border-subtle: rgba(140, 95, 60, 0.20);
 
-  /* Dark Coffee Brown Envelope */
-  --envelope-dark: #2E1810;
-  --envelope-base: #3B2014;
-  --envelope-light: #4E2D20;
-  --envelope-screen-bg: radial-gradient(circle at center, #351C12 0%, #200E08 65%, #100603 100%);
+  /* Rustic Olive Green Envelope (Rich Forest & Olive Tones) */
+  --envelope-olive-dark: #1E2B1E;
+  --envelope-olive-base: #2E3E2E;
+  --envelope-olive-mid: #3C503C;
+  --envelope-olive-light: #4D644D;
+  --envelope-screen-bg: radial-gradient(circle at center, #2F422F 0%, #1A281A 65%, #0D150D 100%);
 
-  /* Terracotta & Warm Caramel Accents */
-  --terracotta-rich: #9E4D2C;
-  --terracotta-warm: #B85F3A;
-  --terracotta-caramel: #C7784E;
+  /* Warm Terracotta & Caramel Accents */
+  --terracotta-rich: #8F3E1E;
+  --terracotta-warm: #A84C24;
+  --terracotta-caramel: #BF6B3E;
   --terracotta-soft: #DC9B79;
-  --terracotta-light: #F6E2D5;
-  --gold-warm: #CFA668;
-  --gold-soft: #EAD5B2;
+  --terracotta-light: #F7EAE1;
+  --gold-warm: #D4AF37;
+  --gold-soft: #F0DFC0;
 
-  /* Typography Colors (Dark Coffee, Deep Mocha & Warm Charcoal) */
-  --text-dark: #2B160C;
-  --text-mocha: #3A2014;
-  --text-taupe: #4E3022;
-  --text-secondary: #6A4838;
-  --text-muted: #8E6E5E;
-  --text-caption: #B09282;
+  /* HIGH-CONTRAST TYPOGRAPHY COLORS (Deep Dark Coffee & Mocha) */
+  --text-dark: #22120A;           /* Deepest Coffee / Charcoal */
+  --text-mocha: #3A2618;          /* Deep Dark Coffee #3A2618 */
+  --text-taupe: #3A2618;          /* High contrast main body */
+  --text-secondary: #4A2E1F;      /* Dark warm coffee for subtitles & labels */
+  --text-muted: #523423;          /* Dark rich coffee for hints */
+  --text-caption: #5C3D2B;        /* Highly legible footer & caption */
   --text-white: #FFFDF9;
 
   /* Typography Families */
@@ -48,10 +51,10 @@
   --font-sans: 'Montserrat', sans-serif;
   --font-cinzel: 'Cinzel', serif;
 
-  /* Soft Ambient Shadows */
-  --shadow-card: 0 25px 65px -10px rgba(50, 25, 12, 0.12), 0 0 0 1px rgba(180, 140, 100, 0.25);
-  --shadow-envelope: 0 35px 80px -10px rgba(20, 8, 4, 0.55), 0 0 0 1px rgba(220, 155, 121, 0.35);
-  --shadow-subtle: 0 4px 15px rgba(60, 30, 15, 0.06);
+  /* Shadows & Elevations */
+  --shadow-card: 0 25px 65px -10px rgba(35, 20, 10, 0.16), 0 0 0 1px rgba(160, 110, 75, 0.28);
+  --shadow-envelope: 0 35px 80px -10px rgba(10, 20, 10, 0.65), 0 0 0 1px rgba(180, 150, 110, 0.35);
+  --shadow-subtle: 0 4px 18px rgba(50, 25, 10, 0.08);
   --transition-smooth: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -71,9 +74,9 @@ html {
 
 body {
   font-family: var(--font-sans);
-  color: var(--text-taupe);
+  color: var(--text-mocha);
   background-color: var(--bg-viewport);
-  background-image: radial-gradient(circle at 50% 10%, #FAF8F5 0%, #EFECE6 100%);
+  background-image: radial-gradient(circle at 50% 10%, #FAF8F5 0%, #EBE7DF 100%);
   min-height: 100vh;
   overflow-x: hidden;
   position: relative;
@@ -94,7 +97,7 @@ body {
   height: 100vh;
   pointer-events: none;
   z-index: 1;
-  background: radial-gradient(circle at 50% 25%, rgba(255, 255, 255, 0.6) 0%, transparent 70%);
+  background: radial-gradient(circle at 50% 25%, rgba(255, 255, 255, 0.5) 0%, transparent 70%);
 }
 
 /* --- FLOATING AUDIO CONTROLLER --- */
@@ -110,13 +113,13 @@ body {
 }
 
 .audio-btn {
-  width: 46px;
-  height: 46px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
-  background: rgba(250, 247, 242, 0.96);
+  background: rgba(250, 248, 244, 0.98);
   backdrop-filter: blur(10px);
   border: 1.5px solid var(--terracotta-caramel);
-  box-shadow: 0 6px 20px rgba(60, 30, 15, 0.12);
+  box-shadow: 0 6px 20px rgba(46, 62, 46, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -128,14 +131,14 @@ body {
 .audio-btn:hover {
   transform: scale(1.08);
   border-color: var(--terracotta-warm);
-  box-shadow: 0 8px 25px rgba(184, 95, 58, 0.25);
+  box-shadow: 0 8px 25px rgba(168, 76, 36, 0.3);
 }
 
 .audio-vinyl {
-  width: 26px;
-  height: 26px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
-  background: conic-gradient(from 0deg, #200e08, #5a2e1c, #200e08, #733c26, #200e08);
+  background: conic-gradient(from 0deg, #182418, #354835, #182418, #475f47, #182418);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -193,14 +196,14 @@ body {
 
 .audio-tooltip {
   display: none;
-  background: rgba(250, 247, 242, 0.96);
+  background: rgba(250, 248, 244, 0.98);
   border: 1px solid var(--terracotta-soft);
   border-radius: 20px;
   padding: 4px 12px;
   color: var(--text-mocha);
   font-size: 0.75rem;
   white-space: nowrap;
-  box-shadow: 0 4px 15px rgba(60, 30, 15, 0.1);
+  box-shadow: 0 4px 15px rgba(35, 20, 10, 0.12);
 }
 
 @media (min-width: 600px) {
@@ -213,15 +216,16 @@ body {
     color: var(--terracotta-warm);
     text-transform: uppercase;
     letter-spacing: 1px;
+    font-weight: 700;
   }
   .track-title {
-    font-weight: 600;
+    font-weight: 700;
     color: var(--text-dark);
   }
 }
 
 /* =========================================================
-   1. TELA DO ENVELOPE (MARROM CAFÉ ELEGANTE)
+   1. TELA DO ENVELOPE: VERDE-OLIVA RÚSTICO & ELEGANTE
    ========================================================= */
 .envelope-screen {
   position: fixed;
@@ -267,10 +271,11 @@ body {
   letter-spacing: 5px;
   color: var(--gold-soft);
   text-transform: uppercase;
-  border-bottom: 1px solid rgba(234, 213, 178, 0.45);
+  border-bottom: 1px solid rgba(240, 223, 192, 0.5);
   padding-bottom: 2px;
   display: inline-block;
   margin-bottom: 6px;
+  font-weight: 600;
 }
 
 .envelope-title {
@@ -279,7 +284,7 @@ body {
   font-weight: 400;
   color: #FFFDF9;
   line-height: 1.1;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6), 0 0 25px rgba(207, 166, 104, 0.35);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7), 0 0 25px rgba(212, 175, 55, 0.4);
 }
 
 .envelope-subtitle {
@@ -289,15 +294,16 @@ body {
   text-transform: uppercase;
   color: var(--gold-soft);
   margin-top: 3px;
+  font-weight: 600;
 }
 
-/* 3D Envelope Container (Dark Coffee Brown) */
+/* 3D Envelope Container (Rustic Olive Green) */
 .envelope-wrapper {
   position: relative;
   width: 100%;
   aspect-ratio: 4 / 3;
   max-height: 310px;
-  background-color: var(--envelope-base);
+  background-color: var(--envelope-olive-base);
   background-image: url('assets/images/linen_paper_texture.jpg');
   background-size: cover;
   border-radius: 8px;
@@ -306,12 +312,12 @@ body {
   transform-style: preserve-3d;
   cursor: pointer;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
-  border: 1px solid rgba(207, 166, 104, 0.35);
+  border: 1px solid rgba(240, 223, 192, 0.35);
 }
 
 .envelope-wrapper:hover {
   transform: translateY(-4px);
-  box-shadow: 0 40px 90px -10px rgba(10, 4, 2, 0.7), 0 0 0 1px rgba(207, 166, 104, 0.55);
+  box-shadow: 0 40px 90px -10px rgba(10, 20, 10, 0.75), 0 0 0 1px rgba(240, 223, 192, 0.6);
 }
 
 .envelope-base {
@@ -320,7 +326,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(145deg, #3B2014 0%, #200E08 100%);
+  background: linear-gradient(145deg, #2E3E2E 0%, #1A281A 100%);
   border-radius: 8px;
   overflow: hidden;
   z-index: 1;
@@ -332,7 +338,7 @@ body {
   left: 5%;
   width: 90%;
   height: 85%;
-  background: #FAF7F2 url('assets/images/linen_paper_texture.jpg') center/cover;
+  background: #FAF8F4 url('assets/images/linen_paper_texture.jpg') center/cover;
   border-radius: 4px;
   box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.15), 0 2px 8px rgba(0,0,0,0.1);
   display: flex;
@@ -350,9 +356,10 @@ body {
   font-family: var(--font-script);
   font-size: 1.45rem;
   color: var(--text-dark);
+  font-weight: 600;
 }
 
-/* Flaps in Dark Coffee Gradients */
+/* Flaps in Rustic Olive Green Gradients */
 .envelope-flap {
   position: absolute;
   top: 0;
@@ -363,30 +370,30 @@ body {
 }
 
 .flap-left {
-  background: linear-gradient(135deg, #2A140B 0%, #3D2216 100%);
+  background: linear-gradient(135deg, #243424 0%, #354735 100%);
   clip-path: polygon(0 0, 50% 50%, 0 100%);
-  filter: drop-shadow(2px 0 6px rgba(0, 0, 0, 0.35));
+  filter: drop-shadow(2px 0 6px rgba(0, 0, 0, 0.4));
   z-index: 3;
 }
 
 .flap-right {
-  background: linear-gradient(225deg, #2E170E 0%, #44261A 100%);
+  background: linear-gradient(225deg, #283928 0%, #3B4E3B 100%);
   clip-path: polygon(100% 0, 50% 50%, 100% 100%);
-  filter: drop-shadow(-2px 0 6px rgba(0, 0, 0, 0.35));
+  filter: drop-shadow(-2px 0 6px rgba(0, 0, 0, 0.4));
   z-index: 3;
 }
 
 .flap-bottom {
-  background: linear-gradient(0deg, #4A2B1D 0%, #2A140B 100%);
+  background: linear-gradient(0deg, #405540 0%, #223222 100%);
   clip-path: polygon(0 100%, 50% 48%, 100% 100%);
-  filter: drop-shadow(0 -3px 8px rgba(0, 0, 0, 0.4));
+  filter: drop-shadow(0 -3px 8px rgba(0, 0, 0, 0.45));
   z-index: 4;
   display: flex;
   align-items: flex-end;
   justify-content: center;
 }
 
-/* Subtle Embossed Botanical Dried Branch on Envelope */
+/* Subtle Embossed Botanical Dried Branch on Olive Envelope */
 .envelope-botanical-emboss {
   position: absolute;
   bottom: 8px;
@@ -394,21 +401,21 @@ body {
   max-width: 220px;
   height: auto;
   pointer-events: none;
-  opacity: 0.8;
-  filter: drop-shadow(0 1px 1px rgba(0,0,0,0.5)) drop-shadow(0 -1px 1px rgba(255,255,255,0.25));
+  opacity: 0.85;
+  filter: drop-shadow(0 1px 1px rgba(0,0,0,0.6)) drop-shadow(0 -1px 1px rgba(255,255,255,0.3));
 }
 
 .flap-top {
-  background: linear-gradient(180deg, #543122 0%, #331A10 100%);
+  background: linear-gradient(180deg, #4D644D 0%, #2A3B2A 100%);
   clip-path: polygon(0 0, 50% 55%, 100% 0);
   transform-origin: top center;
   transform-style: preserve-3d;
   transition: transform 0.9s cubic-bezier(0.4, 0, 0.2, 1);
-  filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.5));
+  filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.55));
   z-index: 5;
 }
 
-/* Minimalist Ivory Sand Wax Seal */
+/* Minimalist Ivory Sand Wax Seal with Dried Sprig */
 .envelope-seal-container {
   position: absolute;
   top: 50%;
@@ -429,7 +436,7 @@ body {
 .wax-seal-img {
   width: 125px;
   height: auto;
-  filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.45));
+  filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.5));
   transition: transform 0.4s ease;
   user-select: none;
   -webkit-user-drag: none;
@@ -444,7 +451,7 @@ body {
   width: 85px;
   height: 85px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(207, 166, 104, 0.35) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.4) 0%, transparent 70%);
   animation: pulseGlow 2.5s infinite ease-in-out;
   pointer-events: none;
 }
@@ -466,16 +473,16 @@ body {
   align-items: center;
   gap: 10px;
   padding: 13px 28px;
-  background: linear-gradient(135deg, #C7784E 0%, #9E4D2C 50%, #6E3219 100%);
+  background: linear-gradient(135deg, #BF6B3E 0%, #9E4D2C 50%, #6E3219 100%);
   color: #FFFDF9;
   font-family: var(--font-sans);
-  font-weight: 600;
+  font-weight: 700;
   font-size: 0.88rem;
   letter-spacing: 1px;
   text-transform: uppercase;
-  border: 1px solid rgba(246, 226, 213, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 30px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
   cursor: pointer;
   transition: var(--transition-smooth);
   animation: bouncePrompt 2.5s infinite ease-in-out;
@@ -483,7 +490,7 @@ body {
 
 .btn-open-envelope:hover {
   transform: scale(1.04);
-  box-shadow: 0 12px 30px rgba(184, 95, 58, 0.5);
+  box-shadow: 0 12px 30px rgba(191, 107, 62, 0.55);
   border-color: #FFF;
 }
 
@@ -491,7 +498,7 @@ body {
   width: 22px;
   height: 22px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.25);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -511,9 +518,10 @@ body {
 .envelope-footer {
   margin-top: 50px;
   color: var(--gold-soft);
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   text-align: center;
   letter-spacing: 1px;
+  font-weight: 600;
 }
 
 .envelope-date-hint i {
@@ -546,7 +554,7 @@ body {
 }
 
 /* =========================================================
-   2. CONVITE PRINCIPAL: CARTÃO CENTRAL ÚNICO (BEGE / OFF-WHITE)
+   2. CONVITE PRINCIPAL: CARTÃO CENTRAL ÚNICO (OFF-WHITE & MARROM CAFÉ #3A2618)
    ========================================================= */
 .invitation-main {
   position: relative;
@@ -567,7 +575,7 @@ body {
   justify-content: center;
 }
 
-/* --- O CARTÃO CENTRAL ÚNICO E ELEGANTE --- */
+/* --- O CARTÃO CENTRAL ÚNICO --- */
 .main-wedding-card {
   position: relative;
   width: 100%;
@@ -576,14 +584,14 @@ body {
   box-shadow: var(--shadow-card);
   border: 1px solid var(--card-border);
   overflow: hidden;
-  padding: 50px 28px 40px 28px;
+  padding: 52px 28px 44px 28px;
 }
 
 /* Inset Delicate Frame Line */
 .card-inner-frame {
   position: absolute;
   inset: 12px;
-  border: 1px solid rgba(160, 110, 75, 0.22);
+  border: 1px solid rgba(140, 95, 60, 0.25);
   border-radius: 14px;
   pointer-events: none;
   z-index: 2;
@@ -612,7 +620,7 @@ body {
 .corner-floral-img {
   width: 100%;
   height: auto;
-  filter: drop-shadow(0 2px 5px rgba(60, 30, 15, 0.08));
+  filter: drop-shadow(0 2px 5px rgba(40, 20, 10, 0.08));
 }
 
 /* Stream of Content inside Single Card */
@@ -628,36 +636,39 @@ body {
 /* --- SECTION 1: CABEÇALHO & POEMA --- */
 .card-header-block {
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 22px;
 }
 
 .card-monogram-tag {
   font-family: var(--font-cinzel);
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   letter-spacing: 4px;
-  color: var(--text-secondary);
-  font-weight: 600;
-  margin-bottom: 12px;
+  color: var(--text-mocha);
+  font-weight: 700;
+  margin-bottom: 14px;
 }
 
 .card-quote-wrapper {
-  max-width: 320px;
+  max-width: 330px;
   margin: 0 auto;
   text-align: right;
-  padding-right: 5px;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.65);
+  border-radius: 8px;
+  backdrop-filter: blur(4px);
 }
 
 .card-quote-text {
   font-family: var(--font-serif-body);
-  font-size: 0.95rem;
-  line-height: 1.45;
-  color: var(--text-taupe);
+  font-size: 1.05rem;
+  line-height: 1.5;
+  color: var(--text-mocha);   /* Deep Dark Coffee #3A2618 */
   font-style: italic;
   font-weight: 600;
 }
 
 .card-quote-text strong {
-  font-weight: 700;
+  font-weight: 800;
   color: var(--text-dark);
 }
 
@@ -669,7 +680,7 @@ body {
 
 .card-couple-names {
   font-family: var(--font-script);
-  font-size: 3.9rem;
+  font-size: 4rem;
   font-weight: 400;
   color: var(--text-dark);
   line-height: 1.1;
@@ -679,26 +690,28 @@ body {
 
 .card-invitation-phrase {
   font-family: var(--font-cinzel);
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   letter-spacing: 2.5px;
   text-transform: uppercase;
   color: var(--text-secondary);
-  font-weight: 600;
+  font-weight: 700;
   margin: 12px 0 16px 0;
 }
 
 .card-date-banner {
   margin: 6px 0;
-  padding: 8px 22px;
-  border-top: 1px solid rgba(160, 110, 75, 0.4);
-  border-bottom: 1px solid rgba(160, 110, 75, 0.4);
+  padding: 10px 24px;
+  border-top: 1.5px solid rgba(140, 95, 60, 0.45);
+  border-bottom: 1.5px solid rgba(140, 95, 60, 0.45);
+  background: rgba(255, 255, 255, 0.75);
+  border-radius: 4px;
   display: inline-block;
 }
 
 .card-date-full {
   font-family: var(--font-cinzel);
-  font-size: 0.95rem;
-  font-weight: 700;
+  font-size: 1.02rem;
+  font-weight: 800;
   color: var(--text-dark);
   letter-spacing: 2px;
 }
@@ -707,28 +720,33 @@ body {
 .card-venue-block {
   width: 100%;
   margin: 15px 0 25px 0;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 14px;
+  padding: 22px 18px;
+  border: 1px solid var(--card-border-subtle);
+  box-shadow: var(--shadow-subtle);
 }
 
 .venue-icon-badge {
-  width: 44px;
-  height: 44px;
+  width: 46px;
+  height: 46px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #B85F3A 0%, #8C3E1E 100%);
+  background: linear-gradient(135deg, #A84C24 0%, #7A3315 100%);
   color: #FFFDF9;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   margin: 0 auto 12px auto;
-  box-shadow: 0 4px 12px rgba(140, 62, 30, 0.25);
+  box-shadow: 0 4px 12px rgba(122, 51, 21, 0.3);
 }
 
 .venue-name {
   font-family: var(--font-serif);
-  font-size: 1.45rem;
-  font-weight: 700;
+  font-size: 1.55rem;
+  font-weight: 800;
   color: var(--text-dark);
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .venue-info-row {
@@ -736,24 +754,31 @@ body {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  margin-bottom: 6px;
-  color: var(--text-taupe);
-  font-size: 0.98rem;
+  margin-bottom: 8px;
+  color: var(--text-mocha);
+  font-size: 1.02rem;
+  font-weight: 600;
+}
+
+.venue-info-row strong {
+  color: var(--text-dark);
+  font-weight: 800;
 }
 
 .venue-info-row .info-icon {
-  color: var(--terracotta-warm);
-  font-size: 1rem;
+  color: var(--terracotta-rich);
+  font-size: 1.1rem;
 }
 
 .venue-reception-notice {
   font-family: var(--font-serif-body);
-  font-size: 0.95rem;
+  font-size: 1.02rem;
   color: var(--text-secondary);
   font-style: italic;
-  max-width: 320px;
-  margin: 10px auto 16px auto;
-  line-height: 1.35;
+  font-weight: 600;
+  max-width: 360px;
+  margin: 12px auto 16px auto;
+  line-height: 1.4;
 }
 
 .venue-actions {
@@ -761,8 +786,8 @@ body {
   flex-direction: column;
   gap: 10px;
   width: 100%;
-  max-width: 320px;
-  margin: 16px auto;
+  max-width: 330px;
+  margin: 16px auto 12px auto;
 }
 
 .btn-venue {
@@ -770,25 +795,25 @@ body {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 12px 18px;
+  padding: 13px 18px;
   border-radius: 8px;
   text-decoration: none;
   font-family: var(--font-sans);
-  font-size: 0.85rem;
-  font-weight: 600;
+  font-size: 0.88rem;
+  font-weight: 700;
   cursor: pointer;
   transition: var(--transition-smooth);
   border: none;
 }
 
 .btn-gmaps {
-  background: linear-gradient(135deg, #B85F3A 0%, #8C3E1E 100%);
+  background: linear-gradient(135deg, #A84C24 0%, #7A3315 100%);
   color: #FFFDF9;
-  box-shadow: 0 4px 12px rgba(140, 62, 30, 0.25);
+  box-shadow: 0 4px 14px rgba(122, 51, 21, 0.3);
 }
 
 .btn-gmaps:hover {
-  background: #6E3219;
+  background: #5E260E;
   transform: translateY(-2px);
 }
 
@@ -796,18 +821,19 @@ body {
   background: #FFFFFF;
   color: var(--text-dark);
   border: 1px solid var(--card-border);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
 .btn-waze:hover {
-  background: #FAF7F2;
+  background: #FAF8F4;
   border-color: var(--terracotta-warm);
   transform: translateY(-2px);
 }
 
 .btn-copy-address {
-  background: transparent;
-  color: var(--text-taupe);
-  border: 1px dashed var(--card-border);
+  background: #FAF8F4;
+  color: var(--text-mocha);
+  border: 1.5px dashed var(--card-border);
 }
 
 .btn-copy-address:hover {
@@ -820,7 +846,7 @@ body {
   border-radius: 10px;
   overflow: hidden;
   border: 1px solid var(--card-border);
-  box-shadow: 0 2px 8px rgba(60, 30, 15, 0.05);
+  box-shadow: 0 2px 8px rgba(40, 20, 10, 0.08);
   margin-top: 10px;
 }
 
@@ -830,9 +856,10 @@ body {
   text-align: center;
   margin: 25px 0;
   color: var(--terracotta-warm);
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   letter-spacing: 8px;
-  opacity: 0.85;
+  font-weight: 700;
+  opacity: 0.9;
 }
 
 /* --- SECTION 4: TRAJE RECOMENDADO --- */
@@ -840,31 +867,34 @@ body {
   display: flex;
   align-items: flex-start;
   gap: 14px;
-  background: rgba(255, 255, 255, 0.8);
-  border: 1px dashed var(--card-border);
+  background: rgba(255, 255, 255, 0.92);
+  border: 1.5px dashed var(--card-border);
   border-radius: 12px;
-  padding: 18px 20px;
+  padding: 20px 22px;
   width: 100%;
   text-align: left;
+  box-shadow: var(--shadow-subtle);
 }
 
 .card-dress-code-block .dress-icon {
-  font-size: 1.4rem;
-  color: var(--terracotta-warm);
+  font-size: 1.5rem;
+  color: var(--terracotta-rich);
   margin-top: 2px;
 }
 
 .card-dress-code-block h3 {
   font-family: var(--font-serif);
-  font-size: 1.08rem;
+  font-size: 1.15rem;
   color: var(--text-dark);
-  margin-bottom: 4px;
+  font-weight: 800;
+  margin-bottom: 6px;
 }
 
 .card-dress-code-block p {
-  font-size: 0.95rem;
-  color: var(--text-secondary);
-  line-height: 1.45;
+  font-size: 0.98rem;
+  color: var(--text-mocha);
+  font-weight: 500;
+  line-height: 1.5;
 }
 
 /* --- SECTION 5: FOTO DOS NOIVOS --- */
@@ -875,19 +905,19 @@ body {
 
 .block-pretitle {
   font-family: var(--font-cinzel);
-  font-size: 0.78rem;
+  font-size: 0.82rem;
   letter-spacing: 3.5px;
   color: var(--text-secondary);
-  font-weight: 600;
+  font-weight: 800;
   text-transform: uppercase;
   margin-bottom: 4px;
 }
 
 .block-title {
   font-family: var(--font-serif);
-  font-size: 1.85rem;
+  font-size: 1.95rem;
   color: var(--text-dark);
-  font-weight: 600;
+  font-weight: 800;
   margin-bottom: 16px;
 }
 
@@ -901,14 +931,14 @@ body {
 .frame-border-outer {
   position: relative;
   padding: 5px;
-  background: linear-gradient(135deg, #B85F3A 0%, #CFA668 100%);
+  background: linear-gradient(135deg, #A84C24 0%, #D4AF37 100%);
   border-radius: 170px 170px 14px 14px;
-  box-shadow: 0 10px 25px rgba(60, 30, 15, 0.1);
+  box-shadow: 0 10px 25px rgba(40, 20, 10, 0.15);
 }
 
 .frame-border-inner {
   padding: 3px;
-  background: #FAF7F2;
+  background: #FAF8F4;
   border-radius: 165px 165px 11px 11px;
 }
 
@@ -937,40 +967,45 @@ body {
   bottom: -12px;
   left: 50%;
   transform: translateX(-50%);
-  background: #FAF7F2;
-  border: 1px solid var(--terracotta-caramel);
+  background: #FAF8F4;
+  border: 1.5px solid var(--terracotta-caramel);
   border-radius: 20px;
-  padding: 5px 16px;
+  padding: 6px 18px;
   display: flex;
   align-items: center;
   gap: 6px;
   white-space: nowrap;
-  box-shadow: 0 4px 12px rgba(60, 30, 15, 0.1);
-  color: var(--text-mocha);
-  font-size: 0.78rem;
-  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(40, 20, 10, 0.15);
+  color: var(--text-dark);
+  font-size: 0.82rem;
+  font-weight: 700;
 }
 
 .photo-caption-tag i {
-  color: #B85F3A;
-  font-size: 0.7rem;
+  color: #A84C24;
+  font-size: 0.75rem;
 }
 
 .couple-romantic-text {
   font-family: var(--font-serif-body);
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   font-style: italic;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--text-mocha);
   line-height: 1.6;
-  max-width: 420px;
-  margin: 15px auto 0 auto;
+  max-width: 440px;
+  margin: 16px auto 0 auto;
 }
 
 /* --- SECTION 6: CONTAGEM REGRESSIVA --- */
 .card-countdown-block {
   width: 100%;
   margin: 10px 0 20px 0;
+  background: rgba(255, 255, 255, 0.75);
+  border-radius: 14px;
+  padding: 22px 16px;
+  border: 1px solid var(--card-border-subtle);
+  box-shadow: var(--shadow-subtle);
 }
 
 .countdown-grid {
@@ -993,28 +1028,28 @@ body {
   width: 100%;
   aspect-ratio: 1;
   background: #FFFFFF;
-  border: 1px solid var(--card-border);
+  border: 1.5px solid var(--card-border);
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 2px 6px rgba(60, 30, 15, 0.04);
+  box-shadow: 0 3px 8px rgba(40, 20, 10, 0.08);
 }
 
 .count-value {
   font-family: var(--font-serif);
-  font-size: 1.6rem;
-  font-weight: 700;
+  font-size: 1.7rem;
+  font-weight: 800;
   color: var(--terracotta-rich);
 }
 
 .count-label {
   font-family: var(--font-cinzel);
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: var(--text-secondary);
-  font-weight: 700;
+  color: var(--text-mocha);
+  font-weight: 800;
 }
 
 .calendar-sync-wrapper {
@@ -1024,18 +1059,19 @@ body {
 
 .btn-calendar-sync {
   background: #FFFFFF;
-  color: var(--text-mocha);
-  border: 1px solid var(--card-border);
-  padding: 10px 18px;
+  color: var(--text-dark);
+  border: 1.5px solid var(--card-border);
+  padding: 11px 20px;
   border-radius: 25px;
   font-family: var(--font-sans);
-  font-size: 0.8rem;
-  font-weight: 600;
+  font-size: 0.85rem;
+  font-weight: 700;
   letter-spacing: 0.5px;
   cursor: pointer;
   display: flex;
   align-items: center;
   gap: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
   transition: var(--transition-smooth);
 }
 
@@ -1051,29 +1087,40 @@ body {
   width: 100%;
   margin: 10px 0 20px 0;
   text-align: center;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  padding: 26px 18px;
+  border: 1px solid var(--card-border-subtle);
+  box-shadow: var(--shadow-subtle);
 }
 
 .rsvp-badge {
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #B85F3A 0%, #8C3E1E 100%);
+  background: linear-gradient(135deg, #A84C24 0%, #7A3315 100%);
   color: #FFFDF9;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.25rem;
   margin: 0 auto 12px auto;
-  box-shadow: 0 4px 12px rgba(140, 62, 30, 0.25);
+  box-shadow: 0 4px 12px rgba(122, 51, 21, 0.3);
 }
 
 .block-description {
   font-family: var(--font-serif-body);
-  font-size: 1.05rem;
-  color: var(--text-taupe);
-  font-weight: 500;
-  max-width: 400px;
+  font-size: 1.15rem;
+  color: var(--text-mocha);
+  font-weight: 600;
+  max-width: 410px;
   margin: 0 auto 20px auto;
+  line-height: 1.45;
+}
+
+.block-description strong {
+  color: var(--text-dark);
+  font-weight: 800;
 }
 
 .rsvp-form {
@@ -1093,8 +1140,8 @@ body {
 }
 
 .form-label {
-  font-size: 0.85rem;
-  font-weight: 600;
+  font-size: 0.9rem;
+  font-weight: 700;
   color: var(--text-dark);
   display: flex;
   align-items: center;
@@ -1102,19 +1149,19 @@ body {
 }
 
 .form-icon {
-  color: var(--terracotta-warm);
-  font-size: 0.9rem;
+  color: var(--terracotta-rich);
+  font-size: 0.95rem;
 }
 
 .required-star {
-  color: #C25E5E;
-  font-weight: 700;
+  color: #B83232;
+  font-weight: 800;
 }
 
 .optional-tag {
   font-size: 0.75rem;
   color: var(--text-muted);
-  font-weight: normal;
+  font-weight: 600;
 }
 
 .form-input,
@@ -1122,27 +1169,28 @@ body {
 .form-textarea {
   width: 100%;
   background: #FFFFFF;
-  border: 1px solid var(--card-border);
+  border: 1.5px solid var(--card-border);
   border-radius: 8px;
   padding: 12px 14px;
   color: var(--text-dark);
   font-family: var(--font-sans);
-  font-size: 0.92rem;
+  font-size: 0.95rem;
+  font-weight: 500;
   outline: none;
   transition: var(--transition-smooth);
 }
 
 .form-input::placeholder,
 .form-textarea::placeholder {
-  color: #A89588;
-  font-size: 0.88rem;
+  color: #8C7565;
+  font-size: 0.9rem;
 }
 
 .form-input:focus,
 .form-select:focus,
 .form-textarea:focus {
   border-color: var(--terracotta-warm);
-  box-shadow: 0 0 0 3px rgba(184, 95, 58, 0.12);
+  box-shadow: 0 0 0 3px rgba(168, 76, 36, 0.15);
 }
 
 .form-select option {
@@ -1157,14 +1205,15 @@ body {
 
 .form-error-msg {
   display: none;
-  font-size: 0.78rem;
-  color: #C25E5E;
+  font-size: 0.8rem;
+  color: #B83232;
+  font-weight: 600;
   margin-top: 2px;
 }
 
 .form-group.has-error .form-input {
-  border-color: #C25E5E;
-  background: rgba(194, 94, 94, 0.04);
+  border-color: #B83232;
+  background: rgba(184, 50, 50, 0.05);
 }
 
 .form-group.has-error .form-error-msg {
@@ -1179,7 +1228,7 @@ body {
 }
 
 .rsvp-radio-card {
-  border: 1px solid var(--card-border);
+  border: 1.5px solid var(--card-border);
   background: #FFFFFF;
   border-radius: 10px;
   padding: 12px 10px;
@@ -1208,21 +1257,22 @@ body {
 }
 
 .radio-title {
-  font-size: 0.88rem;
+  font-size: 0.9rem;
   color: var(--text-dark);
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .radio-sub {
-  font-size: 0.7rem;
-  color: var(--text-muted);
+  font-size: 0.72rem;
+  color: var(--text-mocha);
+  font-weight: 600;
   line-height: 1.2;
 }
 
 .rsvp-radio-card.active {
   border-color: var(--terracotta-warm);
-  background: rgba(246, 226, 213, 0.45);
-  box-shadow: 0 2px 8px rgba(184, 95, 58, 0.15);
+  background: rgba(247, 234, 225, 0.75);
+  box-shadow: 0 2px 8px rgba(168, 76, 36, 0.2);
 }
 
 .rsvp-radio-card:hover {
@@ -1236,16 +1286,16 @@ body {
 .btn-submit-rsvp {
   width: 100%;
   padding: 14px 24px;
-  background: linear-gradient(135deg, #B85F3A 0%, #8C3E1E 100%);
+  background: linear-gradient(135deg, #A84C24 0%, #7A3315 100%);
   color: #FFFDF9;
   border: none;
   border-radius: 30px;
   font-family: var(--font-sans);
-  font-size: 0.95rem;
-  font-weight: 600;
+  font-size: 0.98rem;
+  font-weight: 700;
   letter-spacing: 0.5px;
   cursor: pointer;
-  box-shadow: 0 6px 20px rgba(140, 62, 30, 0.25);
+  box-shadow: 0 6px 20px rgba(122, 51, 21, 0.3);
   transition: var(--transition-smooth);
   display: flex;
   align-items: center;
@@ -1254,8 +1304,8 @@ body {
 
 .btn-submit-rsvp:hover:not(:disabled) {
   transform: translateY(-2px);
-  background: #6E3219;
-  box-shadow: 0 8px 25px rgba(140, 62, 30, 0.35);
+  background: #5E260E;
+  box-shadow: 0 8px 25px rgba(122, 51, 21, 0.4);
 }
 
 .btn-submit-rsvp:disabled {
@@ -1265,8 +1315,9 @@ body {
 
 .rsvp-direct-wa-hint {
   text-align: center;
-  font-size: 0.82rem;
-  color: var(--text-muted);
+  font-size: 0.85rem;
+  color: var(--text-mocha);
+  font-weight: 600;
   margin-top: 10px;
   display: flex;
   flex-direction: column;
@@ -1275,9 +1326,9 @@ body {
 }
 
 .link-wa-direct {
-  color: #128C7E;
+  color: #0E7063;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 700;
   display: inline-flex;
   align-items: center;
   gap: 5px;
@@ -1298,26 +1349,28 @@ body {
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  background: rgba(56, 161, 105, 0.12);
-  color: #2F855A;
+  background: rgba(47, 133, 90, 0.15);
+  color: #226945;
   font-size: 1.8rem;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto 14px auto;
-  border: 1.5px solid #2F855A;
+  border: 2px solid #226945;
 }
 
 .success-title {
   font-family: var(--font-serif);
-  font-size: 1.45rem;
+  font-size: 1.55rem;
   color: var(--text-dark);
+  font-weight: 800;
   margin-bottom: 8px;
 }
 
 .success-desc {
-  font-size: 0.95rem;
-  color: var(--text-secondary);
+  font-size: 1.02rem;
+  color: var(--text-mocha);
+  font-weight: 600;
   max-width: 360px;
   margin: 0 auto 20px auto;
   line-height: 1.5;
@@ -1338,26 +1391,27 @@ body {
   width: 100%;
   max-width: 320px;
   padding: 13px 20px;
-  background: #128C7E;
+  background: #0E7063;
   color: #fff;
   border-radius: 25px;
   text-decoration: none;
-  font-weight: 600;
-  font-size: 0.9rem;
-  box-shadow: 0 4px 15px rgba(18, 140, 126, 0.25);
+  font-weight: 700;
+  font-size: 0.92rem;
+  box-shadow: 0 4px 15px rgba(14, 112, 99, 0.3);
   transition: var(--transition-smooth);
 }
 
 .btn-rsvp-success-wa:hover {
-  background: #0E6B60;
+  background: #094F45;
   transform: translateY(-2px);
 }
 
 .btn-rsvp-new-submit {
   background: transparent;
   border: none;
-  color: var(--text-muted);
-  font-size: 0.85rem;
+  color: var(--text-mocha);
+  font-size: 0.88rem;
+  font-weight: 600;
   cursor: pointer;
   text-decoration: underline;
   padding: 6px;
@@ -1371,26 +1425,27 @@ body {
 }
 
 .gift-intro-icon {
-  font-size: 1.6rem;
-  color: var(--terracotta-warm);
+  font-size: 1.7rem;
+  color: var(--terracotta-rich);
   margin-bottom: 8px;
 }
 
 .gift-intro-text {
   font-family: var(--font-serif-body);
-  font-size: 1.05rem;
-  color: var(--text-secondary);
+  font-size: 1.15rem;
+  color: var(--text-mocha);
+  font-weight: 600;
   line-height: 1.55;
-  max-width: 420px;
+  max-width: 440px;
   margin: 0 auto 20px auto;
 }
 
 .pix-main-card {
   background: #FFFFFF;
-  border-radius: 14px;
+  border-radius: 16px;
   padding: 24px 18px;
   box-shadow: var(--shadow-subtle);
-  border: 1px solid var(--card-border);
+  border: 1.5px solid var(--card-border);
   color: var(--text-dark);
   text-align: center;
   max-width: 400px;
@@ -1401,18 +1456,18 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid #F0E6DA;
+  border-bottom: 1px solid #EBE1D5;
   padding-bottom: 12px;
   margin-bottom: 18px;
 }
 
 .pix-logo-badge {
-  background: #257F75;
+  background: #1B665E;
   color: #fff;
   padding: 4px 12px;
   border-radius: 20px;
-  font-weight: 700;
-  font-size: 0.82rem;
+  font-weight: 800;
+  font-size: 0.85rem;
   display: flex;
   align-items: center;
   gap: 4px;
@@ -1420,9 +1475,9 @@ body {
 
 .pix-header-title {
   font-family: var(--font-cinzel);
-  font-weight: 600;
+  font-weight: 800;
   color: var(--text-dark);
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   letter-spacing: 1px;
 }
 
@@ -1436,10 +1491,10 @@ body {
 .qr-frame {
   position: relative;
   padding: 8px;
-  background: #FAF7F2;
-  border: 1px solid var(--card-border);
+  background: #FAF8F4;
+  border: 1.5px solid var(--card-border);
   border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(60, 30, 15, 0.05);
+  box-shadow: 0 2px 8px rgba(40, 20, 10, 0.06);
   display: inline-block;
 }
 
@@ -1450,8 +1505,9 @@ body {
 }
 
 .qr-scan-hint {
-  font-size: 0.78rem;
-  color: var(--text-muted);
+  font-size: 0.82rem;
+  color: var(--text-mocha);
+  font-weight: 600;
   margin-top: 8px;
   display: flex;
   align-items: center;
@@ -1459,35 +1515,36 @@ body {
 }
 
 .pix-data-list {
-  background: #FAF7F2;
+  background: #FAF8F4;
   border: 1px solid var(--card-border-subtle);
   border-radius: 10px;
-  padding: 12px 14px;
+  padding: 14px 16px;
   margin-bottom: 18px;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
   text-align: left;
 }
 
 .pix-data-item {
   display: flex;
   flex-direction: column;
-  font-size: 0.88rem;
+  font-size: 0.92rem;
 }
 
 .data-label {
-  color: var(--text-muted);
-  font-size: 0.75rem;
+  color: var(--text-secondary);
+  font-size: 0.78rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   font-family: var(--font-cinzel);
+  font-weight: 800;
 }
 
 .data-value {
-  font-weight: 600;
+  font-weight: 800;
   color: var(--text-dark);
-  font-size: 0.98rem;
+  font-size: 1.05rem;
 }
 
 .recipient-name {
@@ -1505,77 +1562,81 @@ body {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 13px 20px;
-  background: linear-gradient(135deg, #B85F3A 0%, #8C3E1E 100%);
+  padding: 14px 20px;
+  background: linear-gradient(135deg, #A84C24 0%, #7A3315 100%);
   color: #FFFDF9;
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 30px;
   font-family: var(--font-sans);
-  font-weight: 600;
-  font-size: 0.9rem;
+  font-weight: 700;
+  font-size: 0.95rem;
   letter-spacing: 0.5px;
   cursor: pointer;
-  box-shadow: 0 4px 15px rgba(140, 62, 30, 0.25);
+  box-shadow: 0 4px 15px rgba(122, 51, 21, 0.3);
   transition: var(--transition-smooth);
 }
 
 .btn-copy-pix:hover {
-  background: #6E3219;
+  background: #5E260E;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(140, 62, 30, 0.35);
+  box-shadow: 0 6px 20px rgba(122, 51, 21, 0.4);
 }
 
 /* --- SECTION 9: RODAPÉ DO CARTÃO --- */
 .card-footer-block {
   width: 100%;
   margin-top: 30px;
-  padding-top: 20px;
-  border-top: 1px solid rgba(160, 110, 75, 0.2);
+  padding-top: 22px;
+  border-top: 1.5px solid rgba(140, 95, 60, 0.25);
   text-align: center;
-  color: var(--text-muted);
+  color: var(--text-mocha);
 }
 
 .footer-monogram {
   font-family: var(--font-script);
-  font-size: 2.6rem;
+  font-size: 2.8rem;
   color: var(--text-dark);
   margin-bottom: 6px;
 }
 
 .footer-verse {
   font-family: var(--font-serif-body);
-  font-size: 1.05rem;
+  font-size: 1.15rem;
   font-style: italic;
-  color: var(--text-secondary);
-  max-width: 380px;
+  font-weight: 600;
+  color: var(--text-mocha);
+  max-width: 400px;
   margin: 0 auto;
 }
 
 .footer-ref {
-  font-size: 0.8rem;
-  color: var(--terracotta-warm);
+  font-size: 0.85rem;
+  color: var(--terracotta-rich);
+  font-weight: 700;
   display: block;
-  margin-top: 2px;
+  margin-top: 3px;
 }
 
 .footer-divider-small {
-  width: 35px;
+  width: 40px;
   height: 1px;
   background: var(--card-border);
-  margin: 12px auto;
+  margin: 14px auto;
 }
 
 .footer-date {
   font-family: var(--font-cinzel);
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   letter-spacing: 2px;
-  color: var(--text-muted);
+  color: var(--text-secondary);
+  font-weight: 800;
   margin-bottom: 8px;
 }
 
 .footer-made-with {
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   color: var(--text-caption);
+  font-weight: 600;
 }
 
 /* Toast Feedback */
@@ -1584,16 +1645,16 @@ body {
   bottom: 30px;
   left: 50%;
   transform: translateX(-50%);
-  background: #2E1810;
+  background: #24140D;
   color: #FFFDF9;
   padding: 12px 24px;
   border-radius: 30px;
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 0.88rem;
-  font-weight: 500;
-  box-shadow: 0 10px 30px rgba(46, 24, 16, 0.35);
+  font-size: 0.9rem;
+  font-weight: 600;
+  box-shadow: 0 10px 30px rgba(36, 20, 13, 0.4);
   border: 1px solid var(--terracotta-warm);
   z-index: 3000;
   animation: toastSlideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -1658,7 +1719,7 @@ body {
    ========================================================= */
 @media (max-width: 480px) {
   .main-wedding-card {
-    padding: 40px 18px 30px 18px;
+    padding: 42px 18px 32px 18px;
     border-radius: 16px;
   }
   .card-corner-floral.corner-top-left {
@@ -1671,18 +1732,18 @@ body {
     font-size: 2.6rem;
   }
   .card-couple-names {
-    font-size: 3.1rem;
+    font-size: 3.2rem;
   }
   .card-quote-text {
-    font-size: 0.85rem;
+    font-size: 0.95rem;
   }
   .countdown-number-box {
     border-radius: 8px;
   }
   .count-value {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
   }
   .count-label {
-    font-size: 0.62rem;
+    font-size: 0.68rem;
   }
 }
