@@ -1,40 +1,52 @@
 /* =========================================================
-   CASAMENTO CRISLAYNE & DANIEL — LUXURY BOHO CHIC WEDDING INVITATION
-   Palette: Warm Terracotta, Burnt Caramel, Coppery Brown & Off-White
+   CASAMENTO CRISLAYNE & DANIEL — LUXURY VIRTUAL WEDDING INVITATION
+   Palette: Rustic Olive Green, Artisanal Off-White & Antique Gold
    ========================================================= */
 
-/* --- CSS VARIABLES & TOKENS (WARM TERRACOTTA & BURNT CARAMEL) --- */
+/* --- CSS VARIABLES & TOKENS (RUSTIC OLIVE GREEN & OFF-WHITE) --- */
 :root {
-  /* Warm Terracotta & Burnt Caramel Palette */
-  --terracotta-vibrant: #b8542b;
-  --terracotta-warm: #9e4624;
-  --terracotta-burnt: #7e3316;
-  --terracotta-deep: #5e230c;
-  --terracotta-caramel: #c86c41;
-  --terracotta-soft: #e28e67;
-  --terracotta-light: #f7d2be;
-  --terracotta-cream: #fff4ed;
-  
-  /* Backgrounds */
-  --bg-deep: #1c0c06;
-  --bg-dark: #27120a;
-  --bg-card: #2e150c;
-  --bg-surface: #381b10;
-  --border-terracotta: #572917;
-  --border-warm: #843b1e;
+  /* Rustic Olive Green Palette */
+  --olive-deep: #131c12;
+  --olive-dark: #1f2d1e;
+  --olive-card: #253623;
+  --olive-surface: #2d412b;
+  --olive-medium: #3d563a;
+  --olive-accent: #53734f;
+  --olive-light: #769a71;
+  --olive-soft: #a1c09c;
+  --olive-pale: #e1ede0;
+  --olive-cream: #f3f8f2;
 
-  /* Gradients */
-  --grad-terracotta-btn: linear-gradient(135deg, #c86c41 0%, #9e4624 50%, #6b2b11 100%);
-  --grad-envelope-flap: linear-gradient(180deg, #ad4d28 0%, #7e3316 100%);
-  --grad-gold-warm: linear-gradient(135deg, #fce5c8 0%, #d4955b 50%, #9c602a 100%);
+  /* Antique & Champagne Gold Accents */
+  --gold-antique: #c8a25c;
+  --gold-warm: #dbba78;
+  --gold-light: #f5e4b2;
+  --gold-soft: #fcf6e4;
+
+  /* Artisanal Paper Background & Neutrals */
+  --paper-bg: #faf7f2;
+  --paper-cream: #f4eee3;
   
   /* Text Colors */
-  --text-terracotta-dark: #5e230c;
-  --text-coppery-brown: #7a3820;
-  --text-caramel: #9e4624;
-  --text-light: #fff7f0;
-  --text-cream: #faeedf;
-  --text-muted: #c9a595;
+  --text-olive-deep: #172415;
+  --text-mocha-dark: #33271e;
+  --text-mocha-medium: #4e3d30;
+  --text-olive-medium: #364b33;
+  --text-gold: #c8a25c;
+  --text-light: #fbfdfa;
+  --text-cream: #f0f7ee;
+  --text-muted: #9cb498;
+  --text-card-body: #42352b;
+
+  /* Borders & Highlights */
+  --border-olive-subtle: rgba(83, 115, 79, 0.38);
+  --border-olive-strong: #41593e;
+  --border-gold-subtle: rgba(200, 162, 92, 0.42);
+
+  /* Gradients */
+  --grad-olive-btn: linear-gradient(135deg, #5a7b55 0%, #3e573a 50%, #273924 100%);
+  --grad-gold-btn: linear-gradient(135deg, #dbba78 0%, #c49e58 50%, #8f6e33 100%);
+  --grad-envelope-bg: radial-gradient(circle at center, #3b5037 0%, #233221 60%, #111a10 100%);
 
   /* Typography */
   --font-script: 'Great Vibes', cursive;
@@ -45,8 +57,9 @@
   --font-cinzel: 'Cinzel', serif;
 
   /* Shadows & Physics */
-  --shadow-lux: 0 20px 45px -10px rgba(0, 0, 0, 0.65);
-  --shadow-terracotta: 0 8px 25px rgba(158, 70, 36, 0.45);
+  --shadow-lux: 0 20px 45px -10px rgba(0, 0, 0, 0.7);
+  --shadow-olive: 0 8px 25px rgba(35, 50, 33, 0.5);
+  --shadow-gold: 0 8px 25px rgba(200, 162, 92, 0.35);
   --transition-smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -61,13 +74,13 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
-  background-color: var(--bg-deep);
+  background-color: var(--olive-deep);
 }
 
 body {
   font-family: var(--font-sans);
-  color: var(--text-terracotta-dark);
-  background-color: var(--bg-deep);
+  color: var(--text-olive-deep);
+  background-color: var(--olive-deep);
   min-height: 100vh;
   overflow-x: hidden;
   position: relative;
@@ -88,7 +101,7 @@ body {
   height: 100vh;
   pointer-events: none;
   z-index: 1;
-  background: radial-gradient(circle at 50% 30%, rgba(184, 84, 43, 0.1) 0%, transparent 70%);
+  background: radial-gradient(circle at 50% 30%, rgba(83, 115, 79, 0.12) 0%, transparent 70%);
 }
 
 /* --- FLOATING AUDIO CONTROLLER --- */
@@ -107,10 +120,10 @@ body {
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background: rgba(46, 21, 12, 0.92);
+  background: rgba(31, 45, 30, 0.94);
   backdrop-filter: blur(8px);
-  border: 1.5px solid var(--terracotta-caramel);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), var(--shadow-terracotta);
+  border: 1.5px solid var(--gold-antique);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), var(--shadow-gold);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -121,14 +134,14 @@ body {
 
 .audio-btn:hover {
   transform: scale(1.08);
-  border-color: var(--terracotta-soft);
+  border-color: var(--gold-warm);
 }
 
 .audio-vinyl {
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  background: conic-gradient(from 0deg, #1c0c06, #4a2110, #1c0c06, #5e2813, #1c0c06);
+  background: conic-gradient(from 0deg, #111a10, #364b33, #111a10, #4c6347, #111a10);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -144,7 +157,7 @@ body {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: var(--terracotta-caramel);
+  background: var(--gold-antique);
 }
 
 .music-note-icon {
@@ -158,7 +171,7 @@ body {
   position: absolute;
   bottom: -4px;
   right: -4px;
-  background: var(--terracotta-warm);
+  background: var(--olive-accent);
   padding: 3px 5px;
   border-radius: 6px;
   display: flex;
@@ -186,8 +199,8 @@ body {
 
 .audio-tooltip {
   display: none;
-  background: rgba(46, 21, 12, 0.95);
-  border: 1px solid var(--terracotta-warm);
+  background: rgba(31, 45, 30, 0.96);
+  border: 1px solid var(--olive-accent);
   border-radius: 20px;
   padding: 4px 12px;
   color: var(--text-cream);
@@ -203,7 +216,7 @@ body {
   }
   .track-label {
     font-size: 0.65rem;
-    color: var(--terracotta-soft);
+    color: var(--gold-warm);
     text-transform: uppercase;
     letter-spacing: 1px;
   }
@@ -213,7 +226,7 @@ body {
 }
 
 /* =========================================================
-   1. TELA DO ENVELOPE (TERRACOTA QUENTE / CARAMELO QUEIMADO)
+   1. TELA DO ENVELOPE (VERDE-OLIVA / VERDE RÚSTICO TEXTURIZADO)
    ========================================================= */
 .envelope-screen {
   position: fixed;
@@ -222,7 +235,7 @@ body {
   width: 100vw;
   height: 100vh;
   z-index: 500;
-  background: radial-gradient(circle at center, #6b2e16 0%, #3d1709 60%, #1c0a04 100%);
+  background: var(--grad-envelope-bg);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -246,7 +259,7 @@ body {
   gap: 18px;
 }
 
-/* Envelope Header (Off-white / Soft Cream text) */
+/* Envelope Header */
 .envelope-header {
   text-align: center;
   color: var(--text-cream);
@@ -257,9 +270,9 @@ body {
   font-family: var(--font-cinzel);
   font-size: 0.95rem;
   letter-spacing: 5px;
-  color: var(--terracotta-light);
+  color: var(--gold-light);
   text-transform: uppercase;
-  border-bottom: 1px solid rgba(247, 210, 190, 0.4);
+  border-bottom: 1px solid rgba(245, 228, 178, 0.4);
   padding-bottom: 2px;
   display: inline-block;
   margin-bottom: 6px;
@@ -267,31 +280,31 @@ body {
 
 .envelope-title {
   font-family: var(--font-script);
-  font-size: 3rem;
+  font-size: 3.1rem;
   font-weight: 400;
-  color: #fffaf5;
-  text-shadow: 0 2px 10px rgba(0,0,0,0.6), 0 0 25px rgba(226, 142, 103, 0.4);
+  color: #fffdfa;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.6), 0 0 25px rgba(161, 192, 156, 0.35);
   line-height: 1.1;
 }
 
 .envelope-subtitle {
   font-family: var(--font-serif-body);
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: var(--terracotta-light);
+  color: var(--olive-pale);
   margin-top: 2px;
 }
 
-/* 3D Envelope Container (Terracota Quente & Caramelo) */
+/* 3D Envelope Container (Rustic Olive Green) */
 .envelope-wrapper {
   position: relative;
   width: 100%;
   aspect-ratio: 4 / 3;
   max-height: 310px;
-  background-color: #8c3e1e;
+  background-color: #3b5037;
   border-radius: 8px;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(226, 142, 103, 0.4);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(161, 192, 156, 0.35);
   perspective: 1200px;
   transform-style: preserve-3d;
   cursor: pointer;
@@ -300,7 +313,7 @@ body {
 
 .envelope-wrapper:hover {
   transform: translateY(-4px);
-  box-shadow: 0 30px 75px rgba(0, 0, 0, 0.9), 0 0 25px rgba(200, 108, 65, 0.5);
+  box-shadow: 0 30px 75px rgba(0, 0, 0, 0.9), 0 0 25px rgba(118, 154, 113, 0.45);
 }
 
 .envelope-base {
@@ -309,7 +322,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(145deg, #8f401f 0%, #6b2c12 100%);
+  background: linear-gradient(145deg, #3d5438 0%, #293a26 100%);
   border-radius: 8px;
   overflow: hidden;
   z-index: 1;
@@ -337,11 +350,11 @@ body {
 
 .peek-names {
   font-family: var(--font-script);
-  font-size: 1.4rem;
-  color: var(--text-terracotta-dark);
+  font-size: 1.45rem;
+  color: var(--text-olive-deep);
 }
 
-/* Flaps in Rich Warm Terracotta / Burnt Caramel */
+/* Flaps in Rich Rustic Olive Green */
 .envelope-flap {
   position: absolute;
   top: 0;
@@ -352,28 +365,43 @@ body {
 }
 
 .flap-left {
-  background: linear-gradient(135deg, #6e2c13 0%, #883b1c 100%);
+  background: linear-gradient(135deg, #2b3d28 0%, #3a4f36 100%);
   clip-path: polygon(0 0, 50% 50%, 0 100%);
   filter: drop-shadow(2px 0 6px rgba(0,0,0,0.35));
   z-index: 3;
 }
 
 .flap-right {
-  background: linear-gradient(225deg, #783216 0%, #944220 100%);
+  background: linear-gradient(225deg, #2e412b 0%, #3e553a 100%);
   clip-path: polygon(100% 0, 50% 50%, 100% 100%);
   filter: drop-shadow(-2px 0 6px rgba(0,0,0,0.35));
   z-index: 3;
 }
 
 .flap-bottom {
-  background: linear-gradient(0deg, #9e4624 0%, #6e2c13 100%);
+  background: linear-gradient(0deg, #455d3f 0%, #2a3d27 100%);
   clip-path: polygon(0 100%, 50% 48%, 100% 100%);
   filter: drop-shadow(0 -3px 8px rgba(0,0,0,0.4));
   z-index: 4;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+/* Discreto e elegante relevo de ramos/folhas na capa do envelope */
+.envelope-botanical-emboss {
+  position: absolute;
+  bottom: 8px;
+  width: 65%;
+  max-width: 220px;
+  height: auto;
+  pointer-events: none;
+  opacity: 0.75;
+  filter: drop-shadow(0 1px 1px rgba(0,0,0,0.4)) drop-shadow(0 -1px 1px rgba(255,255,255,0.15));
 }
 
 .flap-top {
-  background: linear-gradient(180deg, #b8542b 0%, #823617 100%);
+  background: linear-gradient(180deg, #4d6746 0%, #344730 100%);
   clip-path: polygon(0 0, 50% 55%, 100% 0);
   transform-origin: top center;
   transform-style: preserve-3d;
@@ -382,7 +410,7 @@ body {
   z-index: 5;
 }
 
-/* Wax Seal (Off-white / Soft Cream with Dried Flowers) */
+/* Wax Seal with Dried Flowers Centerpiece */
 .envelope-seal-container {
   position: absolute;
   top: 50%;
@@ -418,12 +446,12 @@ body {
   width: 85px;
   height: 85px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(226, 142, 103, 0.45) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(219, 186, 120, 0.4) 0%, transparent 70%);
   animation: pulseGlow 2.5s infinite ease-in-out;
   pointer-events: none;
 }
 
-/* Tap Prompt Button (Warm Terracotta / Gold Highlight) */
+/* Tap Prompt Button */
 .open-prompt-container {
   position: absolute;
   bottom: -60px;
@@ -440,15 +468,15 @@ body {
   align-items: center;
   gap: 10px;
   padding: 13px 28px;
-  background: var(--grad-terracotta-btn);
-  color: #fffaf5;
+  background: var(--grad-olive-btn);
+  color: #fffdfa;
   font-family: var(--font-sans);
   font-weight: 700;
   font-size: 0.95rem;
   letter-spacing: 0.5px;
-  border: 1px solid rgba(255, 244, 237, 0.35);
+  border: 1px solid rgba(243, 248, 242, 0.35);
   border-radius: 30px;
-  box-shadow: 0 8px 25px rgba(110, 44, 19, 0.55), 0 2px 5px rgba(0,0,0,0.3);
+  box-shadow: 0 8px 25px rgba(27, 39, 25, 0.6), 0 2px 5px rgba(0,0,0,0.3);
   cursor: pointer;
   transition: var(--transition-smooth);
   animation: bouncePrompt 2.5s infinite ease-in-out;
@@ -456,14 +484,15 @@ body {
 
 .btn-open-envelope:hover {
   transform: scale(1.05);
-  box-shadow: 0 12px 30px rgba(184, 84, 43, 0.7);
+  box-shadow: 0 12px 30px rgba(83, 115, 79, 0.7);
+  border-color: var(--gold-light);
 }
 
 .prompt-icon-ring {
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -475,7 +504,7 @@ body {
 }
 
 .prompt-sparkle {
-  color: var(--terracotta-cream);
+  color: var(--gold-light);
   font-size: 1.1rem;
 }
 
@@ -488,7 +517,7 @@ body {
 }
 
 .envelope-date-hint i {
-  color: var(--terracotta-soft);
+  color: var(--gold-warm);
   margin-right: 4px;
 }
 
@@ -517,14 +546,14 @@ body {
 }
 
 /* =========================================================
-   2. CONVITE PRINCIPAL (AQUARELA OFF-WHITE & TERRACOTA)
+   2. CONVITE PRINCIPAL (PAPEL ECOLÓGICO ARTESANAL & FLORAIS)
    ========================================================= */
 .invitation-main {
   position: relative;
   width: 100%;
   min-height: 100vh;
   z-index: 100;
-  background: var(--bg-deep);
+  background: var(--olive-deep);
   opacity: 1;
   transition: opacity 0.8s ease-in;
 }
@@ -539,7 +568,7 @@ body {
   gap: 35px;
 }
 
-/* --- A. HERO CARD BOHO CHIC --- */
+/* --- A. HERO CARD ARTESANAL --- */
 .card-hero-section {
   width: 100%;
   display: flex;
@@ -553,11 +582,11 @@ body {
   width: 100%;
   background: #faf6f0 url('assets/images/boho_paper_texture.jpg') center/cover;
   border-radius: 16px;
-  box-shadow: 0 25px 55px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(184, 84, 43, 0.4);
+  box-shadow: 0 25px 55px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(83, 115, 79, 0.4);
   padding: 42px 24px 36px 24px;
   overflow: hidden;
   text-align: center;
-  border: 1px solid rgba(184, 84, 43, 0.4);
+  border: 1px solid rgba(83, 115, 79, 0.4);
 }
 
 /* Inset Border */
@@ -565,17 +594,17 @@ body {
   content: '';
   position: absolute;
   inset: 10px;
-  border: 1px solid rgba(126, 51, 22, 0.22);
+  border: 1px solid rgba(61, 86, 58, 0.25);
   border-radius: 12px;
   pointer-events: none;
 }
 
-/* Corner Watercolor Boho Terracotta Floral */
+/* Corner Botanical Wildflowers (Yellow, Burgundy, White & Olive) */
 .corner-floral {
   position: absolute;
   pointer-events: none;
   z-index: 2;
-  opacity: 0.96;
+  opacity: 0.98;
 }
 
 .corner-top-left {
@@ -605,7 +634,7 @@ body {
   align-items: center;
 }
 
-/* Top Quote */
+/* Top Quote (Henry van Dyke) in Sophisticated Dark Mocha */
 .card-quote-wrapper {
   max-width: 330px;
   margin: 0 auto 18px auto;
@@ -617,14 +646,14 @@ body {
   font-family: var(--font-serif-body);
   font-size: 0.92rem;
   line-height: 1.45;
-  color: var(--text-coppery-brown);
+  color: var(--text-mocha-medium);
   font-style: italic;
   font-weight: 600;
 }
 
 .card-quote-text strong {
   font-weight: 700;
-  color: var(--text-terracotta-dark);
+  color: var(--text-mocha-dark);
 }
 
 /* Names in Big Calligraphy */
@@ -635,9 +664,9 @@ body {
 
 .card-couple-names {
   font-family: var(--font-script);
-  font-size: 3.6rem;
+  font-size: 3.7rem;
   font-weight: 400;
-  color: #5e230c;
+  color: var(--text-olive-deep);
   line-height: 1.1;
   text-shadow: 0 1px 2px rgba(255, 255, 255, 0.95);
   letter-spacing: 0.5px;
@@ -648,7 +677,7 @@ body {
   font-family: var(--font-serif-body);
   font-size: 1.1rem;
   font-weight: 600;
-  color: var(--text-coppery-brown);
+  color: var(--text-olive-medium);
   margin-bottom: 16px;
   letter-spacing: 0.5px;
 }
@@ -657,8 +686,8 @@ body {
 .card-date-banner {
   margin: 8px 0 18px 0;
   padding: 6px 18px;
-  border-top: 1px solid rgba(122, 56, 32, 0.4);
-  border-bottom: 1px solid rgba(122, 56, 32, 0.4);
+  border-top: 1px solid rgba(61, 86, 58, 0.35);
+  border-bottom: 1px solid rgba(61, 86, 58, 0.35);
   display: inline-block;
 }
 
@@ -666,7 +695,7 @@ body {
   font-family: var(--font-serif);
   font-size: 1.08rem;
   font-weight: 700;
-  color: var(--text-terracotta-dark);
+  color: var(--text-olive-deep);
   letter-spacing: 1.5px;
 }
 
@@ -679,14 +708,14 @@ body {
   font-family: var(--font-serif);
   font-size: 1.35rem;
   font-weight: 700;
-  color: var(--text-terracotta-dark);
+  color: var(--text-olive-deep);
   margin-bottom: 4px;
 }
 
 .venue-address {
   font-family: var(--font-serif-body);
   font-size: 1.02rem;
-  color: var(--text-coppery-brown);
+  color: var(--text-mocha-medium);
   line-height: 1.4;
   font-weight: 600;
 }
@@ -695,7 +724,7 @@ body {
 .card-reception-notice {
   font-family: var(--font-serif-body);
   font-size: 0.95rem;
-  color: #8a482b;
+  color: #5c4a3d;
   font-style: italic;
   max-width: 320px;
   margin: 0 auto 16px auto;
@@ -711,7 +740,7 @@ body {
   font-family: var(--font-serif);
   font-weight: 700;
   font-size: 0.98rem;
-  color: var(--text-terracotta-dark);
+  color: var(--text-olive-deep);
   letter-spacing: 0.5px;
 }
 
@@ -741,26 +770,27 @@ body {
 }
 
 .btn-card-action.btn-gold {
-  background: var(--grad-terracotta-btn);
-  color: #fff;
-  border: 1px solid rgba(255, 244, 237, 0.3);
-  box-shadow: 0 4px 12px rgba(110, 44, 19, 0.35);
+  background: var(--grad-olive-btn);
+  color: #fffdfa;
+  border: 1px solid rgba(243, 248, 242, 0.3);
+  box-shadow: 0 4px 12px rgba(35, 50, 33, 0.4);
 }
 
 .btn-card-action.btn-gold:hover {
-  background: #4a1c09;
+  background: #253623;
   transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(35, 50, 33, 0.5);
 }
 
 .btn-card-action.btn-outline {
-  background: rgba(255, 255, 255, 0.85);
-  color: var(--text-terracotta-dark);
-  border: 1px solid rgba(126, 51, 22, 0.4);
+  background: rgba(255, 255, 255, 0.88);
+  color: var(--text-olive-deep);
+  border: 1px solid rgba(61, 86, 58, 0.4);
 }
 
 .btn-card-action.btn-outline:hover {
   background: #fff;
-  border-color: var(--text-terracotta-dark);
+  border-color: var(--text-olive-deep);
   transform: translateY(-2px);
 }
 
@@ -771,14 +801,14 @@ body {
   align-items: center;
   gap: 6px;
   margin-top: 20px;
-  color: var(--terracotta-light);
+  color: var(--olive-pale);
   font-size: 0.8rem;
   letter-spacing: 1px;
   text-transform: uppercase;
 }
 
 .bounce-arrow {
-  color: var(--terracotta-soft);
+  color: var(--gold-warm);
   font-size: 1rem;
   animation: bounceDown 2s infinite ease-in-out;
 }
@@ -786,9 +816,9 @@ body {
 /* --- SECTION COMMON STYLING --- */
 .section-container {
   width: 100%;
-  background: var(--bg-card);
+  background: var(--olive-card);
   border-radius: 16px;
-  border: 1px solid var(--border-terracotta);
+  border: 1px solid var(--border-olive-subtle);
   padding: 30px 20px;
   box-shadow: var(--shadow-lux);
 }
@@ -799,7 +829,7 @@ body {
 }
 
 .section-ornament {
-  color: var(--terracotta-soft);
+  color: var(--gold-warm);
   font-size: 0.8rem;
   letter-spacing: 6px;
   display: block;
@@ -810,7 +840,7 @@ body {
   font-family: var(--font-cinzel);
   font-size: 0.8rem;
   letter-spacing: 3px;
-  color: var(--terracotta-light);
+  color: var(--olive-soft);
   text-transform: uppercase;
   display: block;
 }
@@ -826,7 +856,7 @@ body {
 .section-description {
   font-family: var(--font-serif-body);
   font-size: 1.05rem;
-  color: #eedcd3;
+  color: #e2ede0;
   max-width: 400px;
   margin: 0 auto;
 }
@@ -834,7 +864,7 @@ body {
 .gold-divider {
   width: 60px;
   height: 2px;
-  background: var(--grad-terracotta-btn);
+  background: var(--grad-gold-btn);
   margin: 12px auto 0 auto;
   border-radius: 2px;
 }
@@ -842,7 +872,7 @@ body {
 .gold-divider-small {
   width: 40px;
   height: 1px;
-  background: var(--terracotta-caramel);
+  background: var(--gold-antique);
   margin: 12px auto;
   opacity: 0.5;
 }
@@ -858,14 +888,14 @@ body {
 .frame-border-outer {
   position: relative;
   padding: 6px;
-  background: var(--grad-terracotta-btn);
+  background: var(--grad-gold-btn);
   border-radius: 180px 180px 20px 20px;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.5), var(--shadow-terracotta);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.5), var(--shadow-gold);
 }
 
 .frame-border-inner {
   padding: 4px;
-  background: var(--bg-dark);
+  background: var(--olive-dark);
   border-radius: 174px 174px 16px 16px;
 }
 
@@ -894,8 +924,8 @@ body {
   bottom: -12px;
   left: 50%;
   transform: translateX(-50%);
-  background: var(--bg-dark);
-  border: 1px solid var(--terracotta-warm);
+  background: var(--olive-dark);
+  border: 1px solid var(--gold-antique);
   border-radius: 20px;
   padding: 6px 16px;
   display: flex;
@@ -923,7 +953,7 @@ body {
   font-family: var(--font-serif-body);
   font-size: 1.15rem;
   font-style: italic;
-  color: #f7ede7;
+  color: #f1f8ee;
   line-height: 1.6;
 }
 
@@ -945,8 +975,8 @@ body {
 .countdown-number-box {
   width: 100%;
   aspect-ratio: 1;
-  background: rgba(28, 12, 6, 0.8);
-  border: 1.5px solid rgba(184, 84, 43, 0.45);
+  background: rgba(19, 28, 18, 0.85);
+  border: 1.5px solid rgba(118, 154, 113, 0.4);
   border-radius: 12px;
   display: flex;
   align-items: center;
@@ -959,8 +989,8 @@ body {
   font-family: var(--font-serif);
   font-size: 1.6rem;
   font-weight: 700;
-  color: var(--terracotta-light);
-  text-shadow: 0 2px 10px rgba(184, 84, 43, 0.35);
+  color: var(--gold-light);
+  text-shadow: 0 2px 10px rgba(200, 162, 92, 0.35);
 }
 
 .count-label {
@@ -968,7 +998,7 @@ body {
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: #cca999;
+  color: #b8ccb5;
   font-weight: 500;
 }
 
@@ -979,9 +1009,9 @@ body {
 }
 
 .btn-calendar-sync {
-  background: rgba(184, 84, 43, 0.18);
+  background: rgba(83, 115, 79, 0.22);
   color: var(--text-cream);
-  border: 1px solid var(--terracotta-warm);
+  border: 1px solid var(--olive-accent);
   padding: 10px 18px;
   border-radius: 25px;
   font-family: var(--font-sans);
@@ -995,15 +1025,15 @@ body {
 }
 
 .btn-calendar-sync:hover {
-  background: var(--terracotta-warm);
+  background: var(--olive-accent);
   color: #fff;
   transform: translateY(-2px);
 }
 
 /* --- D. LOCALIZAÇÃO & CERIMÔNIA --- */
 .location-card {
-  background: rgba(28, 12, 6, 0.7);
-  border: 1px solid var(--border-terracotta);
+  background: rgba(19, 28, 18, 0.75);
+  border: 1px solid var(--border-olive-subtle);
   border-radius: 14px;
   padding: 22px 18px;
   margin-bottom: 20px;
@@ -1013,14 +1043,14 @@ body {
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background: var(--grad-terracotta-btn);
+  background: var(--grad-olive-btn);
   color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.2rem;
   margin: 0 auto 16px auto;
-  box-shadow: 0 4px 15px rgba(110, 44, 19, 0.45);
+  box-shadow: 0 4px 15px rgba(35, 50, 33, 0.45);
 }
 
 .location-name {
@@ -1036,12 +1066,12 @@ body {
   align-items: flex-start;
   gap: 12px;
   margin-bottom: 14px;
-  color: #f7ece5;
+  color: #f1f8ee;
   font-size: 0.95rem;
 }
 
 .info-icon {
-  color: var(--terracotta-soft);
+  color: var(--gold-warm);
   font-size: 1.1rem;
   margin-top: 3px;
   flex-shrink: 0;
@@ -1105,18 +1135,18 @@ body {
 .btn-copy-address {
   background: rgba(255, 255, 255, 0.08);
   color: var(--text-cream);
-  border: 1px solid rgba(184, 84, 43, 0.45);
+  border: 1px solid rgba(118, 154, 113, 0.45);
 }
 
 .btn-copy-address:hover {
-  background: rgba(184, 84, 43, 0.25);
+  background: rgba(83, 115, 79, 0.3);
 }
 
 .map-embed-wrapper {
   width: 100%;
   border-radius: 12px;
   overflow: hidden;
-  border: 1px solid rgba(184, 84, 43, 0.35);
+  border: 1px solid rgba(83, 115, 79, 0.35);
   box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 
@@ -1125,35 +1155,35 @@ body {
   display: flex;
   align-items: flex-start;
   gap: 16px;
-  background: rgba(184, 84, 43, 0.12);
-  border: 1px dashed rgba(184, 84, 43, 0.5);
+  background: rgba(83, 115, 79, 0.15);
+  border: 1px dashed rgba(118, 154, 113, 0.5);
   border-radius: 12px;
   padding: 18px;
 }
 
 .dress-icon {
   font-size: 1.6rem;
-  color: var(--terracotta-soft);
+  color: var(--gold-warm);
   margin-top: 2px;
 }
 
 .dress-text h4 {
   font-family: var(--font-serif);
   font-size: 1.1rem;
-  color: var(--terracotta-light);
+  color: var(--gold-light);
   margin-bottom: 4px;
 }
 
 .dress-text p {
   font-size: 0.9rem;
-  color: #eedcd3;
+  color: #e4efe2;
   line-height: 1.5;
 }
 
 /* --- E. CONFIRMAÇÃO DE PRESENÇA (RSVP FORM) --- */
 .rsvp-card {
-  background: rgba(28, 12, 6, 0.75);
-  border: 1px solid var(--border-terracotta);
+  background: rgba(19, 28, 18, 0.8);
+  border: 1px solid var(--border-olive-subtle);
   border-radius: 16px;
   padding: 30px 22px;
   text-align: center;
@@ -1165,14 +1195,14 @@ body {
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  background: var(--grad-terracotta-btn);
+  background: var(--grad-olive-btn);
   color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.5rem;
   margin: 0 auto 14px auto;
-  box-shadow: 0 4px 20px rgba(110, 44, 19, 0.45);
+  box-shadow: 0 4px 20px rgba(35, 50, 33, 0.45);
 }
 
 .rsvp-card-title {
@@ -1184,7 +1214,7 @@ body {
 
 .rsvp-card-subtitle {
   font-size: 0.9rem;
-  color: #cca999;
+  color: #b8ccb5;
   margin-bottom: 24px;
 }
 
@@ -1206,14 +1236,14 @@ body {
 .form-label {
   font-size: 0.88rem;
   font-weight: 600;
-  color: var(--terracotta-light);
+  color: var(--olive-pale);
   display: flex;
   align-items: center;
   gap: 6px;
 }
 
 .form-icon {
-  color: var(--terracotta-soft);
+  color: var(--gold-warm);
   font-size: 0.95rem;
 }
 
@@ -1224,7 +1254,7 @@ body {
 
 .optional-tag {
   font-size: 0.75rem;
-  color: #b08d7e;
+  color: #9cb498;
   font-weight: normal;
 }
 
@@ -1232,8 +1262,8 @@ body {
 .form-select,
 .form-textarea {
   width: 100%;
-  background: rgba(46, 21, 12, 0.88);
-  border: 1.5px solid rgba(184, 84, 43, 0.35);
+  background: rgba(31, 45, 30, 0.9);
+  border: 1.5px solid rgba(118, 154, 113, 0.35);
   border-radius: 10px;
   padding: 12px 14px;
   color: #fff;
@@ -1245,20 +1275,20 @@ body {
 
 .form-input::placeholder,
 .form-textarea::placeholder {
-  color: #9c7a6c;
+  color: #8fa78b;
   font-size: 0.9rem;
 }
 
 .form-input:focus,
 .form-select:focus,
 .form-textarea:focus {
-  border-color: var(--terracotta-caramel);
-  background: rgba(56, 26, 15, 0.95);
-  box-shadow: 0 0 12px rgba(184, 84, 43, 0.35);
+  border-color: var(--gold-warm);
+  background: rgba(37, 54, 35, 0.95);
+  box-shadow: 0 0 12px rgba(200, 162, 92, 0.35);
 }
 
 .form-select option {
-  background: var(--bg-dark);
+  background: var(--olive-dark);
   color: #fff;
 }
 
@@ -1292,8 +1322,8 @@ body {
 }
 
 .rsvp-radio-card {
-  border: 1.5px solid rgba(184, 84, 43, 0.3);
-  background: rgba(38, 17, 10, 0.75);
+  border: 1.5px solid rgba(118, 154, 113, 0.3);
+  background: rgba(25, 37, 24, 0.8);
   border-radius: 12px;
   padding: 14px 10px;
   cursor: pointer;
@@ -1327,18 +1357,18 @@ body {
 
 .radio-sub {
   font-size: 0.7rem;
-  color: #cca999;
+  color: #b8ccb5;
   line-height: 1.2;
 }
 
 .rsvp-radio-card.active {
-  border-color: var(--terracotta-caramel);
-  background: rgba(184, 84, 43, 0.2);
-  box-shadow: 0 4px 15px rgba(184, 84, 43, 0.3);
+  border-color: var(--gold-warm);
+  background: rgba(83, 115, 79, 0.3);
+  box-shadow: 0 4px 15px rgba(83, 115, 79, 0.35);
 }
 
 .rsvp-radio-card:hover {
-  border-color: var(--terracotta-soft);
+  border-color: var(--olive-soft);
 }
 
 /* Submit Button */
@@ -1349,7 +1379,7 @@ body {
 .btn-submit-rsvp {
   width: 100%;
   padding: 15px 24px;
-  background: var(--grad-terracotta-btn);
+  background: var(--grad-olive-btn);
   color: #fff;
   border: none;
   border-radius: 30px;
@@ -1358,7 +1388,7 @@ body {
   font-weight: 700;
   letter-spacing: 0.5px;
   cursor: pointer;
-  box-shadow: 0 8px 25px rgba(110, 44, 19, 0.45);
+  box-shadow: 0 8px 25px rgba(35, 50, 33, 0.5);
   transition: var(--transition-smooth);
   display: flex;
   align-items: center;
@@ -1367,7 +1397,8 @@ body {
 
 .btn-submit-rsvp:hover:not(:disabled) {
   transform: translateY(-2px);
-  box-shadow: 0 12px 30px rgba(184, 84, 43, 0.65);
+  box-shadow: 0 12px 30px rgba(83, 115, 79, 0.7);
+  background: linear-gradient(135deg, #678b61 0%, #476443 50%, #2f452c 100%);
 }
 
 .btn-submit-rsvp:disabled {
@@ -1379,7 +1410,7 @@ body {
 .rsvp-direct-wa-hint {
   text-align: center;
   font-size: 0.82rem;
-  color: #cca999;
+  color: #b8ccb5;
   margin-top: 10px;
   display: flex;
   flex-direction: column;
@@ -1431,7 +1462,7 @@ body {
 
 .success-desc {
   font-size: 0.95rem;
-  color: #eedcd3;
+  color: #e4efe2;
   max-width: 360px;
   margin: 0 auto 24px auto;
   line-height: 1.5;
@@ -1470,7 +1501,7 @@ body {
 .btn-rsvp-new-submit {
   background: transparent;
   border: none;
-  color: var(--terracotta-soft);
+  color: var(--gold-warm);
   font-size: 0.85rem;
   cursor: pointer;
   text-decoration: underline;
@@ -1486,14 +1517,14 @@ body {
 
 .gift-intro-icon {
   font-size: 1.8rem;
-  color: var(--terracotta-soft);
+  color: var(--gold-warm);
   margin-bottom: 10px;
 }
 
 .gift-intro-text {
   font-family: var(--font-serif-body);
   font-size: 1.05rem;
-  color: #f7ede7;
+  color: #f1f8ee;
   line-height: 1.6;
 }
 
@@ -1501,9 +1532,9 @@ body {
   background: #ffffff;
   border-radius: 16px;
   padding: 26px 20px;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.45), var(--shadow-terracotta);
-  border: 2px solid var(--terracotta-warm);
-  color: var(--text-terracotta-dark);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.45), var(--shadow-olive);
+  border: 2px solid var(--olive-accent);
+  color: var(--text-olive-deep);
   text-align: center;
   margin-bottom: 10px;
 }
@@ -1512,7 +1543,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid #eedcd4;
+  border-bottom: 1px solid #e1ece0;
   padding-bottom: 12px;
   margin-bottom: 20px;
 }
@@ -1532,7 +1563,7 @@ body {
 .pix-header-title {
   font-family: var(--font-serif);
   font-weight: 700;
-  color: var(--text-terracotta-dark);
+  color: var(--text-olive-deep);
   font-size: 0.95rem;
 }
 
@@ -1547,7 +1578,7 @@ body {
   position: relative;
   padding: 10px;
   background: #fff;
-  border: 1px solid #ebd4cb;
+  border: 1px solid #d9e6d7;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.06);
   display: inline-block;
@@ -1561,7 +1592,7 @@ body {
 
 .qr-scan-hint {
   font-size: 0.8rem;
-  color: #718096;
+  color: #64748b;
   margin-top: 8px;
   display: flex;
   align-items: center;
@@ -1569,8 +1600,8 @@ body {
 }
 
 .pix-data-list {
-  background: #fdfaf8;
-  border: 1px solid #f4e8e1;
+  background: #f7faf6;
+  border: 1px solid #e2ece0;
   border-radius: 10px;
   padding: 14px;
   margin-bottom: 20px;
@@ -1587,7 +1618,7 @@ body {
 }
 
 .data-label {
-  color: #8c6d5f;
+  color: #5c7458;
   font-size: 0.78rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -1595,12 +1626,12 @@ body {
 
 .data-value {
   font-weight: 700;
-  color: #2e150c;
+  color: #172415;
   font-size: 1rem;
 }
 
 .recipient-name {
-  color: var(--text-terracotta-dark);
+  color: var(--text-olive-deep);
 }
 
 .pix-copy-action {
@@ -1615,34 +1646,34 @@ body {
   justify-content: center;
   gap: 8px;
   padding: 14px 20px;
-  background: var(--grad-terracotta-btn);
-  color: #fffaf5;
-  border: 1px solid rgba(255, 244, 237, 0.3);
+  background: var(--grad-olive-btn);
+  color: #fffdfa;
+  border: 1px solid rgba(243, 248, 242, 0.3);
   border-radius: 30px;
   font-family: var(--font-sans);
   font-weight: 700;
   font-size: 0.95rem;
   cursor: pointer;
-  box-shadow: 0 4px 15px rgba(110, 44, 19, 0.4);
+  box-shadow: 0 4px 15px rgba(35, 50, 33, 0.4);
   transition: var(--transition-smooth);
 }
 
 .btn-copy-pix:hover {
-  background: #4a1c09;
+  background: #233221;
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(110, 44, 19, 0.55);
+  box-shadow: 0 8px 20px rgba(35, 50, 33, 0.55);
 }
 
 /* --- G. FOOTER --- */
 .wedding-footer {
   text-align: center;
   padding: 30px 15px 10px 15px;
-  color: #cca999;
+  color: #b8ccb5;
 }
 
 .footer-monogram {
   font-family: var(--font-script);
-  font-size: 2.4rem;
+  font-size: 2.5rem;
   color: var(--text-cream);
   margin-bottom: 6px;
 }
@@ -1651,14 +1682,14 @@ body {
   font-family: var(--font-serif-body);
   font-size: 1.05rem;
   font-style: italic;
-  color: #f7ede7;
+  color: #f1f8ee;
   max-width: 380px;
   margin: 0 auto;
 }
 
 .footer-ref {
   font-size: 0.8rem;
-  color: var(--terracotta-soft);
+  color: var(--gold-warm);
   display: block;
   margin-top: 2px;
 }
@@ -1673,7 +1704,7 @@ body {
 
 .footer-made-with {
   font-size: 0.75rem;
-  color: #a8887a;
+  color: #8fa78b;
 }
 
 /* Toast Feedback */
@@ -1682,8 +1713,8 @@ body {
   bottom: 30px;
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(46, 21, 12, 0.96);
-  border: 1.5px solid var(--terracotta-warm);
+  background: rgba(25, 37, 24, 0.96);
+  border: 1.5px solid var(--olive-accent);
   color: var(--text-cream);
   padding: 12px 24px;
   border-radius: 30px;
@@ -1692,7 +1723,7 @@ body {
   gap: 10px;
   font-size: 0.9rem;
   font-weight: 600;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.55), var(--shadow-terracotta);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.55), var(--shadow-olive);
   z-index: 3000;
   animation: toastSlideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   white-space: nowrap;
