@@ -324,26 +324,47 @@ document.addEventListener('DOMContentLoaded', () => {
       data_envio: new Date().toLocaleString('pt-BR')
     };
 
+    // 1. Dispatch via EmailJS (if initialized)
+    if (window.emailjs && CONFIG.EMAILJS_PUBLIC_KEY && CONFIG.EMAILJS_SERVICE_ID) {
+      try {
+        await window.emailjs.send(CONFIG.EMAILJS_SERVICE_ID, CONFIG.EMAILJS_TEMPLATE_ID, {
+          to_email: CONFIG.NOTIFICATION_EMAIL,
+          guest_name: payload.nome_convidado,
+          guest_phone: payload.telefone,
+          attending_status: payload.comparecera,
+          guests_count: payload.quantidade_acompanhantes,
+          guests_names: payload.nomes_acompanhantes,
+          guest_message: payload.mensagem_recado,
+          event_name: 'Casamento Crislayne & Daniel',
+          submission_date: payload.data_envio
+        });
+        console.log('Notification sent via EmailJS to', CONFIG.NOTIFICATION_EMAIL);
+      } catch (ejsErr) {
+        console.warn('EmailJS dispatch warning:', ejsErr);
+      }
+    }
+
+    // 2. Dispatch via Web3Forms endpoint for Crislayneevelin98@gmail.com
     try {
-      // Send notification via Web3Forms / Formspree standard endpoint configured for Crislayneevelin98@gmail.com
       const emailEndpoint = 'https://api.web3forms.com/submit';
       const formData = new FormData();
-      formData.append('access_key', 'b2b8da46-953e-4361-bd8c-fa42a129d2f2'); // Standard active key or webhook
+      formData.append('access_key', 'b2b8da46-953e-4361-bd8c-fa42a129d2f2');
       formData.append('to_email', CONFIG.NOTIFICATION_EMAIL);
       formData.append('from_name', 'Convite de Casamento Crislayne & Daniel');
       formData.append('subject', payload.subject);
       formData.append('message', `
-Nova Confirmação de Presença recebida!
+💍 Nova Confirmação de Presença recebida!
 
 • Convidado: ${payload.nome_convidado}
 • Telefone/WhatsApp: ${payload.telefone}
 • Comparecerá: ${payload.comparecera}
 • Acompanhantes: ${payload.quantidade_acompanhantes}
 • Nomes dos Acompanhantes: ${payload.nomes_acompanhantes}
-• Recado aos Noivos:
+• Recado com carinho aos Noivos:
 "${payload.mensagem_recado}"
 
 Data e Hora do Registro: ${payload.data_envio}
+Destinatário: ${CONFIG.NOTIFICATION_EMAIL}
       `);
 
       await fetch(emailEndpoint, {
@@ -352,7 +373,7 @@ Data e Hora do Registro: ${payload.data_envio}
       });
       console.log('Email notification sent successfully to', CONFIG.NOTIFICATION_EMAIL);
     } catch (err) {
-      console.warn('Email dispatch warning:', err);
+      console.warn('Email API dispatch warning:', err);
     }
   }
 
@@ -407,10 +428,11 @@ Data e Hora do Registro: ${payload.data_envio}
         created_at: new Date().toISOString()
       };
 
-      // 1. Save to Supabase (if configured)
+      // 1. Save to Supabase (SDK insert + REST API fallback)
+      let supabaseSaved = false;
       if (supabaseClient) {
         try {
-          const { error } = await supabaseClient.from('rsvp').insert([
+          const { data, error } = await supabaseClient.from('rsvp').insert([
             {
               name: rsvpRecord.name,
               phone: rsvpRecord.phone,
@@ -421,12 +443,41 @@ Data e Hora do Registro: ${payload.data_envio}
             }
           ]);
           if (error) {
-            console.warn('Supabase insert error (saving local fallback):', error);
+            console.warn('Supabase SDK insert error, trying REST API:', error);
           } else {
-            console.log('RSVP saved successfully to Supabase!');
+            supabaseSaved = true;
+            console.log('RSVP saved successfully to Supabase via SDK!');
           }
         } catch (dbErr) {
-          console.warn('Database error:', dbErr);
+          console.warn('Supabase SDK exception:', dbErr);
+        }
+      }
+
+      // Direct REST API Fallback for Supabase
+      if (!supabaseSaved && CONFIG.SUPABASE_URL && CONFIG.SUPABASE_ANON_KEY) {
+        try {
+          const restResponse = await fetch(`${CONFIG.SUPABASE_URL}/rest/v1/rsvp`, {
+            method: 'POST',
+            headers: {
+              'apikey': CONFIG.SUPABASE_ANON_KEY,
+              'Authorization': `Bearer ${CONFIG.SUPABASE_ANON_KEY}`,
+              'Content-Type': 'application/json',
+              'Prefer': 'return=minimal'
+            },
+            body: JSON.stringify({
+              name: rsvpRecord.name,
+              phone: rsvpRecord.phone,
+              attending: rsvpRecord.attending,
+              guests_count: rsvpRecord.guests_count,
+              guests_names: rsvpRecord.guests_names,
+              message: rsvpRecord.message
+            })
+          });
+          if (restResponse.ok) {
+            console.log('RSVP saved successfully to Supabase via REST API!');
+          }
+        } catch (restErr) {
+          console.warn('Supabase REST API fallback warning:', restErr);
         }
       }
 
@@ -457,16 +508,17 @@ Data e Hora do Registro: ${payload.data_envio}
       
       btnSuccessWhatsapp.href = `https://api.whatsapp.com/send?phone=${CONFIG.NOIVOS_PHONE}&text=${encodeURIComponent(waMessage)}`;
 
+      // Success message requested by user
       if (isAttending) {
-        rsvpSuccessMsg.innerHTML = `✨ Muito obrigado, <strong>${nameVal}</strong>! Sua presença foi confirmada com muito sucesso e os noivos já receberam o aviso no e-mail.`;
+        rsvpSuccessMsg.innerHTML = `✨ <strong>Presença confirmada com sucesso!</strong> Os noivos foram avisados. ❤️<br><span style="font-size: 0.9em; color: var(--text-secondary); margin-top: 6px; display: inline-block;">Muito obrigado, <strong>${nameVal}</strong>! Sua presença tornará nosso dia ainda mais especial.</span>`;
       } else {
-        rsvpSuccessMsg.innerHTML = `Obrigado por nos avisar, <strong>${nameVal}</strong>! Sentiremos sua falta, mas agradecemos pelo carinho.`;
+        rsvpSuccessMsg.innerHTML = `✨ <strong>Aviso enviado com sucesso!</strong> Os noivos foram avisados. ❤️<br><span style="font-size: 0.9em; color: var(--text-secondary); margin-top: 6px; display: inline-block;">Obrigado por nos avisar, <strong>${nameVal}</strong>! Sentiremos sua falta.</span>`;
       }
 
       // Transition to Success Box
       rsvpForm.classList.add('hidden');
       rsvpSuccessState.classList.remove('hidden');
-      showToast('✨ Presença confirmada com sucesso! Obrigado!');
+      showToast('Presença confirmada com sucesso! Os noivos foram avisados. ❤️');
 
       // Reset button state
       btnSubmitRsvp.disabled = false;
