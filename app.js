@@ -1,203 +1,332 @@
 /**
- * CASAMENTO CRISLAYNE & DANIEL
- * Virtual Interactive Luxury Wedding Invitation
- * Features:
- * - 3D Envelope Physics & Opening Animation
- * - Auto-playing Romantic Background Audio with Smooth Fade-in
- * - Real-time Countdown Timer
- * - Supabase Backend RSVP Integration & E-mail Notification (Crislayneevelin98@gmail.com)
- * - 1-Click PIX Copy with Visual Toast Feedback & Interactive Honeymoon Cotas
- * - WhatsApp RSVP Sync & Calendar Integration
+ * ==========================================================================
+ * CONVITE DE CASAMENTO - CRISLAYNE & DANIEL
+ * Baseado na arquitetura, animações e interações de jo-e-val.vercel.app
+ * ==========================================================================
  */
 
-document.addEventListener('DOMContentLoaded', () => {
-  // Global config fallback
-  const CONFIG = window.WEDDING_CONFIG || {
-    SUPABASE_URL: '',
-    SUPABASE_ANON_KEY: '',
-    NOTIFICATION_EMAIL: 'Crislayneevelin98@gmail.com',
-    NOIVOS_PHONE: '5581996946988',
-    PIX_KEY: '81996946988',
-    PIX_NAME: 'Crislayne Evelin',
-    WEDDING_DATE_ISO: '2026-11-21T18:00:00-03:00',
-    VENUE_NAME: 'Maysa Recepções',
-    VENUE_ADDRESS: 'Maysa Recepções - R. Prof. José Amarino dos Réis, 919-881 - Linha do Tiro, Recife - PE, 52131-320'
-  };
+// ==========================================
+// 1. CONFIGURAÇÃO & SUPABASE INITIALIZER
+// ==========================================
+const CONFIG = window.WEDDING_CONFIG || {
+  SUPABASE_URL: "https://ulqcevrqyfqlhvezreea.supabase.co",
+  SUPABASE_ANON_KEY: "sb_publishable_Fi8BI47PW_1mj3Iuj_aHDA_p5DZqbP4",
+  NOTIFICATION_EMAIL: "Crislayneevelin98@gmail.com",
+  NOIVOS_PHONE: "5581996946988",
+  PIX_KEY: "81996946988",
+  PIX_NAME: "Crislayne Evelin",
+  WEDDING_DATE_ISO: "2026-11-21T18:00:00-03:00",
+  VENUE_NAME: "Maysa Recepções",
+  VENUE_ADDRESS: "R. Prof. José Amarino dos Réis, 919-881 - Linha do Tiro, Recife - PE, 52131-320"
+};
 
-  // --- INITIALIZE SUPABASE CLIENT ---
-  let supabaseClient = null;
-  if (window.supabase && CONFIG.SUPABASE_URL && !CONFIG.SUPABASE_URL.includes('SEU_PROJETO')) {
-    try {
-      supabaseClient = window.supabase.createClient(CONFIG.SUPABASE_URL, CONFIG.SUPABASE_ANON_KEY);
-      console.log('Supabase client initialized successfully.');
-    } catch (e) {
-      console.warn('Supabase initialization failed:', e);
-    }
+let supabaseClient = null;
+if (typeof supabase !== 'undefined' && supabase.createClient && CONFIG.SUPABASE_URL) {
+  try {
+    supabaseClient = supabase.createClient(CONFIG.SUPABASE_URL, CONFIG.SUPABASE_ANON_KEY);
+    console.log("✅ Supabase inicializado com sucesso.");
+  } catch (err) {
+    console.warn("Aviso ao inicializar Supabase:", err);
+  }
+}
+
+// ==========================================
+// 2. GERENCIADOR DE ÁUDIO & SINCRONIZAÇÃO VISUAL
+// ==========================================
+function atualizarEstadoMusica(estaTocando) {
+  const btnIcon = document.getElementById('music-icon');
+  const waveBars = document.getElementById('music-wave-bars');
+  const floatingDisc = document.getElementById('floating-disc-icon');
+  const floatingText = document.getElementById('floating-music-text');
+
+  if (btnIcon) {
+    btnIcon.className = estaTocando ? 'fa-solid fa-pause' : 'fa-solid fa-music';
   }
 
-  // --- DOM ELEMENTS ---
-  const envelopeScreen = document.getElementById('envelope-screen');
-  const envelopeWrapper = document.getElementById('envelope-wrapper');
-  const btnOpenEnvelope = document.getElementById('btn-open-envelope');
-  const invitationMain = document.getElementById('invitation-main');
-  
-  const weddingAudio = document.getElementById('wedding-audio');
-  const audioWidget = document.getElementById('audio-widget');
-  const audioToggleBtn = document.getElementById('audio-toggle-btn');
-  
-  const btnCopyPix = document.getElementById('btn-copy-pix');
-  const copyBtnText = document.getElementById('copy-btn-text');
-  const btnCopyAddress = document.getElementById('btn-copy-address');
-  const btnAddCalendar = document.getElementById('btn-add-calendar');
-  
-  const toast = document.getElementById('toast-notification');
-  const toastMessage = document.getElementById('toast-message');
-
-  const WEDDING_DATE = new Date(CONFIG.WEDDING_DATE_ISO);
-
-  let isEnvelopeOpened = false;
-  let isMusicPlaying = false;
-  let audioFadeInterval = null;
-
-  // ==========================================
-  // 1. ÁUDIO: AUTOPLAY E FADE-IN SUAVE
-  // ==========================================
-  function playWeddingMusic() {
-    if (!weddingAudio) return;
-    
-    weddingAudio.volume = 0.05;
-    const playPromise = weddingAudio.play();
-
-    if (playPromise !== undefined) {
-      playPromise
-        .then(() => {
-          isMusicPlaying = true;
-          audioWidget.classList.remove('paused');
-          
-          // Smooth volume fade-in from 0.05 to 0.75 over 2 seconds
-          let targetVolume = 0.75;
-          let currentVolume = 0.05;
-          clearInterval(audioFadeInterval);
-          audioFadeInterval = setInterval(() => {
-            if (currentVolume < targetVolume) {
-              currentVolume = Math.min(targetVolume, currentVolume + 0.05);
-              weddingAudio.volume = currentVolume;
-            } else {
-              clearInterval(audioFadeInterval);
-            }
-          }, 150);
-        })
-        .catch(err => {
-          console.warn('Autoplay audio blocked or pending user interaction:', err);
-          isMusicPlaying = false;
-          audioWidget.classList.add('paused');
-        });
-    }
-  }
-
-  function toggleMusic() {
-    if (!weddingAudio) return;
-
-    if (isMusicPlaying) {
-      weddingAudio.pause();
-      isMusicPlaying = false;
-      audioWidget.classList.add('paused');
-      showToast('Música pausada 🔇');
+  if (waveBars) {
+    if (estaTocando) {
+      waveBars.classList.add('playing');
     } else {
-      weddingAudio.play().then(() => {
-        isMusicPlaying = true;
-        audioWidget.classList.remove('paused');
-        showToast('Tocando Só Você 🎵');
-      }).catch(() => {});
+      waveBars.classList.remove('playing');
     }
   }
 
-  if (audioToggleBtn) {
-    audioToggleBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      toggleMusic();
+  if (floatingDisc) {
+    if (estaTocando) {
+      floatingDisc.classList.remove('paused');
+    } else {
+      floatingDisc.classList.add('paused');
+    }
+  }
+
+  if (floatingText) {
+    floatingText.textContent = estaTocando ? 'Pausar' : 'Só Você';
+  }
+}
+
+// Controle Manual de Play / Pause do Áudio
+window.toggleMusic = function() {
+  const audio = document.getElementById('bg-music');
+  if (!audio) return;
+
+  if (audio.paused) {
+    audio.play().then(() => {
+      atualizarEstadoMusica(true);
+      exibirToast('<i class="fa-solid fa-music" style="color: #4CAF50; margin-right: 6px;"></i> Tocando: Só Você — Anderson Freire 🎵');
+    }).catch(err => console.log("Erro ao tocar áudio:", err));
+  } else {
+    audio.pause();
+    atualizarEstadoMusica(false);
+    exibirToast('Música pausada 🔇');
+  }
+};
+
+// ==========================================
+// 3. ANIMAÇÃO DE ABERTURA DO ENVELOPE (3D BOHO CHIC)
+// ==========================================
+window.abrirConviteComAnimacao = function() {
+  const cover = document.getElementById('cover');
+  const envelopeContainer = document.getElementById('envelope-container');
+  const audio = document.getElementById('bg-music');
+
+  // Previne múltiplos acionamentos
+  if (envelopeContainer && envelopeContainer.classList.contains('opening')) {
+    return;
+  }
+
+  // Prepara áudio
+  if (audio) {
+    try { audio.load(); } catch (e) {}
+  }
+
+  // 1. Dispara animação 3D da aba do envelope e elevação do convite
+  if (envelopeContainer) {
+    envelopeContainer.classList.add('opening');
+  }
+
+  // Efeito de confetes festivos
+  if (typeof confetti === 'function') {
+    confetti({
+      particleCount: 45,
+      spread: 60,
+      origin: { y: 0.6 },
+      colors: ['#c2a984', '#e8ddcb', '#ffffff', '#8C3F2B', '#C59B4E']
     });
   }
 
-  // ==========================================
-  // 2. ABERTURA DO ENVELOPE (ANIMAÇÃO 3D)
-  // ==========================================
-  function triggerEnvelopeOpening() {
-    if (isEnvelopeOpened) return;
-    isEnvelopeOpened = true;
+  // 2. Transição visual suave para a página principal (fade out da capa)
+  setTimeout(() => {
+    if (cover) {
+      cover.classList.add('aberto');
+    }
+    document.body.style.overflow = 'auto';
+  }, 1000);
 
-    // Start music on user interaction
-    playWeddingMusic();
+  // 3. Conclusão total: capa removida -> TOCA A MÚSICA
+  setTimeout(() => {
+    if (cover) {
+      cover.style.display = 'none';
+    }
 
-    // Add opening animation class to envelope
-    envelopeWrapper.classList.add('envelope-opening');
-
-    // Confetti effect with sand, ivory & champagne particles
-    if (typeof confetti === 'function') {
-      confetti({
-        particleCount: 45,
-        spread: 60,
-        origin: { y: 0.6 },
-        colors: ['#c2a984', '#e8ddcb', '#ffffff', '#b5aba0', '#FAF8F5']
+    // 🎵 A música toca aqui suavemente
+    if (audio && audio.paused) {
+      audio.volume = 0.5;
+      audio.play().then(() => {
+        atualizarEstadoMusica(true);
+      }).catch(err => {
+        console.log("Áudio iniciado após abertura:", err);
       });
-
-      setTimeout(() => {
-        confetti({
-          particleCount: 30,
-          angle: 60,
-          spread: 55,
-          origin: { x: 0 },
-          colors: ['#c2a984', '#e8ddcb', '#ffffff']
-        });
-        confetti({
-          particleCount: 30,
-          angle: 120,
-          spread: 55,
-          origin: { x: 1 },
-          colors: ['#c2a984', '#e8ddcb', '#ffffff']
-        });
-      }, 350);
     }
+  }, 1600);
+};
 
-    // After flap flips open, transition to the full invitation
-    setTimeout(() => {
-      envelopeScreen.classList.add('opened-fade-out');
-      invitationMain.classList.remove('hidden');
-      audioWidget.classList.remove('hidden');
+function abrirConviteComAnimacao() {
+  window.abrirConviteComAnimacao();
+}
 
-      // Scroll smoothly to top of the card
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+// ==========================================
+// 4. DINÂMICA DO FORMULÁRIO RSVP
+// ==========================================
+function atualizarFormularioRsvp() {
+  const selectStatus = document.getElementById('rsvp-status');
+  const boxAcompWrapper = document.getElementById('box-tem-acompanhante-wrapper');
+  const boxQtdAcomp = document.getElementById('box-qtd-acompanhantes');
+  const btnSubmit = document.getElementById('btn-rsvp');
 
-      // Clean up envelope screen after transition
-      setTimeout(() => {
-        envelopeScreen.style.display = 'none';
-      }, 1000);
-    }, 950);
+  if (!selectStatus || !btnSubmit) return;
+
+  const valor = selectStatus.value;
+  const naoVai = valor.toLowerCase().includes('não') || valor.toLowerCase().includes('nao');
+
+  if (naoVai) {
+    btnSubmit.innerText = 'Enviar Resposta';
+    if (boxAcompWrapper) boxAcompWrapper.style.display = 'none';
+    if (boxQtdAcomp) boxQtdAcomp.style.display = 'none';
+  } else {
+    btnSubmit.innerText = 'Confirmar Presença';
+    if (boxAcompWrapper) boxAcompWrapper.style.display = 'block';
+    const selectAcomp = document.getElementById('rsvp-tem-acompanhante');
+    if (selectAcomp && selectAcomp.value === 'Sim') {
+      if (boxQtdAcomp) boxQtdAcomp.style.display = 'block';
+    }
+  }
+}
+
+window.toggleAcompanhantes = function(valor) {
+  const box = document.getElementById('box-qtd-acompanhantes');
+  if (box) {
+    box.style.display = (valor === 'Sim') ? 'block' : 'none';
+  }
+};
+
+// ==========================================
+// 5. MURAL DE RECADOS (SUPABASE + LOCALSTORAGE)
+// ==========================================
+const MURAL_STORAGE_KEY = 'casamento_crislayne_daniel_recados';
+
+function obterRecadosLocais() {
+  try {
+    return JSON.parse(localStorage.getItem(MURAL_STORAGE_KEY) || '[]');
+  } catch (e) {
+    return [];
+  }
+}
+
+function salvarRecadoLocal(recado) {
+  try {
+    const lista = obterRecadosLocais();
+    lista.unshift(recado);
+    localStorage.setItem(MURAL_STORAGE_KEY, JSON.stringify(lista.slice(0, 50)));
+  } catch (e) {}
+}
+
+function renderizarMural(lista) {
+  const wallContainer = document.getElementById('mural-lista');
+  if (!wallContainer) return;
+
+  if (!lista || lista.length === 0) {
+    wallContainer.innerHTML = `
+      <div class="mural-empty-box">
+        <p>Seja o primeiro a deixar um recado carinhoso para os noivos! 🤍</p>
+      </div>
+    `;
+    return;
   }
 
-  if (envelopeWrapper) {
-    envelopeWrapper.addEventListener('click', triggerEnvelopeOpening);
-  }
-  if (btnOpenEnvelope) {
-    btnOpenEnvelope.addEventListener('click', (e) => {
-      e.stopPropagation();
-      triggerEnvelopeOpening();
-    });
+  wallContainer.innerHTML = lista.map(r => {
+    const autorNome = r.nome || r.autor || 'Convidado';
+    const dataFormatada = r.created_at 
+      ? new Date(r.created_at).toLocaleDateString('pt-BR') 
+      : new Date().toLocaleDateString('pt-BR');
+    return `
+      <div class="mural-item">
+        <div class="mural-header">
+          <p class="mural-author">
+            <i class="fa-solid fa-heart" style="font-size: 0.75rem; margin-right: 4px; color: #8C3F2B;"></i> ${autorNome}
+          </p>
+          <span class="mural-date">${dataFormatada}</span>
+        </div>
+        <p class="mural-msg">${r.mensagem || ''}</p>
+      </div>
+    `;
+  }).join('');
+}
+
+async function carregarRecados() {
+  const wallContainer = document.getElementById('mural-lista');
+  if (!wallContainer) return;
+
+  const locais = obterRecadosLocais();
+  if (locais.length > 0) {
+    renderizarMural(locais);
   }
 
-  // ==========================================
-  // 3. CONTAGEM REGRESSIVA EM TEMPO REAL
-  // ==========================================
+  if (supabaseClient) {
+    try {
+      const { data: recados, error } = await supabaseClient
+        .from('recados')
+        .select('*')
+        .order('id', { ascending: false });
+
+      if (!error && recados && recados.length > 0) {
+        const textos = new Set(recados.map(r => (r.mensagem || '') + (r.nome || r.autor || '')));
+        const extras = locais.filter(l => !textos.has((l.mensagem || '') + (l.nome || l.autor || '')));
+        renderizarMural([...extras, ...recados]);
+      } else if (locais.length === 0) {
+        renderizarMural([]);
+      }
+    } catch (err) {
+      console.log("Aviso ao buscar recados no Supabase:", err);
+      if (locais.length === 0) renderizarMural([]);
+    }
+  }
+}
+
+// ==========================================
+// 6. CÓPIA UNIVERSAL (CLIPBOARD + FALLBACK)
+// ==========================================
+function copiarTextoUniversal(texto) {
+  if (navigator.clipboard && window.isSecureContext) {
+    return navigator.clipboard.writeText(texto).catch(() => copiarFallback(texto));
+  }
+  return copiarFallback(texto);
+}
+
+function copiarFallback(texto) {
+  return new Promise((resolve, reject) => {
+    try {
+      const textArea = document.createElement("textarea");
+      textArea.value = texto;
+      textArea.style.position = "fixed";
+      textArea.style.top = "-9999px";
+      textArea.style.left = "-9999px";
+      textArea.setAttribute("readonly", "");
+      document.body.appendChild(textArea);
+      textArea.focus();
+      textArea.select();
+      textArea.setSelectionRange(0, 99999);
+      const copiado = document.execCommand("copy");
+      document.body.removeChild(textArea);
+      if (copiado) resolve();
+      else reject(new Error("Falha ao copiar"));
+    } catch (err) {
+      reject(err);
+    }
+  });
+}
+
+// ==========================================
+// 7. TOAST NOTIFICATION
+// ==========================================
+function exibirToast(mensagem) {
+  const toast = document.getElementById('toast');
+  if (toast) {
+    toast.innerHTML = mensagem;
+    toast.classList.add('show');
+    if (window.toastTimeout) clearTimeout(window.toastTimeout);
+    window.toastTimeout = setTimeout(() => {
+      toast.classList.remove('show');
+    }, 4500);
+  } else {
+    alert(mensagem.replace(/<[^>]*>?/gm, ''));
+  }
+}
+
+// ==========================================
+// 8. CONTAGEM REGRESSIVA EM TEMPO REAL
+// ==========================================
+function iniciarContagemRegressiva() {
+  const weddingDate = new Date(CONFIG.WEDDING_DATE_ISO).getTime();
   const daysEl = document.getElementById('count-days');
   const hoursEl = document.getElementById('count-hours');
   const minutesEl = document.getElementById('count-minutes');
   const secondsEl = document.getElementById('count-seconds');
 
-  function updateCountdown() {
-    const now = new Date().getTime();
-    const distance = WEDDING_DATE.getTime() - now;
+  function atualizar() {
+    const agora = new Date().getTime();
+    const distancia = weddingDate - agora;
 
-    if (distance <= 0) {
+    if (distancia <= 0) {
       if (daysEl) daysEl.textContent = '00';
       if (hoursEl) hoursEl.textContent = '00';
       if (minutesEl) minutesEl.textContent = '00';
@@ -205,48 +334,58 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    const d = Math.floor(distancia / (1000 * 60 * 60 * 24));
+    const h = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const m = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+    const s = Math.floor((distancia % (1000 * 60)) / 1000);
 
-    if (daysEl) daysEl.textContent = String(days).padStart(2, '0');
-    if (hoursEl) hoursEl.textContent = String(hours).padStart(2, '0');
-    if (minutesEl) minutesEl.textContent = String(minutes).padStart(2, '0');
-    if (secondsEl) secondsEl.textContent = String(seconds).padStart(2, '0');
+    if (daysEl) daysEl.textContent = String(d).padStart(2, '0');
+    if (hoursEl) hoursEl.textContent = String(h).padStart(2, '0');
+    if (minutesEl) minutesEl.textContent = String(m).padStart(2, '0');
+    if (secondsEl) secondsEl.textContent = String(s).padStart(2, '0');
   }
 
-  updateCountdown();
-  setInterval(updateCountdown, 1000);
+  atualizar();
+  setInterval(atualizar, 1000);
+}
 
-  // ==========================================
-  // 4. FORMULÁRIO RSVP COM SUPABASE & E-MAIL
-  // ==========================================
-  const rsvpForm = document.getElementById('rsvp-form');
-  const rsvpSuccessState = document.getElementById('rsvp-success-state');
-  const rsvpSuccessMsg = document.getElementById('rsvp-success-msg');
-  const btnSuccessWhatsapp = document.getElementById('btn-success-whatsapp');
-  const btnRsvpReset = document.getElementById('btn-rsvp-reset');
-  const btnSubmitRsvp = document.getElementById('btn-submit-rsvp');
-  
-  const inputPhone = document.getElementById('rsvp-phone');
-  const inputName = document.getElementById('rsvp-name');
-  const inputGuests = document.getElementById('rsvp-guests');
-  const groupGuests = document.getElementById('group-guests');
-  const groupGuestsNames = document.getElementById('group-guests-names');
-  const inputGuestsNames = document.getElementById('rsvp-guests-names');
-  const inputMessage = document.getElementById('rsvp-message');
-  
-  const labelAttendingYes = document.getElementById('label-attending-yes');
-  const labelAttendingNo = document.getElementById('label-attending-no');
-  const radioAttending = document.getElementsByName('attending');
+// ==========================================
+// 9. INICIALIZAÇÃO APÓS DOM PRONTO
+// ==========================================
+document.addEventListener('DOMContentLoaded', () => {
+  // 1. Áudio pausado inicialmente
+  const audio = document.getElementById('bg-music');
+  if (audio) {
+    try {
+      audio.pause();
+      audio.currentTime = 0;
+    } catch (e) {}
+  }
+  atualizarEstadoMusica(false);
 
-  // WhatsApp / Phone Live Mask: (XX) XXXXX-XXXX
-  if (inputPhone) {
-    inputPhone.addEventListener('input', (e) => {
+  // 2. Eventos de abertura da capa
+  const btnAbrir = document.getElementById('btn-abrir');
+  if (btnAbrir) btnAbrir.onclick = window.abrirConviteComAnimacao;
+
+  const flap = document.getElementById('envelope-flap');
+  if (flap) flap.onclick = window.abrirConviteComAnimacao;
+
+  const seal = document.getElementById('wax-seal-btn');
+  if (seal) seal.onclick = window.abrirConviteComAnimacao;
+
+  // 3. Form RSVP dinamismo
+  const selectStatus = document.getElementById('rsvp-status');
+  if (selectStatus) {
+    selectStatus.addEventListener('change', atualizarFormularioRsvp);
+    atualizarFormularioRsvp();
+  }
+
+  // Máscara de Telefone
+  const telInput = document.getElementById('rsvp-telefone');
+  if (telInput) {
+    telInput.addEventListener('input', (e) => {
       let val = e.target.value.replace(/\D/g, '');
       if (val.length > 11) val = val.slice(0, 11);
-      
       if (val.length > 10) {
         e.target.value = `(${val.slice(0, 2)}) ${val.slice(2, 7)}-${val.slice(7)}`;
       } else if (val.length > 6) {
@@ -261,390 +400,216 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Radio toggle handler for attendance
-  function updateAttendanceUI() {
-    let selectedVal = 'sim';
-    radioAttending.forEach(radio => {
-      if (radio.checked) selectedVal = radio.value;
-    });
+  // 4. Copiar Pix com feedback tátil e visual
+  const btnPix = document.getElementById('btn-copiar-pix');
+  if (btnPix) {
+    btnPix.addEventListener('click', async () => {
+      if (navigator.vibrate) navigator.vibrate(50);
+      const pixKey = CONFIG.PIX_KEY;
 
-    if (selectedVal === 'sim') {
-      labelAttendingYes.classList.add('active');
-      labelAttendingNo.classList.remove('active');
-      groupGuests.classList.remove('hidden');
-      updateGuestsNamesVisibility();
-    } else {
-      labelAttendingYes.classList.remove('active');
-      labelAttendingNo.classList.add('active');
-      groupGuests.classList.add('hidden');
-      groupGuestsNames.classList.add('hidden');
-    }
-  }
-
-  radioAttending.forEach(radio => {
-    radio.addEventListener('change', updateAttendanceUI);
-  });
-  if (labelAttendingYes) {
-    labelAttendingYes.addEventListener('click', () => {
-      const r = labelAttendingYes.querySelector('input');
-      if (r) { r.checked = true; updateAttendanceUI(); }
-    });
-  }
-  if (labelAttendingNo) {
-    labelAttendingNo.addEventListener('click', () => {
-      const r = labelAttendingNo.querySelector('input');
-      if (r) { r.checked = true; updateAttendanceUI(); }
-    });
-  }
-
-  function updateGuestsNamesVisibility() {
-    const count = parseInt(inputGuests.value, 10) || 0;
-    if (count > 0 && labelAttendingYes.classList.contains('active')) {
-      groupGuestsNames.classList.remove('hidden');
-    } else {
-      groupGuestsNames.classList.add('hidden');
-    }
-  }
-
-  if (inputGuests) {
-    inputGuests.addEventListener('change', updateGuestsNamesVisibility);
-  }
-
-  // Email Notification Dispatcher
-  async function dispatchEmailNotification(rsvpData) {
-    const payload = {
-      to: CONFIG.NOTIFICATION_EMAIL,
-      subject: `💍 Nova Confirmação de Presença: ${rsvpData.name} (${rsvpData.attending ? 'SIM, VAI' : 'NÃO VAI'}) - Casamento Crislayne & Daniel`,
-      nome_convidado: rsvpData.name,
-      telefone: rsvpData.phone,
-      comparecera: rsvpData.attending ? 'Sim, com certeza! 🎉' : 'Infelizmente não poderei comparecer 💔',
-      quantidade_acompanhantes: rsvpData.guests_count,
-      nomes_acompanhantes: rsvpData.guests_names || 'Nenhum',
-      mensagem_recado: rsvpData.message || 'Sem mensagem',
-      data_envio: new Date().toLocaleString('pt-BR')
-    };
-
-    // 1. Dispatch via EmailJS (if initialized)
-    if (window.emailjs && CONFIG.EMAILJS_PUBLIC_KEY && CONFIG.EMAILJS_SERVICE_ID) {
       try {
-        await window.emailjs.send(CONFIG.EMAILJS_SERVICE_ID, CONFIG.EMAILJS_TEMPLATE_ID, {
-          to_email: CONFIG.NOTIFICATION_EMAIL,
-          guest_name: payload.nome_convidado,
-          guest_phone: payload.telefone,
-          attending_status: payload.comparecera,
-          guests_count: payload.quantidade_acompanhantes,
-          guests_names: payload.nomes_acompanhantes,
-          guest_message: payload.mensagem_recado,
-          event_name: 'Casamento Crislayne & Daniel',
-          submission_date: payload.data_envio
-        });
-        console.log('Notification sent via EmailJS to', CONFIG.NOTIFICATION_EMAIL);
-      } catch (ejsErr) {
-        console.warn('EmailJS dispatch warning:', ejsErr);
-      }
-    }
+        await copiarTextoUniversal(pixKey);
 
-    // 2. Dispatch via Web3Forms endpoint for Crislayneevelin98@gmail.com
-    try {
-      const emailEndpoint = 'https://api.web3forms.com/submit';
-      const formData = new FormData();
-      formData.append('access_key', 'b2b8da46-953e-4361-bd8c-fa42a129d2f2');
-      formData.append('to_email', CONFIG.NOTIFICATION_EMAIL);
-      formData.append('from_name', 'Convite de Casamento Crislayne & Daniel');
-      formData.append('subject', payload.subject);
-      formData.append('message', `
-💍 Nova Confirmação de Presença recebida!
+        const textoOriginal = btnPix.innerHTML;
+        btnPix.style.background = "#2E7D32";
+        btnPix.style.color = "#FFFFFF";
+        btnPix.innerHTML = '<i class="fa-solid fa-check" style="margin-right: 0.4rem;"></i><span>Chave Pix Copiada!</span>';
 
-• Convidado: ${payload.nome_convidado}
-• Telefone/WhatsApp: ${payload.telefone}
-• Comparecerá: ${payload.comparecera}
-• Acompanhantes: ${payload.quantidade_acompanhantes}
-• Nomes dos Acompanhantes: ${payload.nomes_acompanhantes}
-• Recado com carinho aos Noivos:
-"${payload.mensagem_recado}"
+        const avisoFixo = document.getElementById('pix-copiado-aviso');
+        if (avisoFixo) avisoFixo.style.display = 'block';
 
-Data e Hora do Registro: ${payload.data_envio}
-Destinatário: ${CONFIG.NOTIFICATION_EMAIL}
-      `);
+        exibirToast('<i class="fa-solid fa-circle-check" style="color: #4CAF50; margin-right: 6px;"></i> <strong>Chave Pix Copiada!</strong><br>Abra o app do seu banco e cole.');
 
-      await fetch(emailEndpoint, {
-        method: 'POST',
-        body: formData
-      });
-      console.log('Email notification sent successfully to', CONFIG.NOTIFICATION_EMAIL);
-    } catch (err) {
-      console.warn('Email API dispatch warning:', err);
-    }
-  }
-
-  // Handle RSVP Form Submission
-  if (rsvpForm) {
-    rsvpForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
-
-      const nameVal = inputName.value.trim();
-      const phoneVal = inputPhone.value.trim();
-      const isAttending = labelAttendingYes.classList.contains('active');
-      const guestsCount = isAttending ? (parseInt(inputGuests.value, 10) || 0) : 0;
-      const guestsNamesVal = isAttending ? (inputGuestsNames.value.trim()) : '';
-      const messageVal = inputMessage.value.trim();
-
-      // Simple Validation
-      let hasError = false;
-      if (!nameVal || nameVal.length < 3) {
-        inputName.parentElement.classList.add('has-error');
-        hasError = true;
-      } else {
-        inputName.parentElement.classList.remove('has-error');
-      }
-
-      const rawPhone = phoneVal.replace(/\D/g, '');
-      if (!rawPhone || rawPhone.length < 10) {
-        inputPhone.parentElement.classList.add('has-error');
-        hasError = true;
-      } else {
-        inputPhone.parentElement.classList.remove('has-error');
-      }
-
-      if (hasError) {
-        showToast('Por favor, preencha os campos obrigatórios.');
-        return;
-      }
-
-      // UI Loading state
-      btnSubmitRsvp.disabled = true;
-      const btnText = btnSubmitRsvp.querySelector('.btn-text');
-      const btnSpinner = btnSubmitRsvp.querySelector('.btn-spinner');
-      if (btnText) btnText.classList.add('hidden');
-      if (btnSpinner) btnSpinner.classList.remove('hidden');
-
-      const rsvpRecord = {
-        name: nameVal,
-        phone: phoneVal,
-        attending: isAttending,
-        guests_count: guestsCount,
-        guests_names: guestsNamesVal,
-        message: messageVal,
-        created_at: new Date().toISOString()
-      };
-
-      // 1. Save to Supabase (SDK insert + REST API fallback)
-      let supabaseSaved = false;
-      if (supabaseClient) {
-        try {
-          const { data, error } = await supabaseClient.from('rsvp').insert([
-            {
-              name: rsvpRecord.name,
-              phone: rsvpRecord.phone,
-              attending: rsvpRecord.attending,
-              guests_count: rsvpRecord.guests_count,
-              guests_names: rsvpRecord.guests_names,
-              message: rsvpRecord.message
-            }
-          ]);
-          if (error) {
-            console.warn('Supabase SDK insert error, trying REST API:', error);
-          } else {
-            supabaseSaved = true;
-            console.log('RSVP saved successfully to Supabase via SDK!');
-          }
-        } catch (dbErr) {
-          console.warn('Supabase SDK exception:', dbErr);
-        }
-      }
-
-      // Direct REST API Fallback for Supabase
-      if (!supabaseSaved && CONFIG.SUPABASE_URL && CONFIG.SUPABASE_ANON_KEY) {
-        try {
-          const restResponse = await fetch(`${CONFIG.SUPABASE_URL}/rest/v1/rsvp`, {
-            method: 'POST',
-            headers: {
-              'apikey': CONFIG.SUPABASE_ANON_KEY,
-              'Authorization': `Bearer ${CONFIG.SUPABASE_ANON_KEY}`,
-              'Content-Type': 'application/json',
-              'Prefer': 'return=minimal'
-            },
-            body: JSON.stringify({
-              name: rsvpRecord.name,
-              phone: rsvpRecord.phone,
-              attending: rsvpRecord.attending,
-              guests_count: rsvpRecord.guests_count,
-              guests_names: rsvpRecord.guests_names,
-              message: rsvpRecord.message
-            })
-          });
-          if (restResponse.ok) {
-            console.log('RSVP saved successfully to Supabase via REST API!');
-          }
-        } catch (restErr) {
-          console.warn('Supabase REST API fallback warning:', restErr);
-        }
-      }
-
-      // 2. Save to LocalStorage as backup
-      try {
-        const stored = JSON.parse(localStorage.getItem('casamento_rsvp_list') || '[]');
-        stored.push(rsvpRecord);
-        localStorage.setItem('casamento_rsvp_list', JSON.stringify(stored));
-      } catch (err) {}
-
-      // 3. Dispatch Email Notification to Crislayneevelin98@gmail.com
-      await dispatchEmailNotification(rsvpRecord);
-
-      // 4. Trigger celebration confetti
-      if (typeof confetti === 'function') {
-        confetti({
-          particleCount: 50,
-          spread: 70,
-          origin: { y: 0.7 },
-          colors: ['#c2a984', '#e8ddcb', '#ffffff', '#2F855A', '#FAF8F5']
-        });
-      }
-
-      // 5. Update Success Screen & WhatsApp Action
-      const attendanceText = isAttending ? 'confirmo com muita alegria minha presença' : 'infelizmente não poderei comparecer';
-      const guestDetails = (isAttending && guestsCount > 0) ? ` (+${guestsCount} acompanhante(s): ${guestsNamesVal})` : '';
-      const waMessage = `Olá Crislayne e Daniel! Aqui é *${nameVal}*. Recebi o convite e ${attendanceText} no casamento de vocês dia 21/11/2026!${guestDetails}${messageVal ? '\n\nRecado: "' + messageVal + '"' : ''} ❤️💍`;
-      
-      btnSuccessWhatsapp.href = `https://api.whatsapp.com/send?phone=${CONFIG.NOIVOS_PHONE}&text=${encodeURIComponent(waMessage)}`;
-
-      // Success message requested by user
-      if (isAttending) {
-        rsvpSuccessMsg.innerHTML = `✨ <strong>Presença confirmada com sucesso!</strong> Os noivos foram avisados. ❤️<br><span style="font-size: 0.9em; color: var(--text-secondary); margin-top: 6px; display: inline-block;">Muito obrigado, <strong>${nameVal}</strong>! Sua presença tornará nosso dia ainda mais especial.</span>`;
-      } else {
-        rsvpSuccessMsg.innerHTML = `✨ <strong>Aviso enviado com sucesso!</strong> Os noivos foram avisados. ❤️<br><span style="font-size: 0.9em; color: var(--text-secondary); margin-top: 6px; display: inline-block;">Obrigado por nos avisar, <strong>${nameVal}</strong>! Sentiremos sua falta.</span>`;
-      }
-
-      // Transition to Success Box
-      rsvpForm.classList.add('hidden');
-      rsvpSuccessState.classList.remove('hidden');
-      showToast('Presença confirmada com sucesso! Os noivos foram avisados. ❤️');
-
-      // Reset button state
-      btnSubmitRsvp.disabled = false;
-      if (btnText) btnText.classList.remove('hidden');
-      if (btnSpinner) btnSpinner.classList.add('hidden');
-    });
-  }
-
-  // Reset form for new submission
-  if (btnRsvpReset) {
-    btnRsvpReset.addEventListener('click', () => {
-      rsvpForm.reset();
-      updateAttendanceUI();
-      rsvpSuccessState.classList.add('hidden');
-      rsvpForm.classList.remove('hidden');
-    });
-  }
-
-  // ==========================================
-  // 5. COPIAR CHAVE PIX & FEEDBACK VISUAL
-  // ==========================================
-  function copyToClipboard(text, successMsg = 'Copiado para a área de transferência!') {
-    if (navigator.clipboard && window.isSecureContext) {
-      navigator.clipboard.writeText(text).then(() => {
-        showToast(successMsg);
-      }).catch(() => {
-        fallbackCopyText(text, successMsg);
-      });
-    } else {
-      fallbackCopyText(text, successMsg);
-    }
-  }
-
-  function fallbackCopyText(text, successMsg) {
-    const tempInput = document.createElement('textarea');
-    tempInput.value = text;
-    tempInput.style.position = 'fixed';
-    tempInput.style.left = '-9999px';
-    document.body.appendChild(tempInput);
-    tempInput.focus();
-    tempInput.select();
-    try {
-      document.execCommand('copy');
-      showToast(successMsg);
-    } catch (e) {
-      showToast('Por favor, selecione e copie manualmente.');
-    }
-    document.body.removeChild(tempInput);
-  }
-
-  if (btnCopyPix) {
-    btnCopyPix.addEventListener('click', () => {
-      copyToClipboard(CONFIG.PIX_KEY, 'Chave PIX copiada com sucesso! ✨');
-      if (copyBtnText) {
-        copyBtnText.textContent = 'Chave Copiada! ✓';
         setTimeout(() => {
-          copyBtnText.textContent = 'Copiar Chave PIX';
-        }, 3000);
+          btnPix.style.background = "";
+          btnPix.style.color = "";
+          btnPix.innerHTML = textoOriginal;
+        }, 4000);
+      } catch (err) {
+        prompt("Copie a chave Pix abaixo:", pixKey);
       }
     });
   }
 
   // Copiar Endereço
+  const btnCopyAddress = document.getElementById('btn-copy-address');
   if (btnCopyAddress) {
-    btnCopyAddress.addEventListener('click', () => {
-      copyToClipboard(CONFIG.VENUE_ADDRESS, 'Endereço copiado com sucesso! 📍');
+    btnCopyAddress.addEventListener('click', async () => {
+      await copiarTextoUniversal(CONFIG.VENUE_ADDRESS);
+      exibirToast('<i class="fa-solid fa-location-dot" style="color: #4CAF50; margin-right: 6px;"></i> Endereço copiado com sucesso! 📍');
     });
   }
 
-  // ==========================================
-  // 6. SALVAR NO CALENDÁRIO (.ICS & GOOGLE)
-  // ==========================================
+  // Salvar no Calendário
+  const btnAddCalendar = document.getElementById('btn-add-calendar');
   if (btnAddCalendar) {
     btnAddCalendar.addEventListener('click', () => {
       const title = 'Casamento Crislayne & Daniel';
-      const description = 'Celebração do casamento de Crislayne & Daniel no Maysa Recepções, Recife - PE.';
+      const description = 'Celebração de casamento de Crislayne & Daniel no Maysa Recepções, Recife - PE.';
       const location = CONFIG.VENUE_ADDRESS;
       const startDateTime = '20261121T210000Z'; // 18:00 Recife UTC-3 = 21:00 UTC
       const endDateTime = '20261122T030000Z';
-
-      // Open Google Calendar event creation URL
       const gcalUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(title)}&dates=${startDateTime}/${endDateTime}&details=${encodeURIComponent(description)}&location=${encodeURIComponent(location)}`;
-      
       window.open(gcalUrl, '_blank');
-      showToast('Abrindo calendário... 📅');
+      exibirToast('Abrindo calendário... 📅');
     });
   }
 
-  // ==========================================
-  // 8. TOAST NOTIFICATION HELPER
-  // ==========================================
-  let toastTimeout;
-  function showToast(message) {
-    if (!toast || !toastMessage) return;
-    
-    toastMessage.textContent = message;
-    toast.classList.remove('hidden');
+  // 5. Submit RSVP Form
+  const formRsvp = document.getElementById('form-rsvp');
+  if (formRsvp) {
+    formRsvp.addEventListener('submit', async (e) => {
+      e.preventDefault();
 
-    clearTimeout(toastTimeout);
-    toastTimeout = setTimeout(() => {
-      toast.classList.add('hidden');
-    }, 3500);
+      const btnSubmit = document.getElementById('btn-rsvp');
+      const textoOriginal = btnSubmit ? btnSubmit.innerText : 'Confirmar Presença';
+
+      if (btnSubmit) {
+        btnSubmit.disabled = true;
+        btnSubmit.innerText = 'Enviando resposta...';
+      }
+
+      const inputNome = document.getElementById('rsvp-nome');
+      const inputTel = document.getElementById('rsvp-telefone');
+      const selectStatus = document.getElementById('rsvp-status');
+      const selectAcomp = document.getElementById('rsvp-tem-acompanhante');
+      const inputQtd = document.getElementById('rsvp-qtd-acompanhantes');
+      const inputNomesAcomp = document.getElementById('rsvp-nomes-acompanhantes');
+      const inputMsg = document.getElementById('rsvp-mensagem');
+
+      const nome = inputNome ? inputNome.value.trim() : '';
+      const telefone = inputTel ? inputTel.value.trim() : '';
+      const status = selectStatus ? selectStatus.value : 'Sim, estarei presente!';
+      const naoVai = status.toLowerCase().includes('não') || status.toLowerCase().includes('nao');
+      const temAcomp = (!naoVai && selectAcomp) ? selectAcomp.value : 'Não';
+      const qtdAcomp = (!naoVai && temAcomp === 'Sim' && inputQtd) ? parseInt(inputQtd.value, 10) || 1 : 0;
+      const nomesAcomp = (!naoVai && temAcomp === 'Sim' && inputNomesAcomp) ? inputNomesAcomp.value.trim() : '';
+      const mensagem = inputMsg ? inputMsg.value.trim() : '';
+
+      if (!nome) {
+        alert('Por favor, preencha o seu nome completo.');
+        if (btnSubmit) { btnSubmit.disabled = false; btnSubmit.innerText = textoOriginal; }
+        return;
+      }
+
+      try {
+        // 1. Gravação no Supabase (tabela 'rsvp')
+        if (supabaseClient) {
+          const { error: dbErr } = await supabaseClient.from('rsvp').insert([{
+            name: nome,
+            phone: telefone,
+            attending: !naoVai,
+            guests_count: qtdAcomp,
+            guests_names: nomesAcomp || (temAcomp === 'Sim' ? `${qtdAcomp} acompanhante(s)` : 'Nenhum'),
+            message: mensagem
+          }]);
+          if (dbErr) console.warn("Aviso Supabase rsvp:", dbErr.message);
+        }
+
+        // 2. Envio de Notificação por E-mail para Crislayneevelin98@gmail.com
+        const emailDestino = CONFIG.NOTIFICATION_EMAIL || 'Crislayneevelin98@gmail.com';
+        const dataHora = new Date().toLocaleString('pt-BR');
+
+        try {
+          await fetch(`https://formsubmit.co/ajax/${emailDestino}`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+              _subject: naoVai
+                ? `[Casamento Crislayne & Daniel] Não comparecerá: ${nome}`
+                : `💍 [Casamento Crislayne & Daniel] CONFIRMAÇÃO: ${nome} ${temAcomp === 'Sim' ? `(+${qtdAcomp} acomp.)` : '(Sem acomp.)'}`,
+              _template: 'table',
+              _captcha: 'false',
+              "Convidado": nome,
+              "Telefone": telefone,
+              "Presença": naoVai ? "Não comparecerá" : "Confirmada (Irá comparecer!)",
+              "Acompanhantes": naoVai ? "Não se aplica" : (temAcomp === 'Sim' ? `Sim (${qtdAcomp}: ${nomesAcomp || 'Não informado'})` : "Não (irá sozinho)"),
+              "Recado aos Noivos": mensagem || "Nenhum recado",
+              "Data do Registro": dataHora
+            })
+          });
+        } catch (fsErr) {
+          console.log("FormSubmit aviso:", fsErr);
+        }
+
+        if (navigator.vibrate) navigator.vibrate(50);
+
+        // Confetes se for confirmação positiva
+        if (!naoVai && typeof confetti === 'function') {
+          confetti({
+            particleCount: 50,
+            spread: 70,
+            origin: { y: 0.7 },
+            colors: ['#c2a984', '#e8ddcb', '#ffffff', '#8C3F2B', '#2E7D32']
+          });
+        }
+
+        const msgSucesso = naoVai
+          ? `Obrigado por nos avisar, ${nome}! Agradecemos o carinho e sua resposta foi registrada.`
+          : `🎉 Presença confirmada, ${nome}! Mal podemos esperar para comemorar juntos!`;
+
+        exibirToast(msgSucesso);
+        alert(msgSucesso);
+        formRsvp.reset();
+        atualizarFormularioRsvp();
+
+      } catch (err) {
+        console.error("Erro ao enviar RSVP:", err);
+        const msgFallback = `Obrigado, ${nome}! Sua resposta foi registrada com sucesso.`;
+        exibirToast(msgFallback);
+        alert(msgFallback);
+      } finally {
+        if (btnSubmit) {
+          btnSubmit.disabled = false;
+          btnSubmit.innerText = textoOriginal;
+        }
+      }
+    });
   }
 
-  // Ambient floating dust particles generator
-  createAmbientParticles();
-  function createAmbientParticles() {
-    const container = document.getElementById('ambient-particles');
-    if (!container) return;
+  // 6. Submit Mural de Recados
+  const formMsg = document.getElementById('messageForm');
+  if (formMsg) {
+    formMsg.addEventListener('submit', async (e) => {
+      e.preventDefault();
 
-    for (let i = 0; i < 20; i++) {
-      const particle = document.createElement('div');
-      particle.className = 'ambient-dust';
-      particle.style.cssText = `
-        position: absolute;
-        width: ${Math.random() * 3 + 1.5}px;
-        height: ${Math.random() * 3 + 1.5}px;
-        background: rgba(212, 175, 55, ${Math.random() * 0.4 + 0.2});
-        border-radius: 50%;
-        top: ${Math.random() * 100}vh;
-        left: ${Math.random() * 100}vw;
-        pointer-events: none;
-        box-shadow: 0 0 ${Math.random() * 6 + 2}px rgba(212, 175, 55, 0.6);
-        animation: floatDust ${Math.random() * 10 + 12}s infinite ease-in-out alternate;
-      `;
-      container.appendChild(particle);
-    }
+      const autorInput = document.getElementById('msgAuthor');
+      const msgInput = document.getElementById('msgContent');
+      const nome = autorInput ? autorInput.value.trim() : '';
+      const mensagem = msgInput ? msgInput.value.trim() : '';
+
+      if (!nome || !mensagem) return;
+
+      const novoRecado = {
+        nome: nome,
+        autor: nome,
+        mensagem: mensagem,
+        created_at: new Date().toISOString()
+      };
+
+      salvarRecadoLocal(novoRecado);
+      carregarRecados();
+      formMsg.reset();
+
+      if (navigator.vibrate) navigator.vibrate(30);
+      exibirToast("❤️ Mensagem publicada no mural com sucesso!");
+
+      if (supabaseClient) {
+        supabaseClient.from('recados').insert([{
+          nome: nome,
+          autor: nome,
+          mensagem: mensagem
+        }]).then(({ error }) => {
+          if (error) console.log("Aviso Supabase recados:", error.message);
+        }).catch(err => console.log("Aviso Supabase recados:", err));
+      }
+    });
   }
+
+  // 7. Iniciar Mural e Contagem
+  carregarRecados();
+  iniciarContagemRegressiva();
 });
