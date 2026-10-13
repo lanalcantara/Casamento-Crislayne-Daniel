@@ -348,6 +348,8 @@ header.main-header {
   height: 100% !important;
   object-fit: cover !important;
   object-position: center 20% !important;
+  border-radius: 50% !important;
+  display: block !important;
 }
 
 .inner-card-script {
