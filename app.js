@@ -104,13 +104,13 @@ window.abrirConviteComAnimacao = function() {
     envelopeContainer.classList.add('opening');
   }
 
-  // Efeito de confetes festivos
+  // Efeito de confetes festivos em ouro reluzente e terracota
   if (typeof confetti === 'function') {
     confetti({
-      particleCount: 45,
-      spread: 60,
-      origin: { y: 0.6 },
-      colors: ['#c2a984', '#e8ddcb', '#ffffff', '#8C3F2B', '#C59B4E']
+      particleCount: 65,
+      spread: 75,
+      origin: { y: 0.55 },
+      colors: ['#D4AF37', '#E6C88A', '#9C3B23', '#8A331E', '#FFF8EB']
     });
   }
 

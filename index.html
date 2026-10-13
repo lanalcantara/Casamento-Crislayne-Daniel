@@ -33,8 +33,8 @@
   <!-- Configurações do Convite -->
   <script src="supabase_config.js"></script>
 
-  <!-- Estilos Customizados -->
-  <link rel="stylesheet" href="style.css">
+  <!-- Estilos Customizados com Estética Terracota Floral -->
+  <link rel="stylesheet" href="style.css?v=terracotta_floral_v3">
 </head>
 <body>
 
@@ -46,71 +46,76 @@
   </audio>
 
   <!-- ========================================================================== -->
-  <!-- 1. CAPA INICIAL DO CONVITE (#cover) COM ANIMAÇÃO 3D REALISTA DE ENVELOPE  -->
+  <!-- 1. CAPA INICIAL DO CONVITE: ENVELOPE REALISTA FECHADO EM TERRACOTA & OURO -->
   <!-- ========================================================================== -->
   <div id="cover">
-    <!-- Partículas e pétalas flutuantes sutis de fundo -->
+    <!-- Fundo imersivo com atmosfera floral terracota escura e vinheta aveludada -->
+    <div class="cover-backdrop-floral"></div>
+    <div class="cover-overlay-vignette"></div>
     <div class="ambient-petals" id="ambient-petals"></div>
 
-    <div class="envelope-container" id="envelope-container">
+    <div class="envelope-stage">
       
-      <!-- ABA SUPERIOR DO ENVELOPE (FLAP 3D) -->
-      <div class="envelope-flap" id="envelope-flap" onclick="abrirConviteComAnimacao()">
-        <div class="flap-crease"></div>
-        <!-- SELO DE CERA 3D COM MONOGRAMA C&D -->
-        <div class="wax-seal-container" id="wax-seal-btn" title="Toque para abrir o convite">
-          <div class="wax-seal-pulse"></div>
-          <div class="wax-seal">
-            <span class="seal-text">C&amp;D</span>
-          </div>
-          <div class="seal-hint"><i class="fa-solid fa-sparkles"></i> Toque para abrir</div>
-        </div>
+      <!-- Cabeçalho de apresentação de alto prestígio acima do envelope -->
+      <div class="envelope-top-badge">
+        <span class="gold-sparkle-pill"><i class="fa-solid fa-sparkles"></i> CONVITE DE CASAMENTO <i class="fa-solid fa-sparkles"></i></span>
+        <h1 class="envelope-top-names">Crislayne &amp; Daniel</h1>
+        <p class="envelope-top-date">21 de Novembro de 2026 • Maysa Recepções</p>
       </div>
 
-      <!-- BOLSO FRONTAL DO ENVELOPE -->
-      <div class="envelope-pocket">
-        <div class="pocket-shadow"></div>
-      </div>
-
-      <!-- CARTÃO / CONVITE INTERNO QUE DESLIZA SUAVEMENTE -->
-      <div class="card-capa" id="invitation-card">
+      <!-- O ENVELOPE FÍSICO REALISTA 3D FECHADO -->
+      <div class="envelope-3d-box" id="envelope-container" onclick="abrirConviteComAnimacao()" title="Toque no envelope para abrir o convite">
         
-        <!-- CONTAINER COMBINADO: FLORAL + FOTO DO CASAL -->
-        <div class="header-capa-combinação">
-          <!-- Floral Boho delicado de fundo -->
-          <img src="assets/images/boho_terracotta_floral.png" alt="Flores Boho" class="img-floral-capa">
-          
-          <!-- Foto do Casal em Moldura Circular -->
-          <div class="box-foto-capa">
-            <img 
-              src="assets/images/noivos_portrait.jpg" 
-              alt="Crislayne &amp; Daniel" 
-              class="foto-capa-img"
-            >
+        <!-- Parede traseira interna do envelope -->
+        <div class="envelope-back-wall"></div>
+
+        <!-- CARTÃO INTERNO QUE DESLIZA SUAVEMENTE PARA FORA NA ABERTURA -->
+        <div class="envelope-inner-card" id="envelope-letter">
+          <div class="inner-card-content">
+            <div class="inner-card-photo-wrap">
+              <img src="assets/images/noivos_portrait.jpg" alt="Crislayne & Daniel" class="inner-card-photo">
+            </div>
+            <p class="inner-card-script">Você é nosso convidado especial</p>
+            <h2 class="inner-card-monogram">C &amp; D</h2>
+            <div class="inner-card-divider"></div>
+            <p class="inner-card-date">21 . 11 . 2026 • 18h00</p>
           </div>
         </div>
 
-        <p class="envelope-subtitle-script">Você está convidado</p>
-        <h1 class="envelope-title">Crislayne &amp; Daniel</h1>
-        <p class="envelope-concept">Celebração de Casamento</p>
-        
-        <!-- Badge da Data na Capa -->
-        <div class="capa-date-pill">
-          <i class="fa-regular fa-calendar-check" style="color: #8C3F2B;"></i>
-          <span>21 de Novembro de 2026 (Sábado) • 18h00</span>
+        <!-- DOBRAS DO ENVELOPE FECHADO (ABAS LATERAIS E INFERIOR) -->
+        <div class="envelope-side-fold fold-left"></div>
+        <div class="envelope-side-fold fold-right"></div>
+        <div class="envelope-bottom-fold"></div>
+
+        <!-- ABA SUPERIOR TRIANGULAR DO ENVELOPE (FLAP 3D) -->
+        <div class="envelope-top-flap" id="envelope-flap">
+          <div class="top-flap-triangle"></div>
         </div>
 
-        <button id="btn-abrir" class="btn-abrir" onclick="abrirConviteComAnimacao()">
-          <i class="fa-solid fa-envelope-open" style="margin-right: 6px;"></i> Abrir Convite
-        </button>
+        <!-- SELO DE LACRE DE CERA REALISTA COM MONOGRAMA C&D -->
+        <div class="wax-seal-cluster" id="wax-seal-btn" title="Toque no lacre para abrir o convite">
+          <div class="wax-seal-radiance"></div>
+          <div class="wax-seal-disc">
+            <span class="wax-monogram-text">C&amp;D</span>
+          </div>
+          <div class="wax-seal-caption">
+            <i class="fa-solid fa-sparkles" style="color: #D4AF37;"></i> Toque para abrir
+          </div>
+        </div>
 
       </div>
+
+      <!-- BOTÃO INFERIOR DE ABERTURA ELEGANTE -->
+      <button id="btn-abrir" class="btn-abrir-luxo" onclick="abrirConviteComAnimacao()">
+        <i class="fa-solid fa-envelope-open-text" style="color: #D4AF37; margin-right: 8px;"></i>
+        <span>Abrir Convite Oficial</span>
+      </button>
 
     </div>
   </div>
 
   <!-- ========================================================================== -->
-  <!-- 2. SITE PRINCIPAL BOHO RÚSTICO-CHIQUE                                      -->
+  <!-- 2. SITE PRINCIPAL: ESTÉTICA TERRACOTA FLORAL & ALTA COSTURA EDITORIAL      -->
   <!-- ========================================================================== -->
   <div id="site-principal">
     
@@ -126,7 +131,7 @@
           <span class="bar b3"></span>
           <span class="bar b4"></span>
         </div>
-        <i id="music-icon" class="fa-solid fa-music" style="color: #8C3F2B;"></i>
+        <i id="music-icon" class="fa-solid fa-music" style="color: #D4AF37;"></i>
         <span class="music-text">Só Você — Anderson Freire</span>
       </div>
     </header>
@@ -140,22 +145,36 @@
     <main class="container">
 
       <!-- ========================================================================== -->
-      <!-- HERO SECTION COM A FOTO DOS NOIVOS EM DESTAQUE EDITORIAL                   -->
+      <!-- HERO SECTION COM A FOTO DOS NOIVOS EMOLDURADA EM OURO E BOTÂNICA FLORAL   -->
       <!-- ========================================================================== -->
       <section class="hero-section">
-        <img 
-          src="assets/images/noivos_portrait.jpg" 
-          alt="Crislayne e Daniel" 
-          class="foto-casal"
-        >
+        
+        <div class="hero-photo-container">
+          <div class="hero-botanical-halo">
+            <img src="assets/images/boho_terracotta_floral.png" alt="Arranjo Botânico Terracota" class="hero-botanical-art">
+          </div>
+          <div class="hero-gold-ring">
+            <img 
+              src="assets/images/noivos_portrait.jpg" 
+              alt="Crislayne e Daniel" 
+              class="foto-casal"
+            >
+          </div>
+        </div>
         
         <div class="hero-content">
-          <span class="hero-tag">Você é nosso convidado especial</span>
+          <span class="hero-tag">✦ Você é nosso convidado especial ✦</span>
           <h1 class="hero-names">Crislayne &amp; Daniel</h1>
+          <p class="hero-script-subtitle">O Começo do Nosso Para Sempre</p>
+          <div class="hero-ornament-divider">
+            <span class="line"></span>
+            <i class="fa-solid fa-heart" style="color: #C59B4E; font-size: 0.9rem;"></i>
+            <span class="line"></span>
+          </div>
           <p class="hero-phrase">"O tempo é muito lento para os que esperam, muito rápido para os que têm medo, muito longo para os que lamentam, muito curto para os que festejam... Mas, para os que amam, o tempo é eterno."</p>
           
           <div class="hero-date-badge">
-            <i class="fa-regular fa-calendar-check" style="color: #8C3F2B;"></i>
+            <i class="fa-regular fa-calendar-check" style="color: #D4AF37;"></i>
             <span>21 de Novembro de 2026 (Sábado) • 18h00</span>
           </div>
         </div>

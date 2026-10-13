@@ -1,7 +1,9 @@
 /* ==========================================================================
-   CONVITE DE CASAMENTO - CRISLAYNE & DANIEL
-   Inspirado no design, interações e acabamento de jo-e-val.vercel.app
-   Paleta: Boho Rústico-Chique, Palha Artesanal, Terracota Quente e Dourado
+   CONVITE DE CASAMENTO DE LUXO - CRISLAYNE & DANIEL
+   Estética: Terracota Floral Haute Couture • Alta Papelaria & Casamento Rico
+   Paleta: Terracota Nobre (#8A331E, #9C3B23), Dourado Antigo (#C59B4E, #D4AF37),
+           Marfim Acetinado (#FFFDF9, #FAF5ED), Café Espresso (#2A1812) e
+           Atmosfera Floral Botânica Terracota Escura
    ========================================================================== */
 
 /* --- RESET & BOX SIZING --- */
@@ -17,77 +19,84 @@ html {
 }
 
 body {
-  background-color: #F7F4EF !important; /* Tom palha artesanal suave */
+  background-color: #180D0A !important;
+  background-image: 
+    radial-gradient(ellipse at 50% 25%, rgba(46, 23, 18, 0.91) 0%, rgba(18, 9, 7, 0.97) 100%),
+    url('assets/images/terracotta_floral_ref.jpg') !important;
+  background-attachment: fixed !important;
+  background-size: cover !important;
+  background-position: center !important;
   font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-  color: #4A403A !important;
+  color: #2A1812 !important;
   overflow-x: hidden !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 /* ==========================================================================
-   HEADER DELICADO COM PLAYER DE MÚSICA (STICKY E 100% RESPONSIVO)
+   HEADER NOBRE COM PLAYER DE MÚSICA (STICKY E 100% RESPONSIVO)
    ========================================================================== */
 header.main-header {
   width: 100% !important;
   padding: 0.85rem 1.25rem !important;
   padding-top: max(0.85rem, env(safe-area-inset-top)) !important;
-  background: rgba(255, 253, 249, 0.95) !important;
-  backdrop-filter: blur(10px) !important;
-  -webkit-backdrop-filter: blur(10px) !important;
-  border-bottom: 1px solid #E5D8CC !important;
+  background: rgba(26, 14, 11, 0.94) !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.35) !important;
   display: flex !important;
   justify-content: space-between !important;
   align-items: center !important;
   position: sticky !important;
   top: 0 !important;
   z-index: 1000 !important;
-  box-shadow: 0 2px 10px rgba(140, 63, 43, 0.04) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4) !important;
 }
 
 .logo-header {
   font-family: 'Playfair Display', serif !important;
   font-size: 1.35rem !important;
   font-weight: 700 !important;
-  color: #8C3F2B !important;
-  letter-spacing: 1.5px !important;
+  color: #D4AF37 !important;
+  letter-spacing: 2px !important;
   text-decoration: none !important;
   flex-shrink: 0 !important;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) !important;
 }
 
 .header-music-info {
   font-size: 0.82rem !important;
-  color: #8C3F2B !important;
+  color: #FFF8EB !important;
   display: inline-flex !important;
   align-items: center !important;
-  gap: 7px !important;
-  padding: 0.4rem 0.85rem !important;
-  background: #F7F4EF !important;
-  border: 1px solid #E5D8CC !important;
+  gap: 8px !important;
+  padding: 0.4rem 0.95rem !important;
+  background: rgba(48, 26, 20, 0.85) !important;
+  border: 1px solid rgba(212, 175, 55, 0.45) !important;
   border-radius: 9999px !important;
   cursor: pointer !important;
   user-select: none !important;
   transition: all 0.25s ease !important;
-  box-shadow: 0 2px 6px rgba(140, 63, 43, 0.05) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25) !important;
 }
 
 .header-music-info:active {
   transform: scale(0.96) !important;
-  background: #ECE5DA !important;
+  background: rgba(65, 34, 27, 0.95) !important;
 }
 
-/* Equalizer Bars Animadas */
+/* Equalizer Bars Animadas em Ouro */
 .music-wave-bars {
   display: inline-flex !important;
   align-items: flex-end !important;
-  gap: 2px !important;
-  height: 12px !important;
-  margin-right: 1px !important;
+  gap: 2.5px !important;
+  height: 13px !important;
+  margin-right: 2px !important;
 }
 
 .music-wave-bars .bar {
-  width: 2.2px !important;
-  background-color: #8C3F2B !important;
+  width: 2.4px !important;
+  background-color: #D4AF37 !important;
   border-radius: 2px !important;
   height: 3px !important;
   transition: height 0.2s ease !important;
@@ -104,7 +113,7 @@ header.main-header {
 
 @keyframes barBounce {
   0% { height: 3px; }
-  50% { height: 12px; }
+  50% { height: 13px; }
   100% { height: 5px; }
 }
 
@@ -114,20 +123,20 @@ header.main-header {
   bottom: max(16px, env(safe-area-inset-bottom)) !important;
   left: 16px !important;
   z-index: 9999 !important;
-  background: rgba(255, 253, 249, 0.95) !important;
-  backdrop-filter: blur(10px) !important;
-  -webkit-backdrop-filter: blur(10px) !important;
-  border: 1px solid #D9C3B0 !important;
-  padding: 0.45rem 0.85rem !important;
+  background: rgba(32, 17, 13, 0.95) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border: 1px solid #D4AF37 !important;
+  padding: 0.5rem 0.95rem !important;
   border-radius: 9999px !important;
-  box-shadow: 0 6px 18px rgba(140, 63, 43, 0.15) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45), 0 2px 8px rgba(140, 63, 43, 0.3) !important;
   display: flex !important;
   align-items: center !important;
-  gap: 7px !important;
+  gap: 8px !important;
   cursor: pointer !important;
-  color: #8C3F2B !important;
+  color: #FFF8EB !important;
   font-weight: 600 !important;
-  font-size: 0.78rem !important;
+  font-size: 0.8rem !important;
   transition: all 0.25s ease !important;
 }
 
@@ -136,8 +145,8 @@ header.main-header {
 }
 
 .disc-spinning {
-  font-size: 1rem !important;
-  color: #8C3F2B !important;
+  font-size: 1.1rem !important;
+  color: #D4AF37 !important;
   animation: spinDisc 3s linear infinite !important;
 }
 
@@ -152,374 +161,507 @@ header.main-header {
 }
 
 /* ==========================================================================
-   EXPERIÊNCIA 3D DO ENVELOPE / CONVITE REALISTA (#COVER) - MOBILE FIRST
+   1. CAPA INICIAL COM O ENVELOPE REALISTA FECHADO 3D (#COVER)
    ========================================================================== */
 #cover {
   position: fixed !important;
   inset: 0 !important;
   z-index: 99999 !important;
-  background: radial-gradient(circle at center, #FAF7F2 0%, #EFE9DE 100%) !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  padding: 1rem 0.8rem !important;
+  padding: 1.2rem 1rem !important;
   overflow-y: auto !important;
   -webkit-overflow-scrolling: touch !important;
-  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  transition: opacity 0.85s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.85s cubic-bezier(0.4, 0, 0.2, 1), transform 0.85s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 
 #cover.aberto {
   opacity: 0 !important;
   visibility: hidden !important;
   pointer-events: none !important;
-  transform: scale(1.04) !important;
+  transform: scale(1.05) !important;
 }
 
-/* PÉTALAS E PARTÍCULAS DE FUNDO */
+/* Fundo Imersivo da Capa */
+.cover-backdrop-floral {
+  position: absolute !important;
+  inset: 0 !important;
+  background-image: url('assets/images/terracotta_floral_ref.jpg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  filter: brightness(0.65) saturate(1.15) !important;
+  transform: scale(1.04) !important;
+  z-index: 1 !important;
+}
+
+.cover-overlay-vignette {
+  position: absolute !important;
+  inset: 0 !important;
+  background: radial-gradient(circle at center, rgba(38, 20, 16, 0.78) 0%, rgba(15, 8, 6, 0.95) 100%) !important;
+  z-index: 2 !important;
+}
+
 .ambient-petals {
   position: absolute !important;
   inset: 0 !important;
   pointer-events: none !important;
+  z-index: 3 !important;
   background-image: 
-    radial-gradient(circle at 15% 20%, rgba(197, 155, 78, 0.15) 0%, transparent 8%),
-    radial-gradient(circle at 85% 80%, rgba(140, 63, 43, 0.12) 0%, transparent 10%),
-    radial-gradient(circle at 75% 15%, rgba(197, 155, 78, 0.12) 0%, transparent 6%),
-    radial-gradient(circle at 25% 85%, rgba(140, 63, 43, 0.1) 0%, transparent 7%) !important;
+    radial-gradient(circle at 18% 22%, rgba(212, 175, 55, 0.2) 0%, transparent 8%),
+    radial-gradient(circle at 82% 78%, rgba(160, 68, 44, 0.25) 0%, transparent 10%),
+    radial-gradient(circle at 75% 15%, rgba(212, 175, 55, 0.18) 0%, transparent 6%),
+    radial-gradient(circle at 25% 85%, rgba(140, 63, 43, 0.2) 0%, transparent 7%) !important;
 }
 
-/* ENVELOPE CONTAINER & 3D PERSPECTIVA */
-.envelope-container {
+/* PALCO DO ENVELOPE */
+.envelope-stage {
   position: relative !important;
+  z-index: 10 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
   width: 100% !important;
-  max-width: 410px !important;
-  perspective: 1200px !important;
-  perspective-origin: center top !important;
-  transition: transform 0.8s ease !important;
+  max-width: 440px !important;
   margin: auto !important;
 }
 
-/* ABA SUPERIOR DO ENVELOPE (FLAP 3D) */
-.envelope-flap {
-  position: absolute !important;
-  top: -12px !important;
-  left: 0 !important;
-  width: 100% !important;
-  height: 70px !important;
-  z-index: 10 !important;
-  cursor: pointer !important;
-  transform-origin: top center !important;
-  transition: transform 0.85s cubic-bezier(0.4, 0, 0.2, 1), z-index 0.2s 0.3s !important;
-  pointer-events: auto !important;
+/* Apresentação superior acima do envelope */
+.envelope-top-badge {
+  text-align: center !important;
+  margin-bottom: 1rem !important;
 }
 
-.envelope-flap .flap-crease {
+.gold-sparkle-pill {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  font-size: 0.72rem !important;
+  letter-spacing: 2px !important;
+  text-transform: uppercase !important;
+  color: #D4AF37 !important;
+  font-weight: 700 !important;
+  padding: 4px 14px !important;
+  background: rgba(38, 20, 16, 0.8) !important;
+  border: 1px solid rgba(212, 175, 55, 0.5) !important;
+  border-radius: 9999px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.envelope-top-names {
+  font-family: 'Playfair Display', serif !important;
+  font-size: clamp(2rem, 7vw, 2.7rem) !important;
+  font-weight: 700 !important;
+  color: #FFF8EB !important;
+  line-height: 1.15 !important;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6) !important;
+}
+
+.envelope-top-date {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: 1.05rem !important;
+  font-style: italic !important;
+  color: #E6C88A !important;
+  letter-spacing: 0.5px !important;
+  margin-top: 0.2rem !important;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* ==========================================================================
+   ESTRUTURA FÍSICA DO ENVELOPE 3D FECHADO
+   ========================================================================== */
+.envelope-3d-box {
+  position: relative !important;
+  width: 92vw !important;
+  max-width: 380px !important;
+  height: 245px !important;
+  perspective: 1200px !important;
+  cursor: pointer !important;
+  border-radius: 12px !important;
+  margin: 0.6rem 0 1.2rem 0 !important;
+  box-shadow: 
+    0 25px 65px rgba(0, 0, 0, 0.65), 
+    0 8px 25px rgba(140, 63, 43, 0.4) !important;
+  user-select: none !important;
+  transition: transform 0.4s ease, box-shadow 0.4s ease !important;
+}
+
+.envelope-3d-box:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 
+    0 30px 75px rgba(0, 0, 0, 0.75), 
+    0 10px 30px rgba(160, 68, 44, 0.5) !important;
+}
+
+/* 1. Parede Traseira do Envelope */
+.envelope-back-wall {
+  position: absolute !important;
+  inset: 0 !important;
+  background: linear-gradient(135deg, #7A2F1C 0%, #541E11 100%) !important;
+  border-radius: 12px !important;
+  border: 1px solid rgba(212, 175, 55, 0.4) !important;
+  z-index: 1 !important;
+}
+
+/* 2. Cartão Interno que desliza para fora */
+.envelope-inner-card {
+  position: absolute !important;
+  width: 88% !important;
+  height: 86% !important;
+  left: 6% !important;
+  top: 7% !important;
+  background: #FFFDF9 !important;
+  border: 1px solid #D4AF37 !important;
+  border-radius: 8px !important;
+  z-index: 2 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  padding: 0.8rem !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25) !important;
+  transition: transform 0.95s 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+
+.inner-card-content {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+
+.inner-card-photo-wrap {
+  width: 64px !important;
+  height: 64px !important;
+  border-radius: 50% !important;
+  border: 2px solid #D4AF37 !important;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2) !important;
+  overflow: hidden !important;
+  margin-bottom: 0.35rem !important;
+}
+
+.inner-card-photo {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center 20% !important;
+}
+
+.inner-card-script {
+  font-family: 'Great Vibes', cursive !important;
+  font-size: 1.15rem !important;
+  color: #C59B4E !important;
+  line-height: 1 !important;
+}
+
+.inner-card-monogram {
+  font-family: 'Playfair Display', serif !important;
+  font-size: 1.3rem !important;
+  font-weight: 700 !important;
+  color: #8A331E !important;
+  letter-spacing: 1.5px !important;
+  margin: 0.1rem 0 !important;
+}
+
+.inner-card-divider {
+  width: 32px !important;
+  height: 1px !important;
+  background: #D4AF37 !important;
+  margin: 0.25rem 0 !important;
+}
+
+.inner-card-date {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 0.72rem !important;
+  font-weight: 700 !important;
+  color: #78716C !important;
+  letter-spacing: 0.5px !important;
+}
+
+/* 3. Dobras Laterais do Envelope */
+.envelope-side-fold.fold-left {
+  position: absolute !important;
+  inset: 0 !important;
+  clip-path: polygon(0 0, 0 100%, 50% 50%) !important;
+  background: linear-gradient(to right, #84311D, #963B25) !important;
+  border-radius: 12px 0 0 12px !important;
+  z-index: 3 !important;
+}
+
+.envelope-side-fold.fold-right {
+  position: absolute !important;
+  inset: 0 !important;
+  clip-path: polygon(100% 0, 100% 100%, 50% 50%) !important;
+  background: linear-gradient(to left, #84311D, #963B25) !important;
+  border-radius: 0 12px 12px 0 !important;
+  z-index: 3 !important;
+}
+
+/* 4. Dobra Inferior do Envelope */
+.envelope-bottom-fold {
+  position: absolute !important;
+  inset: 0 !important;
+  clip-path: polygon(0 100%, 100% 100%, 50% 50%) !important;
+  background: linear-gradient(to top, #712715, #88331E) !important;
+  border-radius: 0 0 12px 12px !important;
+  z-index: 4 !important;
+  filter: drop-shadow(0 -3px 6px rgba(0, 0, 0, 0.35)) !important;
+}
+
+/* 5. Aba Superior do Envelope (Flap 3D Dobrável) */
+.envelope-top-flap {
   position: absolute !important;
   top: 0 !important;
   left: 0 !important;
   width: 100% !important;
   height: 100% !important;
-  background: #EFE6D8 !important;
-  clip-path: polygon(0 0, 100% 0, 50% 100%) !important;
-  border-top: 1px solid #D9C3B0 !important;
-  filter: drop-shadow(0 6px 8px rgba(140, 63, 43, 0.12)) !important;
+  z-index: 5 !important;
+  transform-origin: top center !important;
+  transition: transform 0.85s cubic-bezier(0.4, 0, 0.2, 1), z-index 0.3s !important;
 }
 
-/* SELO DE CERA 3D LUXUOSO COM MONOGRAMA */
-.wax-seal-container {
+.top-flap-triangle {
+  width: 100% !important;
+  height: 100% !important;
+  clip-path: polygon(0 0, 100% 0, 50% 50%) !important;
+  background: linear-gradient(180deg, #A2442C 0%, #88331E 100%) !important;
+  border-top: 1.5px solid #D4AF37 !important;
+  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.4)) !important;
+  border-radius: 12px 12px 0 0 !important;
+}
+
+/* 6. Selo de Cera 3D Centralizado */
+.wax-seal-cluster {
   position: absolute !important;
-  top: 32px !important;
+  top: 50% !important;
   left: 50% !important;
-  transform: translateX(-50%) !important;
+  transform: translate(-50%, -50%) !important;
+  z-index: 6 !important;
   display: flex !important;
   flex-direction: column !important;
   align-items: center !important;
   cursor: pointer !important;
-  z-index: 15 !important;
-  transition: transform 0.35s ease, opacity 0.5s ease !important;
+  transition: transform 0.35s ease, opacity 0.4s ease !important;
 }
 
-.wax-seal-container:active {
-  transform: translateX(-50%) scale(0.95) !important;
+.wax-seal-cluster:active {
+  transform: translate(-50%, -50%) scale(0.95) !important;
 }
 
-.wax-seal-pulse {
+.wax-seal-radiance {
   position: absolute !important;
-  top: -4px !important;
+  top: -6px !important;
   left: 50% !important;
   transform: translateX(-50%) !important;
-  width: 52px !important;
-  height: 52px !important;
+  width: 66px !important;
+  height: 66px !important;
   border-radius: 50% !important;
-  background: rgba(197, 155, 78, 0.3) !important;
-  animation: waxPulse 2s infinite ease-out !important;
+  background: rgba(212, 175, 55, 0.3) !important;
+  animation: waxRadiance 2s infinite ease-out !important;
   z-index: 1 !important;
 }
 
-@keyframes waxPulse {
-  0% { transform: translateX(-50%) scale(0.9); opacity: 0.8; }
-  50% { transform: translateX(-50%) scale(1.3); opacity: 0.2; }
-  100% { transform: translateX(-50%) scale(1.5); opacity: 0; }
+@keyframes waxRadiance {
+  0% { transform: translateX(-50%) scale(0.85); opacity: 0.9; }
+  50% { transform: translateX(-50%) scale(1.35); opacity: 0.2; }
+  100% { transform: translateX(-50%) scale(1.6); opacity: 0; }
 }
 
-.wax-seal {
+.wax-seal-disc {
   position: relative !important;
   z-index: 2 !important;
-  width: 44px !important;
-  height: 44px !important;
-  background: radial-gradient(circle at 35% 35%, #BA5A40 0%, #8C3F2B 70%, #5E2619 100%) !important;
-  border: 2px solid #D4AF37 !important;
+  width: 54px !important;
+  height: 54px !important;
   border-radius: 50% !important;
-  box-shadow: 0 5px 14px rgba(94, 38, 25, 0.35), inset 0 2px 4px rgba(255,255,255,0.3) !important;
+  background: radial-gradient(circle at 35% 35%, #BA5036 0%, #852C18 70%, #541709 100%) !important;
+  border: 2px solid #D4AF37 !important;
+  box-shadow: 
+    0 8px 20px rgba(0, 0, 0, 0.55), 
+    inset 0 2px 4px rgba(255, 255, 255, 0.4) !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  color: #FFF6E5 !important;
-  font-family: 'Cormorant Garamond', serif !important;
-  font-size: 1rem !important;
-  font-weight: 700 !important;
-  letter-spacing: 1px !important;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.4) !important;
 }
 
-.seal-hint {
-  margin-top: 4px !important;
-  font-size: 0.68rem !important;
+.wax-monogram-text {
+  font-family: 'Playfair Display', serif !important;
+  font-size: 1.15rem !important;
   font-weight: 700 !important;
-  color: #8C3F2B !important;
-  background: #FFFDF9 !important;
-  border: 1px solid #D9C3B0 !important;
-  padding: 2px 7px !important;
-  border-radius: 999px !important;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.06) !important;
+  color: #FFF8EB !important;
+  letter-spacing: 1.5px !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6) !important;
+}
+
+.wax-seal-caption {
+  margin-top: 8px !important;
+  font-size: 0.72rem !important;
+  font-weight: 700 !important;
+  color: #FFFDF9 !important;
+  background: rgba(35, 17, 13, 0.92) !important;
+  border: 1px solid #D4AF37 !important;
+  border-radius: 9999px !important;
+  padding: 3px 11px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
   white-space: nowrap !important;
-  letter-spacing: 0.3px !important;
+  letter-spacing: 0.4px !important;
   animation: bounceHint 2s infinite ease-in-out !important;
 }
 
 @keyframes bounceHint {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-3px); }
+  50% { transform: translateY(-4px); }
 }
 
-/* BOLSO INFERIOR DO ENVELOPE (FRENTE) */
-.envelope-pocket {
-  display: none !important;
-}
-
-/* CARTÃO INTERNO DO CONVITE */
-.card-capa {
-  position: relative !important;
-  z-index: 5 !important;
-  width: 100% !important;
-  max-width: 410px !important;
-  background: #FFFDF9 !important;
-  border: 1px solid #E5D8CC !important;
-  border-radius: 1.5rem !important;
-  padding: 2.6rem 1.3rem 1.8rem 1.3rem !important;
-  box-shadow: 0 15px 40px rgba(140, 63, 43, 0.12) !important;
-  text-align: center !important;
-  margin: 0 auto !important;
-  transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.8s ease !important;
-}
-
-@media (min-width: 480px) {
-  .card-capa {
-    padding: 2.8rem 1.6rem 2.2rem 1.6rem !important;
-  }
-}
-
-/* HEADER CAPA COMBINAÇÃO (FLORAL + FOTO) */
-.header-capa-combinação {
-  position: relative !important;
-  width: 100% !important;
-  min-height: 190px !important;
-  margin-bottom: 0.8rem !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-}
-
-.img-floral-capa {
-  position: absolute !important;
-  top: 0 !important;
-  left: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: contain !important;
-  z-index: 1 !important;
-  opacity: 0.75 !important;
-  mix-blend-mode: multiply !important;
-  pointer-events: none !important;
-}
-
-.box-foto-capa {
-  position: relative !important;
-  z-index: 2 !important;
-  width: 155px !important;
-  height: 155px !important;
-  border-radius: 50% !important;
-  overflow: hidden !important;
-  border: 3px solid #D9C3B0 !important;
-  box-shadow: 0 6px 18px rgba(140, 63, 43, 0.15) !important;
-  margin: 0 auto !important;
-}
-
-.foto-capa-img {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  object-position: center 20% !important;
-  display: block !important;
-}
-
-.envelope-subtitle-script {
-  font-family: 'Great Vibes', cursive !important;
-  font-size: clamp(1.8rem, 6vw, 2.2rem) !important;
-  color: #C59B4E !important;
-  margin-bottom: 0.1rem !important;
-  line-height: 1 !important;
-}
-
-.envelope-title {
-  font-family: 'Playfair Display', serif !important;
-  font-size: clamp(1.8rem, 6vw, 2.3rem) !important;
-  font-weight: 700 !important;
-  color: #8C3F2B !important;
-  margin-bottom: 0.3rem !important;
-  line-height: 1.15 !important;
-}
-
-.envelope-concept {
-  font-family: 'Cormorant Garamond', serif !important;
-  font-size: clamp(0.85rem, 3vw, 0.95rem) !important;
-  font-style: italic !important;
-  color: #78716C !important;
-  margin-bottom: 0.9rem !important;
-}
-
-.capa-date-pill {
-  display: inline-flex !important;
-  align-items: center !important;
-  gap: 6px !important;
-  background: #F7F4EF !important;
-  border: 1px solid #E5D8CC !important;
-  padding: 0.4rem 0.9rem !important;
-  border-radius: 9999px !important;
-  color: #8C3F2B !important;
-  font-size: 0.82rem !important;
-  font-weight: 600 !important;
-  margin-bottom: 0.5rem !important;
-}
-
-button.btn-abrir {
-  margin-top: 1.1rem !important;
-  width: 100% !important;
-  min-height: 48px !important;
-  padding: 0.85rem 1.2rem !important;
-  background-color: #8C3F2B !important;
-  color: #FFFDF9 !important;
-  border: none !important;
-  border-radius: 0.75rem !important;
-  font-family: 'Plus Jakarta Sans', sans-serif !important;
-  font-weight: 600 !important;
-  font-size: 0.95rem !important;
-  letter-spacing: 0.3px !important;
-  cursor: pointer !important;
-  transition: all 0.25s ease !important;
+/* BOTÃO DE ABERTURA DIRETA DE ALTO LUXO */
+.btn-abrir-luxo {
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
   gap: 8px !important;
-  box-shadow: 0 4px 14px rgba(140, 63, 43, 0.2) !important;
-  touch-action: manipulation !important;
+  padding: 0.85rem 1.8rem !important;
+  background: linear-gradient(135deg, #A8452D 0%, #7D2D1A 100%) !important;
+  color: #FFF8EB !important;
+  border: 1.5px solid #D4AF37 !important;
+  border-radius: 9999px !important;
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 0.95rem !important;
+  letter-spacing: 0.4px !important;
+  cursor: pointer !important;
+  box-shadow: 
+    0 8px 25px rgba(0, 0, 0, 0.45), 
+    0 3px 10px rgba(168, 69, 45, 0.4) !important;
+  transition: all 0.25s ease !important;
 }
 
-button.btn-abrir:active {
-  background-color: #723222 !important;
-  transform: scale(0.98) !important;
-  box-shadow: 0 2px 8px rgba(140, 63, 43, 0.25) !important;
+.btn-abrir-luxo:active {
+  transform: scale(0.96) !important;
+  background: linear-gradient(135deg, #8E3823 0%, #662212 100%) !important;
 }
 
-/* ANIMAÇÃO DE ABERTURA QUANDO O CONVITE É CLICADO */
-.envelope-container.opening .envelope-flap {
+/* ==========================================================================
+   ANIMAÇÃO DE ABERTURA DO ENVELOPE (QUANDO ACIONADO)
+   ========================================================================== */
+.envelope-3d-box.opening .envelope-top-flap {
   transform: rotateX(180deg) !important;
   z-index: 1 !important;
 }
 
-.envelope-container.opening .wax-seal-container {
+.envelope-3d-box.opening .wax-seal-cluster {
   opacity: 0 !important;
-  transform: translateX(-50%) scale(1.35) !important;
+  transform: translate(-50%, -50%) scale(1.35) !important;
   pointer-events: none !important;
 }
 
-.envelope-container.opening .card-capa {
-  transform: translateY(-30px) scale(1.02) !important;
-  box-shadow: 0 25px 50px rgba(140, 63, 43, 0.2) !important;
+.envelope-3d-box.opening .envelope-inner-card {
+  transform: translateY(-90px) scale(1.04) !important;
+  z-index: 7 !important;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.4) !important;
 }
 
 /* ==========================================================================
-   MAIN CONTAINER EM FLUXO NORMAL (SITE PRINCIPAL)
+   2. SITE PRINCIPAL: ESTRUTURA EDITORIAL & ESTÉTICA CASAMENTO RICO
    ========================================================================== */
 main.container, .container {
-  max-width: 960px !important;
+  max-width: 980px !important;
   margin: 0 auto !important;
-  padding: 1.5rem 1rem 3rem 1rem !important;
+  padding: 1.5rem 1rem 3.5rem 1rem !important;
   display: block !important;
 }
 
 @media (min-width: 768px) {
   main.container, .container {
-    padding: 2.5rem 1.5rem 4rem 1.5rem !important;
+    padding: 2.5rem 1.5rem 4.5rem 1.5rem !important;
   }
 }
 
 /* ==========================================================================
-   HERO SECTION BOHO
+   HERO SECTION COM FOTO EMOLDURADA EM OURO E ARRANJO BOTÂNICO
    ========================================================================== */
 .hero-section {
   background: #FFFDF9 !important;
-  border: 1px solid #E5D8CC !important;
-  border-radius: 1.25rem !important;
-  padding: 1.5rem 1.2rem !important;
-  box-shadow: 0 10px 30px rgba(140, 63, 43, 0.04) !important;
+  border: 1px solid rgba(212, 175, 55, 0.45) !important;
+  border-radius: 1.5rem !important;
+  padding: 2rem 1.2rem !important;
+  box-shadow: 
+    0 20px 55px rgba(0, 0, 0, 0.45), 
+    0 4px 15px rgba(140, 63, 43, 0.15) !important;
   display: grid !important;
   grid-template-columns: 1fr !important;
   gap: 1.5rem !important;
   align-items: center !important;
   position: static !important;
   transform: none !important;
-  margin-bottom: 1.5rem !important;
+  margin-bottom: 2rem !important;
 }
 
 @media (min-width: 768px) {
   .hero-section {
-    grid-template-columns: 320px 1fr !important;
-    padding: 2rem !important;
-    gap: 2rem !important;
-    margin-bottom: 2rem !important;
+    grid-template-columns: 330px 1fr !important;
+    padding: 2.5rem 2rem !important;
+    gap: 2.2rem !important;
+  }
+}
+
+/* Foto com Anel Dourado e Auréola Botânica */
+.hero-photo-container {
+  position: relative !important;
+  width: 220px !important;
+  height: 220px !important;
+  margin: 0 auto !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+@media (min-width: 768px) {
+  .hero-photo-container {
+    width: 280px !important;
+    height: 280px !important;
+  }
+}
+
+.hero-botanical-halo {
+  position: absolute !important;
+  inset: -35px !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
+}
+
+.hero-botanical-art {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  opacity: 0.85 !important;
+  mix-blend-mode: multiply !important;
+}
+
+.hero-gold-ring {
+  position: relative !important;
+  z-index: 2 !important;
+  width: 195px !important;
+  height: 195px !important;
+  border-radius: 50% !important;
+  border: 4px solid #D4AF37 !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25) !important;
+  overflow: hidden !important;
+}
+
+@media (min-width: 768px) {
+  .hero-gold-ring {
+    width: 245px !important;
+    height: 245px !important;
   }
 }
 
 .foto-casal {
   width: 100% !important;
-  max-width: 100% !important;
-  height: 320px !important;
+  height: 100% !important;
   object-fit: cover !important;
   object-position: center 20% !important;
-  border-radius: 1rem !important;
-  border: 3px solid #FFFFFF !important;
-  box-shadow: 0 8px 20px rgba(140, 63, 43, 0.08) !important;
-  margin: 0 auto !important;
   display: block !important;
-}
-
-@media (min-width: 768px) {
-  .foto-casal {
-    max-width: 320px !important;
-    height: 400px !important;
-    border-radius: 1.25rem !important;
-    border-width: 4px !important;
-  }
 }
 
 .hero-content {
@@ -536,28 +678,56 @@ main.container, .container {
   font-size: 0.72rem !important;
   text-transform: uppercase !important;
   letter-spacing: 2px !important;
-  color: #8C3F2B !important;
+  color: #C59B4E !important;
   font-weight: 700 !important;
   display: block !important;
-  margin-bottom: 0.4rem !important;
+  margin-bottom: 0.3rem !important;
 }
 
 .hero-names {
   font-family: 'Playfair Display', serif !important;
-  font-size: clamp(2rem, 7vw, 3.2rem) !important;
+  font-size: clamp(2.2rem, 7vw, 3.4rem) !important;
   font-weight: 700 !important;
-  color: #8C3F2B !important;
-  line-height: 1.15 !important;
-  margin-bottom: 0.6rem !important;
+  color: #8A331E !important;
+  line-height: 1.1 !important;
+  margin-bottom: 0.2rem !important;
+}
+
+.hero-script-subtitle {
+  font-family: 'Great Vibes', cursive !important;
+  font-size: clamp(1.8rem, 5vw, 2.2rem) !important;
+  color: #C59B4E !important;
+  line-height: 1 !important;
+  margin-bottom: 0.8rem !important;
+}
+
+.hero-ornament-divider {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  margin: 0.6rem 0 1rem 0 !important;
+}
+
+@media (min-width: 768px) {
+  .hero-ornament-divider {
+    justify-content: flex-start !important;
+  }
+}
+
+.hero-ornament-divider .line {
+  width: 45px !important;
+  height: 1px !important;
+  background: #D4AF37 !important;
 }
 
 .hero-phrase {
   font-family: 'Cormorant Garamond', serif !important;
-  font-size: clamp(1rem, 3.5vw, 1.15rem) !important;
+  font-size: clamp(1.05rem, 3.5vw, 1.2rem) !important;
   font-style: italic !important;
-  color: #78716C !important;
-  line-height: 1.4 !important;
-  margin-bottom: 1.2rem !important;
+  color: #3D261C !important;
+  line-height: 1.5 !important;
+  margin-bottom: 1.3rem !important;
 }
 
 .hero-date-badge {
@@ -565,58 +735,57 @@ main.container, .container {
   align-items: center !important;
   justify-content: center !important;
   gap: 8px !important;
-  background: #F7F4EF !important;
-  padding: 0.65rem 1.2rem !important;
+  background: #8A331E !important;
+  padding: 0.65rem 1.4rem !important;
   border-radius: 9999px !important;
-  border: 1px solid #E5D8CC !important;
-  font-weight: 600 !important;
-  color: #8C3F2B !important;
-  font-size: 0.9rem !important;
-  max-width: 100% !important;
+  border: 1.5px solid #D4AF37 !important;
+  font-weight: 700 !important;
+  color: #FFF8EB !important;
+  font-size: 0.92rem !important;
+  box-shadow: 0 4px 15px rgba(138, 51, 30, 0.3) !important;
 }
 
 /* ==========================================================================
-   GRID DOS CARDS (100% MOBILE FRIENDLY)
+   GRID DOS CARDS (ALTA PAPELARIA & CASAMENTO RICO)
    ========================================================================== */
 .sections-grid {
   display: grid !important;
   grid-template-columns: 1fr !important;
-  gap: 1.5rem !important;
-  margin-top: 1.5rem !important;
+  gap: 1.8rem !important;
   align-items: stretch !important;
 }
 
 @media (min-width: 768px) {
   .sections-grid {
     grid-template-columns: repeat(2, 1fr) !important;
-    gap: 2rem !important;
-    margin-top: 2rem !important;
+    gap: 2.2rem !important;
   }
 }
 
 .card-section {
   background: #FFFDF9 !important;
-  border: 1px solid #E5D8CC !important;
-  border-radius: 1.25rem !important;
-  padding: 1.5rem 1.2rem !important;
-  box-shadow: 0 8px 25px rgba(140, 63, 43, 0.04) !important;
+  border: 1px solid rgba(212, 175, 55, 0.45) !important;
+  border-radius: 1.35rem !important;
+  padding: 1.8rem 1.3rem !important;
+  box-shadow: 
+    0 18px 45px rgba(0, 0, 0, 0.38), 
+    0 2px 8px rgba(140, 63, 43, 0.12) !important;
   width: 100% !important;
-  position: static !important;
-  transform: none !important;
+  position: relative !important;
 }
 
 @media (min-width: 768px) {
   .card-section {
-    padding: 2rem 1.8rem !important;
+    padding: 2.2rem 1.8rem !important;
   }
 }
 
 .card-title {
-  color: #8C3F2B !important;
+  color: #8A331E !important;
   font-family: 'Playfair Display', serif !important;
-  font-size: 1.35rem !important;
-  font-weight: 600 !important;
-  margin-bottom: 1rem !important;
+  font-size: 1.4rem !important;
+  font-weight: 700 !important;
+  margin-bottom: 1.1rem !important;
   text-align: center !important;
   display: flex !important;
   align-items: center !important;
@@ -627,11 +796,11 @@ main.container, .container {
 /* CARD 1: RECEPÇÃO ESPECÍFICOS */
 .venue-title {
   font-family: 'Playfair Display', serif !important;
-  color: #8C3F2B !important;
-  font-size: 1.45rem !important;
+  color: #8A331E !important;
+  font-size: 1.5rem !important;
   font-weight: 700 !important;
   text-align: center !important;
-  margin-bottom: 1rem !important;
+  margin-bottom: 1.1rem !important;
 }
 
 .info-grid {
@@ -642,52 +811,53 @@ main.container, .container {
 
 .info-box {
   flex: 1 !important;
-  background: #F7F4EF !important;
-  padding: 0.8rem !important;
-  border-radius: 0.75rem !important;
+  background: #FAF5ED !important;
+  padding: 0.85rem !important;
+  border-radius: 0.85rem !important;
   text-align: center !important;
-  border: 1px solid #E5D8CC !important;
+  border: 1px solid rgba(212, 175, 55, 0.35) !important;
 }
 
 .info-label {
   font-size: 0.75rem !important;
   color: #78716C !important;
-  font-weight: 600 !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.5px !important;
   display: block !important;
 }
 
 .info-val {
-  color: #8C3F2B !important;
-  font-size: 1.05rem !important;
+  color: #8A331E !important;
+  font-size: 1.1rem !important;
   font-weight: 700 !important;
 }
 
 .venue-address-box {
-  background: #F7F4EF !important;
-  border: 1px solid #E5D8CC !important;
-  border-radius: 0.75rem !important;
-  padding: 0.8rem 1rem !important;
-  font-size: 0.9rem !important;
-  color: #4A403A !important;
-  margin-bottom: 0.8rem !important;
+  background: #FAF5ED !important;
+  border: 1px solid rgba(212, 175, 55, 0.35) !important;
+  border-radius: 0.85rem !important;
+  padding: 0.9rem 1.1rem !important;
+  font-size: 0.92rem !important;
+  color: #2A1812 !important;
+  margin-bottom: 0.9rem !important;
   display: flex !important;
   align-items: center !important;
-  gap: 8px !important;
+  gap: 10px !important;
   text-align: left !important;
 }
 
 .venue-notice {
   font-family: 'Cormorant Garamond', serif !important;
   font-style: italic !important;
-  font-size: 0.95rem !important;
-  color: #78716C !important;
+  font-size: 1rem !important;
+  color: #5C3D31 !important;
   text-align: center !important;
   margin-bottom: 1.2rem !important;
 }
 
 .venue-sub-actions {
   display: flex !important;
-  gap: 0.75rem !important;
+  gap: 0.8rem !important;
   margin-bottom: 1.2rem !important;
 }
 
@@ -695,8 +865,8 @@ main.container, .container {
   width: 100% !important;
   border-radius: 1rem !important;
   overflow: hidden !important;
-  border: 1px solid #E5D8CC !important;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.03) !important;
+  border: 1px solid rgba(212, 175, 55, 0.4) !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08) !important;
 }
 
 .map-embed-frame iframe {
@@ -705,50 +875,50 @@ main.container, .container {
 }
 
 /* ==========================================================================
-   FORMULÁRIOS & INPUTS OTIMIZADOS PARA CELULAR
+   FORMULÁRIOS & INPUTS OTIMIZADOS
    ========================================================================== */
 input, select, textarea, .form-input {
   width: 100% !important;
-  font-size: 16px !important; /* evita zoom automático no iOS */
-  padding: 0.8rem 0.95rem !important;
-  min-height: 46px !important;
+  font-size: 16px !important;
+  padding: 0.85rem 1rem !important;
+  min-height: 48px !important;
   border: 1px solid #D9C3B0 !important;
-  border-radius: 0.75rem !important;
-  background-color: #F7F4EF !important;
-  color: #4A403A !important;
+  border-radius: 0.8rem !important;
+  background-color: #FAF5ED !important;
+  color: #2A1812 !important;
   margin-top: 0.35rem !important;
-  margin-bottom: 0.9rem !important;
+  margin-bottom: 0.95rem !important;
   font-family: inherit !important;
   outline: none !important;
   transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
 }
 
 input:focus, select:focus, textarea:focus, .form-input:focus {
-  border-color: #8C3F2B !important;
-  box-shadow: 0 0 0 3px rgba(140, 63, 43, 0.12) !important;
+  border-color: #8A331E !important;
+  box-shadow: 0 0 0 3px rgba(138, 51, 30, 0.15) !important;
   background-color: #FFFDF9 !important;
 }
 
 label, .form-label {
   display: block !important;
   text-align: left !important;
-  font-size: 0.85rem !important;
-  font-weight: 600 !important;
-  color: #4A403A !important;
+  font-size: 0.88rem !important;
+  font-weight: 700 !important;
+  color: #2A1812 !important;
   margin-top: 0.4rem !important;
   margin-bottom: 0.2rem !important;
 }
 
-button.btn-primary {
+.btn-primary, button.btn-primary, a.btn-primary {
   width: 100% !important;
-  min-height: 48px !important;
-  padding: 0.85rem 1.2rem !important;
-  background-color: #8C3F2B !important;
-  color: #FFFDF9 !important;
-  border: none !important;
-  border-radius: 0.75rem !important;
+  min-height: 50px !important;
+  padding: 0.9rem 1.3rem !important;
+  background: linear-gradient(135deg, #9C3B23 0%, #752916 100%) !important;
+  color: #FFF8EB !important;
+  border: 1px solid #D4AF37 !important;
+  border-radius: 0.8rem !important;
   font-family: 'Plus Jakarta Sans', sans-serif !important;
-  font-weight: 600 !important;
+  font-weight: 700 !important;
   font-size: 0.95rem !important;
   letter-spacing: 0.3px !important;
   cursor: pointer !important;
@@ -757,15 +927,25 @@ button.btn-primary {
   align-items: center !important;
   justify-content: center !important;
   gap: 8px !important;
-  box-shadow: 0 4px 14px rgba(140, 63, 43, 0.2) !important;
+  box-shadow: 0 6px 18px rgba(117, 41, 22, 0.35) !important;
   touch-action: manipulation !important;
   text-decoration: none !important;
 }
 
-button.btn-primary:active, .btn-primary:active {
-  background-color: #723222 !important;
+button.btn-primary:active, .btn-primary:active, a.btn-primary:active {
+  background: linear-gradient(135deg, #842F19 0%, #5E1E0E 100%) !important;
   transform: scale(0.98) !important;
-  box-shadow: 0 2px 8px rgba(140, 63, 43, 0.25) !important;
+}
+
+.btn-maps, a.btn-maps {
+  margin-bottom: 0.85rem !important;
+  color: #FFF8EB !important;
+  text-decoration: none !important;
+}
+
+.btn-maps:hover, .btn-maps:focus, .btn-maps:visited {
+  color: #FFF8EB !important;
+  text-decoration: none !important;
 }
 
 .btn-secondary {
@@ -775,34 +955,34 @@ button.btn-primary:active, .btn-primary:active {
   justify-content: center !important;
   gap: 0.5rem !important;
   text-decoration: none !important;
-  background-color: #F7F4EF !important;
-  color: #8C3F2B !important;
-  border: 1px solid #8C3F2B !important;
-  padding: 0.75rem !important;
-  border-radius: 0.75rem !important;
-  font-weight: 600 !important;
-  font-size: 0.88rem !important;
+  background-color: #FAF5ED !important;
+  color: #8A331E !important;
+  border: 1px solid rgba(212, 175, 55, 0.45) !important;
+  padding: 0.8rem !important;
+  border-radius: 0.8rem !important;
+  font-weight: 700 !important;
+  font-size: 0.9rem !important;
   cursor: pointer !important;
   transition: all 0.2s ease !important;
 }
 
 .btn-secondary:active {
-  background-color: #ECE5DA !important;
+  background-color: #EFE4D3 !important;
   transform: scale(0.98) !important;
 }
 
 .rsvp-notify-hint {
-  font-size: 0.8rem !important;
-  color: #78716C !important;
-  margin-bottom: 1rem !important;
+  font-size: 0.82rem !important;
+  color: #6B4E41 !important;
+  margin-bottom: 1.1rem !important;
   text-align: center !important;
 }
 
 .rsvp-wa-direct {
-  margin-top: 1rem !important;
+  margin-top: 1.1rem !important;
   text-align: center !important;
-  font-size: 0.82rem !important;
-  color: #78716C !important;
+  font-size: 0.85rem !important;
+  color: #6B4E41 !important;
   display: flex !important;
   flex-direction: column !important;
   gap: 4px !important;
@@ -815,131 +995,134 @@ button.btn-primary:active, .btn-primary:active {
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-  gap: 5px !important;
+  gap: 6px !important;
 }
 
 /* ==========================================================================
    PIX CARD ESPECÍFICOS
    ========================================================================== */
 .pix-intro-text {
-  font-size: 0.85rem !important;
-  color: #78716C !important;
-  margin-bottom: 0.8rem !important;
+  font-size: 0.9rem !important;
+  color: #4A3228 !important;
+  margin-bottom: 0.9rem !important;
   text-align: center !important;
   line-height: 1.5 !important;
 }
 
 .pix-qr-container {
   text-align: center !important;
-  margin: 0.8rem 0 !important;
+  margin: 0.9rem 0 !important;
 }
 
 .pix-qr-img {
-  width: 170px !important;
-  height: 170px !important;
-  border-radius: 0.75rem !important;
-  border: 1px solid #D9C3B0 !important;
+  width: 175px !important;
+  height: 175px !important;
+  border-radius: 0.85rem !important;
+  border: 2px solid #D4AF37 !important;
   padding: 0.5rem !important;
   background: #ffffff !important;
   display: inline-block !important;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.04) !important;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1) !important;
 }
 
 .pix-qr-hint {
-  font-size: 0.75rem !important;
-  color: #78716C !important;
-  margin-top: 0.35rem !important;
+  font-size: 0.78rem !important;
+  color: #6B4E41 !important;
+  margin-top: 0.4rem !important;
 }
 
 .pix-box {
-  background: #F7F4EF !important;
-  border: 1px dashed #8C3F2B !important;
-  padding: 0.75rem 0.9rem !important;
-  border-radius: 0.75rem !important;
+  background: #FAF5ED !important;
+  border: 1.5px dashed #8A331E !important;
+  padding: 0.85rem 1rem !important;
+  border-radius: 0.85rem !important;
   text-align: center !important;
-  margin-bottom: 1rem !important;
+  margin-bottom: 1.1rem !important;
 }
 
 .pix-box-label {
-  font-size: 0.75rem !important;
+  font-size: 0.78rem !important;
   color: #78716C !important;
+  font-weight: 600 !important;
   margin-bottom: 0.2rem !important;
 }
 
 .pix-box-key {
-  font-size: 1.15rem !important;
-  font-weight: 700 !important;
-  color: #8C3F2B !important;
+  font-size: 1.25rem !important;
+  font-weight: 800 !important;
+  color: #8A331E !important;
   margin: 0 !important;
-  letter-spacing: 0.5px !important;
+  letter-spacing: 0.6px !important;
 }
 
 .pix-box-holder {
-  font-size: 0.78rem !important;
-  color: #78716C !important;
-  margin-top: 0.25rem !important;
+  font-size: 0.82rem !important;
+  color: #5C3D31 !important;
+  margin-top: 0.3rem !important;
 }
 
 .pix-copied-notice {
   display: none !important;
-  margin-top: 0.75rem !important;
+  margin-top: 0.85rem !important;
   background: #E8F5E9 !important;
-  border: 1px solid #A5D6A7 !important;
-  border-radius: 0.6rem !important;
-  padding: 0.6rem 0.8rem !important;
+  border: 1.5px solid #A5D6A7 !important;
+  border-radius: 0.75rem !important;
+  padding: 0.75rem 0.9rem !important;
   text-align: center !important;
   color: #1B5E20 !important;
-  font-size: 0.85rem !important;
-  font-weight: 600 !important;
+  font-size: 0.88rem !important;
+  font-weight: 700 !important;
 }
 
 .pix-copied-notice p {
-  font-size: 0.78rem !important;
+  font-size: 0.8rem !important;
   font-weight: normal !important;
   color: #2E7D32 !important;
-  margin: 0.2rem 0 0 0 !important;
+  margin: 0.25rem 0 0 0 !important;
 }
 
 /* ==========================================================================
    CONTAGEM REGRESSIVA CARD
    ========================================================================== */
 .countdown-hint {
-  font-size: 0.85rem !important;
-  color: #78716C !important;
+  font-size: 0.9rem !important;
+  color: #5C3D31 !important;
   text-align: center !important;
-  margin-bottom: 1rem !important;
+  margin-bottom: 1.1rem !important;
 }
 
 .countdown-display-grid {
   display: grid !important;
   grid-template-columns: repeat(4, 1fr) !important;
-  gap: 0.6rem !important;
-  margin-bottom: 1.2rem !important;
+  gap: 0.7rem !important;
+  margin-bottom: 1.3rem !important;
 }
 
 .count-block {
-  background: #F7F4EF !important;
-  border: 1px solid #E5D8CC !important;
-  border-radius: 0.75rem !important;
-  padding: 0.8rem 0.4rem !important;
+  background: linear-gradient(145deg, #8A331E, #6E2614) !important;
+  border: 1px solid #D4AF37 !important;
+  border-radius: 0.85rem !important;
+  padding: 0.9rem 0.4rem !important;
   text-align: center !important;
+  box-shadow: 0 4px 12px rgba(110, 38, 20, 0.3) !important;
 }
 
 .count-number {
   font-family: 'Playfair Display', serif !important;
-  font-size: 1.6rem !important;
+  font-size: 1.7rem !important;
   font-weight: 700 !important;
-  color: #8C3F2B !important;
+  color: #FFF8EB !important;
   display: block !important;
   line-height: 1 !important;
 }
 
 .count-text {
-  font-size: 0.7rem !important;
-  color: #78716C !important;
+  font-size: 0.68rem !important;
+  color: #E6C88A !important;
   text-transform: uppercase !important;
-  font-weight: 600 !important;
-  margin-top: 0.3rem !important;
+  letter-spacing: 1px !important;
+  font-weight: 700 !important;
+  margin-top: 0.35rem !important;
   display: block !important;
 }
 
@@ -951,121 +1134,124 @@ button.btn-primary:active, .btn-primary:active {
    MURAL DE RECADOS CARD
    ========================================================================== */
 .mural-hint {
-  font-size: 0.85rem !important;
-  color: #78716C !important;
+  font-size: 0.88rem !important;
+  color: #5C3D31 !important;
   text-align: center !important;
   margin-bottom: 1rem !important;
 }
 
 .mural-list-container {
-  max-height: 320px !important;
+  max-height: 330px !important;
   overflow-y: auto !important;
   padding-right: 4px !important;
+  margin-top: 1rem !important;
 }
 
 .mural-empty-box {
   border: 2px dashed #D9C3B0 !important;
-  padding: 1.2rem 1rem !important;
-  border-radius: 0.8rem !important;
+  padding: 1.3rem 1rem !important;
+  border-radius: 0.85rem !important;
   text-align: center !important;
 }
 
 .mural-empty-box p {
   color: #78716C !important;
   font-style: italic !important;
-  font-size: 0.85rem !important;
+  font-size: 0.88rem !important;
 }
 
 .mural-item {
-  background: #F7F4EF !important;
-  border: 1px solid #D9C3B0 !important;
-  padding: 0.9rem 1rem !important;
-  border-radius: 0.8rem !important;
-  margin-bottom: 0.75rem !important;
+  background: #FAF5ED !important;
+  border: 1px solid rgba(212, 175, 55, 0.4) !important;
+  padding: 1rem 1.1rem !important;
+  border-radius: 0.85rem !important;
+  margin-bottom: 0.85rem !important;
   text-align: left !important;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.03) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
 }
 
 .mural-header {
   display: flex !important;
   justify-content: space-between !important;
   align-items: center !important;
-  margin-bottom: 0.25rem !important;
+  margin-bottom: 0.3rem !important;
 }
 
 .mural-author {
   font-weight: 700 !important;
-  color: #8C3F2B !important;
-  font-size: 0.95rem !important;
+  color: #8A331E !important;
+  font-size: 0.98rem !important;
   margin: 0 !important;
 }
 
 .mural-date {
-  font-size: 0.7rem !important;
+  font-size: 0.72rem !important;
   color: #78716C !important;
 }
 
 .mural-msg {
-  font-size: 0.9rem !important;
-  color: #444 !important;
-  line-height: 1.4 !important;
+  font-size: 0.92rem !important;
+  color: #2A1812 !important;
+  line-height: 1.45 !important;
   margin: 0 !important;
   white-space: pre-wrap !important;
 }
 
 /* ==========================================================================
-   FOOTER (MOBILE FRIENDLY)
+   FOOTER (MOBILE FRIENDLY DE ALTA COSTURA)
    ========================================================================== */
 footer.main-footer {
-  background: #2C221F !important;
-  color: #FAF7F2 !important;
-  padding: 2.8rem 1rem !important;
-  padding-bottom: max(2.8rem, env(safe-area-inset-bottom)) !important;
+  background: #180D0A !important;
+  color: #FAF5ED !important;
+  padding: 3rem 1rem !important;
+  padding-bottom: max(3rem, env(safe-area-inset-bottom)) !important;
   text-align: center !important;
-  margin-top: 2.5rem !important;
+  margin-top: 3rem !important;
+  border-top: 1px solid rgba(212, 175, 55, 0.35) !important;
 }
 
 .footer-script {
   font-family: 'Great Vibes', cursive !important;
-  font-size: 2.6rem !important;
-  color: #C59B4E !important;
+  font-size: 2.8rem !important;
+  color: #D4AF37 !important;
   margin-bottom: 0.4rem !important;
 }
 
 .footer-verse {
   font-family: 'Cormorant Garamond', serif !important;
-  font-size: 1.1rem !important;
+  font-size: 1.15rem !important;
   font-style: italic !important;
   color: #E5D8CC !important;
-  max-width: 440px !important;
+  max-width: 460px !important;
   margin: 0 auto !important;
+  line-height: 1.4 !important;
 }
 
 .footer-ref {
-  font-size: 0.8rem !important;
-  color: #C59B4E !important;
-  font-weight: 600 !important;
+  font-size: 0.82rem !important;
+  color: #D4AF37 !important;
+  font-weight: 700 !important;
   display: block !important;
-  margin-top: 3px !important;
+  margin-top: 4px !important;
 }
 
 .footer-divider-gold {
-  width: 40px !important;
+  width: 48px !important;
   height: 1px !important;
-  background: #C59B4E !important;
-  margin: 1rem auto !important;
-  opacity: 0.6 !important;
+  background: #D4AF37 !important;
+  margin: 1.1rem auto !important;
+  opacity: 0.7 !important;
 }
 
 .footer-date {
-  font-size: 0.85rem !important;
+  font-size: 0.88rem !important;
   color: #E5D8CC !important;
   margin-bottom: 0.4rem !important;
 }
 
 .footer-credits {
-  font-size: 0.8rem !important;
-  color: rgba(250, 247, 242, 0.65) !important;
+  font-size: 0.82rem !important;
+  color: rgba(250, 245, 237, 0.7) !important;
 }
 
 /* ==========================================================================
@@ -1078,18 +1264,19 @@ footer.main-footer {
   transform: translateX(-50%) translateY(30px) !important;
   width: calc(100% - 32px) !important;
   max-width: 400px !important;
-  background: #2C221F !important;
+  background: #23120E !important;
   color: #FFFFFF !important;
   padding: 14px 20px !important;
   border-radius: 12px !important;
-  box-shadow: 0 12px 35px rgba(0,0,0,0.35) !important;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.45) !important;
   border-left: 5px solid #2E7D32 !important;
+  border-top: 1px solid rgba(212, 175, 55, 0.4) !important;
   z-index: 9999999 !important;
   opacity: 0 !important;
   visibility: hidden !important;
   transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.3s !important;
-  font-size: 0.9rem !important;
-  font-weight: 500 !important;
+  font-size: 0.92rem !important;
+  font-weight: 600 !important;
   text-align: center !important;
   line-height: 1.4 !important;
   pointer-events: none !important;
