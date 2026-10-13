@@ -7,6 +7,11 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
 
+  <!-- Favicon / Ícone da Aba do Navegador (Substitui o globinho pela foto do casal) -->
+  <link rel="icon" type="image/jpeg" href="assets/images/noivos_square.jpg">
+  <link rel="shortcut icon" type="image/jpeg" href="assets/images/noivos_square.jpg">
+  <link rel="apple-touch-icon" href="assets/images/noivos_square.jpg">
+
   <!-- Título e Meta Tags Open Graph -->
   <title>Casamento Crislayne &amp; Daniel</title>
   <meta name="description" content="Celebração de Casamento de Crislayne & Daniel • 21 de Novembro de 2026 às 18h00 no Maysa Recepções, Recife - PE.">
@@ -14,7 +19,11 @@
   <meta property="og:title" content="Crislayne &amp; Daniel — Convite de Casamento">
   <meta property="og:description" content="Com muita alegria, convidamos você para celebrar o nosso amor! Toque para abrir nosso convite de casamento.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="assets/images/noivos_portrait.jpg">
+  <meta property="og:image" content="assets/images/noivos_square.jpg">
+  <meta property="og:image:width" content="600">
+  <meta property="og:image:height" content="600">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="assets/images/noivos_square.jpg">
 
   <!-- Google Fonts de Alta Costura Editorial -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,7 +43,7 @@
   <script src="supabase_config.js"></script>
 
   <!-- Estilos Customizados com Estética Terracota Floral -->
-  <link rel="stylesheet" href="style.css?v=terracotta_floral_v3">
+  <link rel="stylesheet" href="style.css?v=parchment_dove_v4">
 </head>
 <body>
 
@@ -46,7 +55,7 @@
   </audio>
 
   <!-- ========================================================================== -->
-  <!-- 1. CAPA INICIAL DO CONVITE: ENVELOPE REALISTA FECHADO EM TERRACOTA & OURO -->
+  <!-- 1. CAPA INICIAL DO CONVITE: ENVELOPE VINTAGE MARFIM COM O SELO DA POMBA    -->
   <!-- ========================================================================== -->
   <div id="cover">
     <!-- Fundo imersivo com atmosfera floral terracota escura e vinheta aveludada -->
@@ -63,8 +72,8 @@
         <p class="envelope-top-date">21 de Novembro de 2026 • Maysa Recepções</p>
       </div>
 
-      <!-- O ENVELOPE FÍSICO REALISTA 3D FECHADO -->
-      <div class="envelope-3d-box" id="envelope-container" onclick="abrirConviteComAnimacao()" title="Toque no envelope para abrir o convite">
+      <!-- O ENVELOPE VINTAGE EM PAPEL MARFIM COM SELO DOURADO DA POMBA (ABRÍVEL EM 3D) -->
+      <div class="envelope-3d-box vintage-parchment" id="envelope-container" onclick="abrirConviteComAnimacao()" title="Toque no envelope para abrir o convite">
         
         <!-- Parede traseira interna do envelope -->
         <div class="envelope-back-wall"></div>
@@ -75,10 +84,10 @@
             <div class="inner-card-photo-wrap">
               <img src="assets/images/noivos_portrait.jpg" alt="Crislayne & Daniel" class="inner-card-photo">
             </div>
-            <p class="inner-card-script">Você é nosso convidado especial</p>
-            <h2 class="inner-card-monogram">C &amp; D</h2>
+            <p class="inner-card-script">Você é nosso convidado de honra</p>
+            <h2 class="inner-card-monogram">Crislayne &amp; Daniel</h2>
             <div class="inner-card-divider"></div>
-            <p class="inner-card-date">21 . 11 . 2026 • 18h00</p>
+            <p class="inner-card-date">21 • Novembro • 2026 • 18h00</p>
           </div>
         </div>
 
@@ -87,16 +96,16 @@
         <div class="envelope-side-fold fold-right"></div>
         <div class="envelope-bottom-fold"></div>
 
-        <!-- ABA SUPERIOR TRIANGULAR DO ENVELOPE (FLAP 3D) -->
+        <!-- ABA SUPERIOR TRIANGULAR DO ENVELOPE (FLAP 3D DOBRÁVEL) -->
         <div class="envelope-top-flap" id="envelope-flap">
           <div class="top-flap-triangle"></div>
         </div>
 
-        <!-- SELO DE LACRE DE CERA REALISTA COM MONOGRAMA C&D -->
+        <!-- SELO DE LACRE DE CERA DOURADO COM A POMBA (FOTO DE REFERÊNCIA) -->
         <div class="wax-seal-cluster" id="wax-seal-btn" title="Toque no lacre para abrir o convite">
           <div class="wax-seal-radiance"></div>
-          <div class="wax-seal-disc">
-            <span class="wax-monogram-text">C&amp;D</span>
+          <div class="wax-seal-disc vintage-dove-seal">
+            <img src="assets/images/vintage_dove_wax_seal.png" alt="Selo de Lacre Dourado Pomba" class="dove-seal-img">
           </div>
           <div class="wax-seal-caption">
             <i class="fa-solid fa-sparkles" style="color: #D4AF37;"></i> Toque para abrir
@@ -145,7 +154,7 @@
     <main class="container">
 
       <!-- ========================================================================== -->
-      <!-- HERO SECTION COM A FOTO DOS NOIVOS EMOLDURADA EM OURO E BOTÂNICA FLORAL   -->
+      <!-- HERO SECTION COM A FOTO DOS NOIVOS & CONTAGEM REGRESSIVA NO INÍCIO        -->
       <!-- ========================================================================== -->
       <section class="hero-section">
         
@@ -177,18 +186,51 @@
             <i class="fa-regular fa-calendar-check" style="color: #D4AF37;"></i>
             <span>21 de Novembro de 2026 (Sábado) • 18h00</span>
           </div>
+
+          <!-- CONTAGEM REGRESSIVA NO INÍCIO LOGO ABAIXO DA FOTO E DETALHES -->
+          <div class="hero-countdown-box">
+            <p class="countdown-hero-title">
+              <i class="fa-solid fa-hourglass-half" style="color: #D4AF37; margin-right: 6px;"></i>
+              Contagem Regressiva para o Grande Dia
+            </p>
+
+            <div class="countdown-display-grid">
+              <div class="count-block">
+                <span class="count-number" id="count-days">--</span>
+                <span class="count-text">Dias</span>
+              </div>
+              <div class="count-block">
+                <span class="count-number" id="count-hours">--</span>
+                <span class="count-text">Horas</span>
+              </div>
+              <div class="count-block">
+                <span class="count-number" id="count-minutes">--</span>
+                <span class="count-text">Minutos</span>
+              </div>
+              <div class="count-block">
+                <span class="count-number" id="count-seconds">--</span>
+                <span class="count-text">Segundos</span>
+              </div>
+            </div>
+
+            <button id="btn-add-calendar" class="btn-secondary btn-calendar-action">
+              <i class="fa-regular fa-calendar-plus" style="color: #8A331E;"></i>
+              <span>Salvar na Minha Agenda (Google / Apple)</span>
+            </button>
+          </div>
+
         </div>
       </section>
 
       <!-- ========================================================================== -->
-      <!-- GRID DOS CARDS PRINCIPAIS                                                  -->
+      <!-- GRID DOS CARDS PRINCIPAIS: LOCAL, RSVP E PIX                               -->
       <!-- ========================================================================== -->
       <div class="sections-grid">
         
         <!-- CARD 1: CERIMÔNIA E RECEPÇÃO (MAYSA RECEPÇÕES) -->
         <div class="card-section card-recepcao">
           <h2 class="card-title">
-            <i class="fa-solid fa-location-dot" style="color: #8C3F2B; margin-right: 0.4rem;"></i>
+            <i class="fa-solid fa-location-dot" style="color: #8A331E; margin-right: 0.4rem;"></i>
             Local da Celebração
           </h2>
 
@@ -208,7 +250,7 @@
 
           <!-- ENDEREÇO -->
           <div class="venue-address-box">
-            <i class="fa-solid fa-map-pin" style="color: #8C3F2B;"></i>
+            <i class="fa-solid fa-map-pin" style="color: #8A331E;"></i>
             <span id="venue-full-address">R. Prof. José Amarino dos Réis, 919-881 - Linha do Tiro, Recife - PE, 52131-320</span>
           </div>
 
@@ -260,7 +302,7 @@
         <!-- CARD 2: CONFIRMAÇÃO DE PRESENÇA (RSVP) -->
         <div class="card-section">
           <h2 class="card-title">
-            <i class="fa-regular fa-envelope" style="color: #8C3F2B; margin-right: 0.4rem;"></i>
+            <i class="fa-regular fa-envelope" style="color: #8A331E; margin-right: 0.4rem;"></i>
             <span>Confirmação de Presença</span>
           </h2>
           <p class="rsvp-notify-hint">Notificação enviada para: <strong>Crislayneevelin98@gmail.com</strong></p>
@@ -310,9 +352,9 @@
         </div>
 
         <!-- CARD 3: PRESENTES EM PIX -->
-        <div class="card-section">
+        <div class="card-section card-pix-full">
           <h2 class="card-title">
-            <i class="fa-solid fa-gift" style="color: #8C3F2B; margin-right: 0.4rem;"></i>
+            <i class="fa-solid fa-gift" style="color: #8A331E; margin-right: 0.4rem;"></i>
             <span>Presentes em Pix</span>
           </h2>
           <p class="pix-intro-text">
@@ -348,66 +390,55 @@
           </div>
         </div>
 
-        <!-- CARD 4: CONTAGEM REGRESSIVA & SALVAR NA AGENDA -->
-        <div class="card-section card-countdown-section">
-          <h2 class="card-title">
-            <i class="fa-solid fa-hourglass-half" style="color: #8C3F2B; margin-right: 0.4rem;"></i>
-            <span>Contagem Regressiva</span>
-          </h2>
-          <p class="countdown-hint">Falta pouco para o nosso grande dia!</p>
+      </div>
 
-          <div class="countdown-display-grid">
-            <div class="count-block">
-              <span class="count-number" id="count-days">--</span>
-              <span class="count-text">Dias</span>
-            </div>
-            <div class="count-block">
-              <span class="count-number" id="count-hours">--</span>
-              <span class="count-text">Horas</span>
-            </div>
-            <div class="count-block">
-              <span class="count-number" id="count-minutes">--</span>
-              <span class="count-text">Minutos</span>
-            </div>
-            <div class="count-block">
-              <span class="count-number" id="count-seconds">--</span>
-              <span class="count-text">Segundos</span>
-            </div>
-          </div>
+      <!-- ========================================================================== -->
+      <!-- CARD 4: MURAL DE RECADOS COM OS RECADOS AO LADO (DUAS COLUNAS LADO A LADO) -->
+      <!-- ========================================================================== -->
+      <div class="card-section card-mural-duplo">
+        <h2 class="card-title">
+          <i class="fa-regular fa-comment-dots" style="color: #8A331E; margin-right: 0.4rem;"></i>
+          <span>Mural de Recados aos Noivos</span>
+        </h2>
+        <p class="mural-intro-desc">Deixe uma mensagem carinhosa para Crislayne &amp; Daniel e celebre conosco!</p>
 
-          <button id="btn-add-calendar" class="btn-secondary btn-calendar-action">
-            <i class="fa-regular fa-calendar-plus" style="color: #8C3F2B;"></i>
-            <span>Salvar na Minha Agenda (Google / Apple)</span>
-          </button>
-        </div>
-
-        <!-- CARD 5: MURAL DE RECADOS -->
-        <div class="card-section card-mural">
-          <h2 class="card-title">
-            <i class="fa-regular fa-comment-dots" style="color: #8C3F2B; margin-right: 0.4rem;"></i>
-            <span>Mural de Recados</span>
-          </h2>
-          <p class="mural-hint">Deixe uma mensagem especial para Crislayne &amp; Daniel:</p>
+        <div class="mural-two-columns">
           
-          <form id="messageForm" class="form-styled">
-            <label for="msgAuthor">Seu Nome *</label>
-            <input type="text" id="msgAuthor" class="form-input" placeholder="Digite seu nome" required />
+          <!-- COLUNA ESQUERDA: FORMULÁRIO DE ENVIO -->
+          <div class="mural-col-form">
+            <h3 class="mural-subheading">
+              <i class="fa-solid fa-pen-nib" style="color: #C59B4E; margin-right: 6px;"></i>
+              Deixe seu Recado
+            </h3>
+            
+            <form id="messageForm" class="form-styled">
+              <label for="msgAuthor">Seu Nome *</label>
+              <input type="text" id="msgAuthor" class="form-input" placeholder="Digite seu nome completo" required />
 
-            <label for="msgContent">Sua Mensagem com Carinho *</label>
-            <textarea id="msgContent" class="form-input" rows="2" placeholder="Escreva um recado carinhoso para os noivos..." required></textarea>
+              <label for="msgContent">Sua Mensagem com Carinho *</label>
+              <textarea id="msgContent" class="form-input" rows="3" placeholder="Escreva uma mensagem especial para os noivos..." required></textarea>
 
-            <button type="submit" class="btn-primary" style="margin-top: 0.4rem;">
-              <i class="fa-solid fa-heart" style="margin-right: 4px;"></i> Publicar Mensagem
-            </button>
-          </form>
+              <button type="submit" class="btn-primary" style="margin-top: 0.4rem;">
+                <i class="fa-solid fa-heart" style="margin-right: 6px; color: #FFF8EB;"></i> Publicar Mensagem
+              </button>
+            </form>
+          </div>
 
-          <div id="mural-lista" class="mural-list-container">
-            <div class="mural-empty-box">
-              <p>Seja o primeiro a deixar um recado carinhoso para os noivos! 🤍</p>
+          <!-- COLUNA DIREITA: RECADOS DOS CONVIDADOS AO LADO -->
+          <div class="mural-col-messages">
+            <h3 class="mural-subheading">
+              <i class="fa-solid fa-comments" style="color: #C59B4E; margin-right: 6px;"></i>
+              Recados dos Convidados
+            </h3>
+            
+            <div id="mural-lista" class="mural-list-container">
+              <div class="mural-empty-box">
+                <p>Seja o primeiro a deixar um recado carinhoso para os noivos! 🤍</p>
+              </div>
             </div>
           </div>
-        </div>
 
+        </div>
       </div>
 
     </main>

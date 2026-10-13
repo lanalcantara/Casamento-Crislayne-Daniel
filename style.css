@@ -295,13 +295,14 @@ header.main-header {
     0 10px 30px rgba(160, 68, 44, 0.5) !important;
 }
 
-/* 1. Parede Traseira do Envelope */
-.envelope-back-wall {
+/* 1. Parede Traseira do Envelope em Pergaminho / Linho Vintage */
+.envelope-3d-box.vintage-parchment .envelope-back-wall {
   position: absolute !important;
   inset: 0 !important;
-  background: linear-gradient(135deg, #7A2F1C 0%, #541E11 100%) !important;
+  background: #EAE3D3 url('assets/images/linen_paper_texture.jpg') center/cover !important;
   border-radius: 12px !important;
-  border: 1px solid rgba(212, 175, 55, 0.4) !important;
+  border: 1px solid rgba(212, 175, 55, 0.45) !important;
+  box-shadow: inset 0 0 25px rgba(180, 160, 130, 0.35) !important;
   z-index: 1 !important;
 }
 
@@ -313,7 +314,7 @@ header.main-header {
   left: 6% !important;
   top: 7% !important;
   background: #FFFDF9 !important;
-  border: 1px solid #D4AF37 !important;
+  border: 1.5px solid #D4AF37 !important;
   border-radius: 8px !important;
   z-index: 2 !important;
   display: flex !important;
@@ -333,8 +334,8 @@ header.main-header {
 }
 
 .inner-card-photo-wrap {
-  width: 64px !important;
-  height: 64px !important;
+  width: 66px !important;
+  height: 66px !important;
   border-radius: 50% !important;
   border: 2px solid #D4AF37 !important;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2) !important;
@@ -351,18 +352,18 @@ header.main-header {
 
 .inner-card-script {
   font-family: 'Great Vibes', cursive !important;
-  font-size: 1.15rem !important;
+  font-size: 1.2rem !important;
   color: #C59B4E !important;
   line-height: 1 !important;
 }
 
 .inner-card-monogram {
   font-family: 'Playfair Display', serif !important;
-  font-size: 1.3rem !important;
+  font-size: 1.15rem !important;
   font-weight: 700 !important;
   color: #8A331E !important;
-  letter-spacing: 1.5px !important;
-  margin: 0.1rem 0 !important;
+  letter-spacing: 1px !important;
+  margin: 0.15rem 0 !important;
 }
 
 .inner-card-divider {
@@ -380,34 +381,39 @@ header.main-header {
   letter-spacing: 0.5px !important;
 }
 
-/* 3. Dobras Laterais do Envelope */
-.envelope-side-fold.fold-left {
+/* 3. Dobras Laterais do Envelope em Papel Artesanal Marfim/Pergaminho */
+.envelope-3d-box.vintage-parchment .envelope-side-fold.fold-left {
   position: absolute !important;
   inset: 0 !important;
   clip-path: polygon(0 0, 0 100%, 50% 50%) !important;
-  background: linear-gradient(to right, #84311D, #963B25) !important;
+  background: linear-gradient(to right, #DFD6C4, #EFE8DA), url('assets/images/linen_paper_texture.jpg') !important;
+  background-blend-mode: multiply !important;
   border-radius: 12px 0 0 12px !important;
+  box-shadow: inset 1px 0 8px rgba(0, 0, 0, 0.1) !important;
   z-index: 3 !important;
 }
 
-.envelope-side-fold.fold-right {
+.envelope-3d-box.vintage-parchment .envelope-side-fold.fold-right {
   position: absolute !important;
   inset: 0 !important;
   clip-path: polygon(100% 0, 100% 100%, 50% 50%) !important;
-  background: linear-gradient(to left, #84311D, #963B25) !important;
+  background: linear-gradient(to left, #DFD6C4, #EFE8DA), url('assets/images/linen_paper_texture.jpg') !important;
+  background-blend-mode: multiply !important;
   border-radius: 0 12px 12px 0 !important;
+  box-shadow: inset -1px 0 8px rgba(0, 0, 0, 0.1) !important;
   z-index: 3 !important;
 }
 
-/* 4. Dobra Inferior do Envelope */
-.envelope-bottom-fold {
+/* 4. Dobra Inferior do Envelope em Papel Artesanal Marfim */
+.envelope-3d-box.vintage-parchment .envelope-bottom-fold {
   position: absolute !important;
   inset: 0 !important;
   clip-path: polygon(0 100%, 100% 100%, 50% 50%) !important;
-  background: linear-gradient(to top, #712715, #88331E) !important;
+  background: linear-gradient(to top, #D6CBB7, #EDE6D8), url('assets/images/linen_paper_texture.jpg') !important;
+  background-blend-mode: multiply !important;
   border-radius: 0 0 12px 12px !important;
   z-index: 4 !important;
-  filter: drop-shadow(0 -3px 6px rgba(0, 0, 0, 0.35)) !important;
+  filter: drop-shadow(0 -4px 8px rgba(0, 0, 0, 0.16)) !important;
 }
 
 /* 5. Aba Superior do Envelope (Flap 3D Dobrável) */
@@ -422,17 +428,18 @@ header.main-header {
   transition: transform 0.85s cubic-bezier(0.4, 0, 0.2, 1), z-index 0.3s !important;
 }
 
-.top-flap-triangle {
+.envelope-3d-box.vintage-parchment .top-flap-triangle {
   width: 100% !important;
   height: 100% !important;
   clip-path: polygon(0 0, 100% 0, 50% 50%) !important;
-  background: linear-gradient(180deg, #A2442C 0%, #88331E 100%) !important;
-  border-top: 1.5px solid #D4AF37 !important;
-  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.4)) !important;
+  background: linear-gradient(180deg, #FAF6EE 0%, #E2D8C6 100%), url('assets/images/linen_paper_texture.jpg') !important;
+  background-blend-mode: multiply !important;
+  border-top: 1.5px solid #C59B4E !important;
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.35)) !important;
   border-radius: 12px 12px 0 0 !important;
 }
 
-/* 6. Selo de Cera 3D Centralizado */
+/* 6. Selo de Lacre de Cera Dourado com a Pomba da Foto */
 .wax-seal-cluster {
   position: absolute !important;
   top: 50% !important;
@@ -455,10 +462,10 @@ header.main-header {
   top: -6px !important;
   left: 50% !important;
   transform: translateX(-50%) !important;
-  width: 66px !important;
-  height: 66px !important;
+  width: 72px !important;
+  height: 72px !important;
   border-radius: 50% !important;
-  background: rgba(212, 175, 55, 0.3) !important;
+  background: rgba(212, 175, 55, 0.35) !important;
   animation: waxRadiance 2s infinite ease-out !important;
   z-index: 1 !important;
 }
@@ -469,33 +476,33 @@ header.main-header {
   100% { transform: translateX(-50%) scale(1.6); opacity: 0; }
 }
 
-.wax-seal-disc {
+.wax-seal-disc.vintage-dove-seal {
   position: relative !important;
   z-index: 2 !important;
-  width: 54px !important;
-  height: 54px !important;
-  border-radius: 50% !important;
-  background: radial-gradient(circle at 35% 35%, #BA5036 0%, #852C18 70%, #541709 100%) !important;
-  border: 2px solid #D4AF37 !important;
-  box-shadow: 
-    0 8px 20px rgba(0, 0, 0, 0.55), 
-    inset 0 2px 4px rgba(255, 255, 255, 0.4) !important;
+  width: 64px !important;
+  height: 64px !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
 }
 
-.wax-monogram-text {
-  font-family: 'Playfair Display', serif !important;
-  font-size: 1.15rem !important;
-  font-weight: 700 !important;
-  color: #FFF8EB !important;
-  letter-spacing: 1.5px !important;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6) !important;
+.dove-seal-img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.6)) drop-shadow(0 2px 4px rgba(212, 175, 55, 0.5)) !important;
+  transition: transform 0.25s ease !important;
+}
+
+.wax-seal-cluster:hover .dove-seal-img {
+  transform: scale(1.08) !important;
 }
 
 .wax-seal-caption {
-  margin-top: 8px !important;
+  margin-top: 6px !important;
   font-size: 0.72rem !important;
   font-weight: 700 !important;
   color: #FFFDF9 !important;
@@ -1082,20 +1089,34 @@ button.btn-primary:active, .btn-primary:active, a.btn-primary:active {
 }
 
 /* ==========================================================================
-   CONTAGEM REGRESSIVA CARD
+   CONTAGEM REGRESSIVA NO HERO & MURAL DUPLO
    ========================================================================== */
-.countdown-hint {
-  font-size: 0.9rem !important;
-  color: #5C3D31 !important;
+.hero-countdown-box {
+  margin-top: 1.5rem !important;
+  padding: 1.3rem !important;
+  background: #FAF5ED !important;
+  border: 1px solid rgba(212, 175, 55, 0.45) !important;
+  border-radius: 1.1rem !important;
+  box-shadow: inset 0 0 15px rgba(212, 175, 55, 0.08), 0 4px 15px rgba(0, 0, 0, 0.04) !important;
   text-align: center !important;
-  margin-bottom: 1.1rem !important;
+}
+
+.countdown-hero-title {
+  font-family: 'Playfair Display', serif !important;
+  font-size: 1.15rem !important;
+  font-weight: 700 !important;
+  color: #8A331E !important;
+  margin-bottom: 1rem !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
 
 .countdown-display-grid {
   display: grid !important;
   grid-template-columns: repeat(4, 1fr) !important;
   gap: 0.7rem !important;
-  margin-bottom: 1.3rem !important;
+  margin-bottom: 1.1rem !important;
 }
 
 .count-block {
@@ -1130,26 +1151,71 @@ button.btn-primary:active, .btn-primary:active, a.btn-primary:active {
   width: 100% !important;
 }
 
-/* ==========================================================================
-   MURAL DE RECADOS CARD
-   ========================================================================== */
-.mural-hint {
-  font-size: 0.88rem !important;
-  color: #5C3D31 !important;
-  text-align: center !important;
-  margin-bottom: 1rem !important;
+@media (min-width: 768px) {
+  .card-pix-full {
+    grid-column: 1 / -1 !important;
+    max-width: 640px !important;
+    margin: 0 auto !important;
+  }
 }
 
-.mural-list-container {
-  max-height: 330px !important;
+/* ==========================================================================
+   MURAL DE RECADOS DUPLO (FORMULÁRIO E RECADOS LADO A LADO)
+   ========================================================================== */
+.card-mural-duplo {
+  margin-top: 2.2rem !important;
+  width: 100% !important;
+}
+
+.mural-intro-desc {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-style: italic !important;
+  font-size: 1.05rem !important;
+  color: #5C3D31 !important;
+  text-align: center !important;
+  margin-bottom: 1.6rem !important;
+}
+
+.mural-two-columns {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 1.8rem !important;
+  align-items: start !important;
+}
+
+@media (min-width: 768px) {
+  .mural-two-columns {
+    grid-template-columns: 1.05fr 1fr !important;
+    gap: 2.2rem !important;
+  }
+}
+
+.mural-col-form, .mural-col-messages {
+  width: 100% !important;
+}
+
+.mural-subheading {
+  font-family: 'Playfair Display', serif !important;
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  color: #8A331E !important;
+  margin-bottom: 1rem !important;
+  display: flex !important;
+  align-items: center !important;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.35) !important;
+  padding-bottom: 0.5rem !important;
+}
+
+.mural-col-messages .mural-list-container {
+  max-height: 420px !important;
   overflow-y: auto !important;
-  padding-right: 4px !important;
-  margin-top: 1rem !important;
+  padding-right: 6px !important;
+  margin-top: 0 !important;
 }
 
 .mural-empty-box {
   border: 2px dashed #D9C3B0 !important;
-  padding: 1.3rem 1rem !important;
+  padding: 1.5rem 1rem !important;
   border-radius: 0.85rem !important;
   text-align: center !important;
 }
