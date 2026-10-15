@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
-  <meta name="theme-color" content="#F7F4EF">
+  <meta name="theme-color" content="#E8E1D3">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
 
-  <!-- Favicon / Ícone da Aba do Navegador (Foto REDONDA dos noivos no globinho) -->
-  <link rel="icon" type="image/png" href="assets/images/noivos_round.png?v=5">
-  <link rel="shortcut icon" type="image/png" href="assets/images/noivos_round.png?v=5">
-  <link rel="apple-touch-icon" href="assets/images/noivos_round.png?v=5">
+  <!-- Favicon / Ícone da Aba do Navegador (Foto Redonda dos Noivos) -->
+  <link rel="icon" type="image/png" href="assets/images/noivos_round.png?v=8">
+  <link rel="shortcut icon" type="image/png" href="assets/images/noivos_round.png?v=8">
+  <link rel="apple-touch-icon" href="assets/images/noivos_round.png?v=8">
 
   <!-- Título e Meta Tags Open Graph -->
   <title>Casamento Crislayne &amp; Daniel</title>
-  <meta name="description" content="Celebração de Casamento de Crislayne & Daniel • 21 de Novembro de 2026 às 18h00 no Maysa Recepções, Recife - PE.">
+  <meta name="description" content="Celebração de Casamento de Crislayne & Daniel • 21 de Novembro de 2026 às 18:00 no Maysa Recepções, Recife - PE.">
   <meta property="og:site_name" content="Convite Casamento Crislayne &amp; Daniel">
   <meta property="og:title" content="Crislayne &amp; Daniel — Convite de Casamento">
   <meta property="og:description" content="Com muita alegria, convidamos você para celebrar o nosso amor! Toque para abrir nosso convite de casamento.">
@@ -25,7 +25,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="assets/images/noivos_round.png">
 
-  <!-- Google Fonts de Alta Costura Editorial -->
+  <!-- Google Fonts de Alta Papelaria Editorial -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Great+Vibes&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -42,8 +42,8 @@
   <!-- Configurações do Convite -->
   <script src="supabase_config.js"></script>
 
-  <!-- Estilos Customizados com Estética Terracota Floral -->
-  <link rel="stylesheet" href="style.css?v=round_photo_v5">
+  <!-- Estilos Customizados: Rustic & Romantic • Cartão Único Unificado -->
+  <link rel="stylesheet" href="style.css?v=creme_linho_v10">
 </head>
 <body>
 
@@ -55,25 +55,24 @@
   </audio>
 
   <!-- ========================================================================== -->
-  <!-- 1. CAPA INICIAL DO CONVITE: ENVELOPE VINTAGE MARFIM COM O SELO DA POMBA    -->
+  <!-- 1. CAPA INICIAL: ENVELOPE AREIA/KRAFT NATURAL COM SELO DE LACRE TERRACOTA -->
   <!-- ========================================================================== -->
   <div id="cover">
-    <!-- Fundo imersivo com atmosfera floral terracota escura e vinheta aveludada -->
-    <div class="cover-backdrop-floral"></div>
-    <div class="cover-overlay-vignette"></div>
+    <!-- Fundo da Capa: Areia Quente / Creme Linho Suave e Iluminado (#F5F2EC) -->
+    <div class="cover-backdrop-clean"></div>
     <div class="ambient-petals" id="ambient-petals"></div>
 
     <div class="envelope-stage">
       
-      <!-- Cabeçalho de apresentação de alto prestígio acima do envelope -->
+      <!-- Apresentação superior acima do envelope -->
       <div class="envelope-top-badge">
         <span class="gold-sparkle-pill"><i class="fa-solid fa-sparkles"></i> CONVITE DE CASAMENTO <i class="fa-solid fa-sparkles"></i></span>
         <h1 class="envelope-top-names">Crislayne &amp; Daniel</h1>
         <p class="envelope-top-date">21 de Novembro de 2026 • Maysa Recepções</p>
       </div>
 
-      <!-- O ENVELOPE VINTAGE EM PAPEL MARFIM COM SELO DOURADO DA POMBA (ABRÍVEL EM 3D) -->
-      <div class="envelope-3d-box vintage-parchment" id="envelope-container" onclick="abrirConviteComAnimacao()" title="Toque no envelope para abrir o convite">
+      <!-- O ENVELOPE 3D EM PAPEL ARTESANAL KRAFT/AREIA COM SELO DE CERA TERRACOTA -->
+      <div class="envelope-3d-box kraft-rustic-envelope" id="envelope-container" onclick="abrirConviteComAnimacao()" title="Toque no envelope para abrir o convite">
         
         <!-- Parede traseira interna do envelope -->
         <div class="envelope-back-wall"></div>
@@ -87,7 +86,7 @@
             <p class="inner-card-script">Você é nosso convidado de honra</p>
             <h2 class="inner-card-monogram">Crislayne &amp; Daniel</h2>
             <div class="inner-card-divider"></div>
-            <p class="inner-card-date">21 • Novembro • 2026 • 18h00</p>
+            <p class="inner-card-date">21 • Novembro • 2026 • 18:00</p>
           </div>
         </div>
 
@@ -101,30 +100,24 @@
           <div class="top-flap-triangle"></div>
         </div>
 
-        <!-- SELO DE LACRE DE CERA DOURADO COM A POMBA (FOTO DE REFERÊNCIA) -->
+        <!-- SELO DE LACRE DE CERA CENTRAL EM TERRACOTA SUAVE COM A POMBA -->
         <div class="wax-seal-cluster" id="wax-seal-btn" title="Toque no lacre para abrir o convite">
           <div class="wax-seal-radiance"></div>
-          <div class="wax-seal-disc vintage-dove-seal">
-            <img src="assets/images/vintage_dove_wax_seal.png" alt="Selo de Lacre Dourado Pomba" class="dove-seal-img">
+          <div class="wax-seal-disc terracotta-dove-seal">
+            <img src="assets/images/terracotta_dove_wax_seal.png" alt="Selo de Lacre Terracota Pomba" class="dove-seal-img">
           </div>
           <div class="wax-seal-caption">
-            <i class="fa-solid fa-sparkles" style="color: #D4AF37;"></i> Toque para abrir
+            <i class="fa-solid fa-sparkles" style="color: #C59B4E;"></i> Toque para abrir
           </div>
         </div>
 
       </div>
 
-      <!-- BOTÃO INFERIOR DE ABERTURA ELEGANTE -->
-      <button id="btn-abrir" class="btn-abrir-luxo" onclick="abrirConviteComAnimacao()">
-        <i class="fa-solid fa-envelope-open-text" style="color: #D4AF37; margin-right: 8px;"></i>
-        <span>Abrir Convite Oficial</span>
-      </button>
-
     </div>
   </div>
 
   <!-- ========================================================================== -->
-  <!-- 2. SITE PRINCIPAL: ESTÉTICA TERRACOTA FLORAL & ALTA COSTURA EDITORIAL      -->
+  <!-- 2. SITE PRINCIPAL: CARTÃO CENTRAL UNIFICADO SOBRE FUNDO AREIA LINHO         -->
   <!-- ========================================================================== -->
   <div id="site-principal">
     
@@ -140,7 +133,7 @@
           <span class="bar b3"></span>
           <span class="bar b4"></span>
         </div>
-        <i id="music-icon" class="fa-solid fa-music" style="color: #D4AF37;"></i>
+        <i id="music-icon" class="fa-solid fa-music" style="color: #8A422D;"></i>
         <span class="music-text">Só Você — Anderson Freire</span>
       </div>
     </header>
@@ -151,92 +144,99 @@
       <span id="floating-music-text">Só Você</span>
     </div>
 
+    <!-- CONTAINER PRINCIPAL: ENVOLVE O CARTÃO ÚNICO CENTRAL -->
     <main class="container">
 
       <!-- ========================================================================== -->
-      <!-- HERO SECTION COM A FOTO DOS NOIVOS & CONTAGEM REGRESSIVA NO INÍCIO        -->
+      <!-- O CARTÃO CENTRAL UNIFICADO: TODO O CONVITE DENTRO DE UM ÚNICO BLOCO        -->
       <!-- ========================================================================== -->
-      <section class="hero-section">
-        
-        <div class="hero-photo-container">
-          <div class="hero-botanical-halo">
-            <img src="assets/images/boho_terracotta_floral.png" alt="Arranjo Botânico Terracota" class="hero-botanical-art">
-          </div>
-          <div class="hero-gold-ring">
-            <img 
-              src="assets/images/noivos_portrait.jpg" 
-              alt="Crislayne e Daniel" 
-              class="foto-casal"
-            >
-          </div>
+      <article class="unified-invitation-card">
+
+        <!-- RAMINHO BOTÂNICO EM AQUARELA NO TOPO DE DENTRO DO CARTÃO -->
+        <div class="card-botanical-crest-wrap">
+          <img src="assets/images/boho_terracotta_floral.png" alt="Arranjo Floral Terracota e Oliva" class="card-botanical-crest">
         </div>
-        
-        <div class="hero-content">
-          <span class="hero-tag">✦ Você é nosso convidado especial ✦</span>
-          <h1 class="hero-names">Crislayne &amp; Daniel</h1>
-          <p class="hero-script-subtitle">O Começo do Nosso Para Sempre</p>
-          <div class="hero-ornament-divider">
-            <span class="line"></span>
-            <i class="fa-solid fa-heart" style="color: #C59B4E; font-size: 0.9rem;"></i>
-            <span class="line"></span>
-          </div>
-          <p class="hero-phrase">"O tempo é muito lento para os que esperam, muito rápido para os que têm medo, muito longo para os que lamentam, muito curto para os que festejam... Mas, para os que amam, o tempo é eterno."</p>
+
+        <!-- 1. APRESENTAÇÃO E CITAÇÃO POÉTICA -->
+        <header class="invitation-intro">
+          <span class="invitation-tag">✦ Você é nosso convidado especial ✦</span>
+          <h1 class="invitation-names">Crislayne &amp; Daniel</h1>
+          <p class="invitation-script-subtitle">O Começo do Nosso Para Sempre</p>
           
-          <div class="hero-date-badge">
-            <i class="fa-regular fa-calendar-check" style="color: #D4AF37;"></i>
-            <span>21 de Novembro de 2026 (Sábado) • 18h00</span>
+          <div class="ornament-divider">
+            <span class="line"></span>
+            <i class="fa-solid fa-heart" style="color: #C59B4E; font-size: 0.85rem;"></i>
+            <span class="line"></span>
           </div>
 
-          <!-- CONTAGEM REGRESSIVA NO INÍCIO LOGO ABAIXO DA FOTO E DETALHES -->
-          <div class="hero-countdown-box">
-            <p class="countdown-hero-title">
-              <i class="fa-solid fa-hourglass-half" style="color: #D4AF37; margin-right: 6px;"></i>
+          <p class="invitation-quote">
+            "O tempo é muito lento para os que esperam<br>
+            Muito rápido para os que têm medo<br>
+            Muito longo para os que lamentam<br>
+            Muito curto para os que festejam<br>
+            Mas, para os que amam, o tempo é eterno."
+          </p>
+        </header>
+
+        <!-- 2. FOTO DOS NOIVOS (100% INTACTA E PRESERVADA) -->
+        <div class="couple-photo-wrap">
+          <div class="couple-photo-halo">
+            <img src="assets/images/boho_terracotta_floral.png" alt="Auréola Floral Boho" class="halo-art">
+          </div>
+          <div class="couple-photo-frame">
+            <img src="assets/images/noivos_portrait.jpg" alt="Crislayne e Daniel" class="couple-photo">
+          </div>
+        </div>
+
+        <!-- 3. DATA, HORÁRIO E CONTAGEM REGRESSIVA -->
+        <div class="invitation-date-block">
+          <div class="date-badge">
+            <i class="fa-regular fa-calendar-check" style="color: #FFFDF9; margin-right: 6px;"></i>
+            <span>21 de Novembro de 2026 – Sábado – Às 18:00</span>
+          </div>
+
+          <div class="countdown-inner-box">
+            <p class="countdown-title">
+              <i class="fa-solid fa-hourglass-half" style="color: #55654A; margin-right: 6px;"></i>
               Contagem Regressiva para o Grande Dia
             </p>
 
-            <div class="countdown-display-grid">
-              <div class="count-block">
-                <span class="count-number" id="count-days">--</span>
-                <span class="count-text">Dias</span>
+            <div class="countdown-grid">
+              <div class="count-box">
+                <span class="count-num" id="count-days">--</span>
+                <span class="count-lbl">Dias</span>
               </div>
-              <div class="count-block">
-                <span class="count-number" id="count-hours">--</span>
-                <span class="count-text">Horas</span>
+              <div class="count-box">
+                <span class="count-num" id="count-hours">--</span>
+                <span class="count-lbl">Horas</span>
               </div>
-              <div class="count-block">
-                <span class="count-number" id="count-minutes">--</span>
-                <span class="count-text">Minutos</span>
+              <div class="count-box">
+                <span class="count-num" id="count-minutes">--</span>
+                <span class="count-lbl">Minutos</span>
               </div>
-              <div class="count-block">
-                <span class="count-number" id="count-seconds">--</span>
-                <span class="count-text">Segundos</span>
+              <div class="count-box">
+                <span class="count-num" id="count-seconds">--</span>
+                <span class="count-lbl">Segundos</span>
               </div>
             </div>
 
             <button id="btn-add-calendar" class="btn-secondary btn-calendar-action">
-              <i class="fa-regular fa-calendar-plus" style="color: #8A331E;"></i>
+              <i class="fa-regular fa-calendar-plus" style="color: #8A422D; margin-right: 6px;"></i>
               <span>Salvar na Minha Agenda (Google / Apple)</span>
             </button>
           </div>
-
         </div>
-      </section>
 
-      <!-- ========================================================================== -->
-      <!-- GRID DOS CARDS PRINCIPAIS: LOCAL, RSVP E PIX                               -->
-      <!-- ========================================================================== -->
-      <div class="sections-grid">
-        
-        <!-- CARD 1: CERIMÔNIA E RECEPÇÃO (MAYSA RECEPÇÕES) -->
-        <div class="card-section card-recepcao">
-          <h2 class="card-title">
-            <i class="fa-solid fa-location-dot" style="color: #8A331E; margin-right: 0.4rem;"></i>
+        <div class="card-section-divider"></div>
+
+        <!-- 4. LOCAL DA CELEBRAÇÃO (MAYSA RECEPÇÕES) -->
+        <section class="card-section-item venue-section">
+          <h2 class="section-heading">
+            <i class="fa-solid fa-location-dot" style="color: #8A422D; margin-right: 0.4rem;"></i>
             Local da Celebração
           </h2>
+          <h3 class="venue-name">Maysa Recepções</h3>
 
-          <h3 class="venue-title">Maysa Recepções</h3>
-
-          <!-- INFO DATA E HORÁRIO -->
           <div class="info-grid">
             <div class="info-box">
               <span class="info-label">DATA</span>
@@ -244,13 +244,12 @@
             </div>
             <div class="info-box">
               <span class="info-label">HORÁRIO</span>
-              <strong class="info-val">18h00</strong>
+              <strong class="info-val">18:00</strong>
             </div>
           </div>
 
-          <!-- ENDEREÇO -->
           <div class="venue-address-box">
-            <i class="fa-solid fa-map-pin" style="color: #8A331E;"></i>
+            <i class="fa-solid fa-map-pin" style="color: #8A422D;"></i>
             <span id="venue-full-address">R. Prof. José Amarino dos Réis, 919-881 - Linha do Tiro, Recife - PE, 52131-320</span>
           </div>
 
@@ -258,17 +257,15 @@
             Após a cerimônia, os convidados serão recepcionados no mesmo local.
           </p>
 
-          <!-- BOTÃO GOOGLE MAPS -->
           <a 
             href="https://www.google.com/maps/search/?api=1&query=Maysa+Recep%C3%A7%C3%B5es+R.+Prof.+Jos%C3%A9+Amarino+dos+R%C3%A9is,+919-881+-+Linha+do+Tiro,+Recife+-+PE,+52131-320" 
             target="_blank" 
             rel="noopener noreferrer"
             class="btn-primary btn-maps"
           >
-            <i class="fa-solid fa-map-location-dot"></i> Abrir no Google Maps
+            <i class="fa-solid fa-map-location-dot" style="margin-right: 6px;"></i> Abrir no Google Maps
           </a>
 
-          <!-- BOTÕES SECUNDÁRIOS: WAZE E COPIAR ENDEREÇO -->
           <div class="venue-sub-actions">
             <a 
               href="https://waze.com/ul?q=Maysa%20Recepções%20Recife" 
@@ -276,34 +273,75 @@
               rel="noopener noreferrer"
               class="btn-secondary"
             >
-              <i class="fa-brands fa-waze"></i> Abrir no Waze
+              <i class="fa-brands fa-waze" style="margin-right: 5px;"></i> Abrir no Waze
             </a>
 
             <button type="button" id="btn-copy-address" class="btn-secondary">
-              <i class="fa-regular fa-copy"></i> Copiar Endereço
+              <i class="fa-regular fa-copy" style="margin-right: 5px;"></i> Copiar Endereço
             </button>
           </div>
 
-          <!-- MAPA EMBED INTERATIVO -->
           <div class="map-embed-frame">
             <iframe 
               title="Mapa Maysa Recepções"
               src="https://maps.google.com/maps?q=Maysa+Recep%C3%A7%C3%B5es+R.+Prof.+Jos%C3%A9+Amarino+dos+R%C3%A9is,+919-881+-+Linha+do+Tiro,+Recife+-+PE&t=&z=15&ie=UTF8&iwloc=&output=embed"
               width="100%" 
-              height="210" 
+              height="200" 
               style="border:0;" 
               allowfullscreen="" 
               loading="lazy" 
               referrerpolicy="no-referrer-when-downgrade">
             </iframe>
           </div>
-        </div>
+        </section>
 
-        <!-- CARD 2: CONFIRMAÇÃO DE PRESENÇA (RSVP) -->
-        <div class="card-section">
-          <h2 class="card-title">
-            <i class="fa-regular fa-envelope" style="color: #8A331E; margin-right: 0.4rem;"></i>
-            <span>Confirmação de Presença</span>
+        <div class="card-section-divider"></div>
+
+        <!-- 5. PRESENTES EM PIX -->
+        <section class="card-section-item pix-section">
+          <h2 class="section-heading">
+            <i class="fa-solid fa-gift" style="color: #8A422D; margin-right: 0.4rem;"></i>
+            Presentes em Pix
+          </h2>
+          <p class="pix-intro-text">
+            O maior presente para nós é compartilhar esse dia tão especial ao seu lado! Caso deseje nos presentear de forma prática para o início da nossa vida a dois, utilize a chave Pix abaixo:
+          </p>
+
+          <div class="pix-qr-container">
+            <img 
+              src="assets/images/pix_qrcode.png" 
+              alt="QR Code Pix - Crislayne Evelin" 
+              class="pix-qr-img"
+              onError="this.onerror=null; this.src='https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=81996946988';"
+            >
+            <p class="pix-qr-hint">Aponte a câmera do aplicativo do seu banco para transferir</p>
+          </div>
+
+          <div class="pix-box">
+            <p class="pix-box-label">Chave Pix (Telefone)</p>
+            <p class="pix-box-key" id="pix-key-val">81996946988</p>
+            <p class="pix-box-holder">Favorecida: <strong>Crislayne Evelin</strong> • Recife - PE</p>
+          </div>
+
+          <button id="btn-copiar-pix" class="btn-primary">
+            <i class="fa-regular fa-copy" style="margin-right: 0.4rem;"></i>
+            <span>Copiar Chave Pix</span>
+          </button>
+
+          <div id="pix-copiado-aviso" class="pix-copied-notice">
+            <i class="fa-solid fa-circle-check" style="color: #2E7D32; margin-right: 4px;"></i>
+            <span>Chave Pix Copiada com Sucesso!</span>
+            <p>Abra o app do seu banco e escolha a opção <strong>Pix Copia e Cola / Chave Telefone</strong> para transferir.</p>
+          </div>
+        </section>
+
+        <div class="card-section-divider"></div>
+
+        <!-- 6. CONFIRMAÇÃO DE PRESENÇA (RSVP) -->
+        <section class="card-section-item rsvp-section">
+          <h2 class="section-heading">
+            <i class="fa-regular fa-envelope" style="color: #8A422D; margin-right: 0.4rem;"></i>
+            Confirmação de Presença
           </h2>
           <p class="rsvp-notify-hint">Notificação enviada para: <strong>Crislayneevelin98@gmail.com</strong></p>
 
@@ -342,116 +380,75 @@
             <button type="submit" id="btn-rsvp" class="btn-primary" style="margin-top: 0.5rem;">Confirmar Presença</button>
           </form>
 
-          <!-- Link direto de WhatsApp -->
           <div class="rsvp-wa-direct">
             <span>Prefere falar direto com os noivos?</span>
             <a href="https://api.whatsapp.com/send?phone=5581996946988&text=Ol%C3%A1%20Crislayne%20e%20Daniel!%20Gostaria%20de%20confirmar%20minha%20presen%C3%A7a%20no%20casamento%20de%20voc%C3%AAs%20no%20dia%2021/11/2026!%20%F0%9F%8E%89%F0%9F%92%8D" target="_blank" rel="noopener noreferrer">
               <i class="fa-brands fa-whatsapp"></i> Confirmar pelo WhatsApp
             </a>
           </div>
-        </div>
+        </section>
 
-        <!-- CARD 3: PRESENTES EM PIX -->
-        <div class="card-section card-pix-full">
-          <h2 class="card-title">
-            <i class="fa-solid fa-gift" style="color: #8A331E; margin-right: 0.4rem;"></i>
-            <span>Presentes em Pix</span>
+        <div class="card-section-divider"></div>
+
+        <!-- 7. MURAL DE RECADOS AOS NOIVOS -->
+        <section class="card-section-item mural-section">
+          <h2 class="section-heading">
+            <i class="fa-regular fa-comment-dots" style="color: #8A422D; margin-right: 0.4rem;"></i>
+            Mural de Recados aos Noivos
           </h2>
-          <p class="pix-intro-text">
-            O maior presente para nós é compartilhar esse dia tão especial ao seu lado! Caso deseje nos presentear de forma prática para o início da nossa vida a dois, utilize a chave Pix abaixo:
-          </p>
+          <p class="mural-intro-desc">Deixe uma mensagem carinhosa para Crislayne &amp; Daniel e celebre conosco!</p>
 
-          <div class="pix-qr-container">
-            <img 
-              src="assets/images/pix_qrcode.png" 
-              alt="QR Code Pix - Crislayne Evelin" 
-              class="pix-qr-img"
-              onError="this.onerror=null; this.src='https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=81996946988';"
-            >
-            <p class="pix-qr-hint">Aponte a câmera do aplicativo do seu banco para transferir</p>
-          </div>
+          <div class="mural-layout-container">
+            <!-- FORMULÁRIO -->
+            <div class="mural-form-box">
+              <h3 class="mural-subheading">
+                <i class="fa-solid fa-pen-nib" style="color: #8A422D; margin-right: 6px;"></i>
+                Deixe seu Recado
+              </h3>
+              <form id="messageForm" class="form-styled">
+                <label for="msgAuthor">Seu Nome *</label>
+                <input type="text" id="msgAuthor" class="form-input" placeholder="Digite seu nome completo" required />
 
-          <div class="pix-box">
-            <p class="pix-box-label">Chave Pix (Telefone)</p>
-            <p class="pix-box-key" id="pix-key-val">81996946988</p>
-            <p class="pix-box-holder">Favorecida: <strong>Crislayne Evelin</strong> • Recife - PE</p>
-          </div>
+                <label for="msgContent">Sua Mensagem com Carinho *</label>
+                <textarea id="msgContent" class="form-input" rows="3" placeholder="Escreva uma mensagem especial para os noivos..." required></textarea>
 
-          <button id="btn-copiar-pix" class="btn-primary">
-            <i class="fa-regular fa-copy" style="margin-right: 0.4rem;"></i>
-            <span>Copiar Chave Pix</span>
-          </button>
+                <button type="submit" class="btn-primary" style="margin-top: 0.4rem;">
+                  <i class="fa-solid fa-heart" style="margin-right: 6px; color: #FFFDF9;"></i> Publicar Mensagem
+                </button>
+              </form>
+            </div>
 
-          <!-- Aviso de Pix Copiado com Sucesso -->
-          <div id="pix-copiado-aviso" class="pix-copied-notice">
-            <i class="fa-solid fa-circle-check" style="color: #2E7D32; margin-right: 4px;"></i>
-            <span>Chave Pix Copiada com Sucesso!</span>
-            <p>Abra o app do seu banco e escolha a opção <strong>Pix Copia e Cola / Chave Telefone</strong> para transferir.</p>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- ========================================================================== -->
-      <!-- CARD 4: MURAL DE RECADOS COM OS RECADOS AO LADO (DUAS COLUNAS LADO A LADO) -->
-      <!-- ========================================================================== -->
-      <div class="card-section card-mural-duplo">
-        <h2 class="card-title">
-          <i class="fa-regular fa-comment-dots" style="color: #8A331E; margin-right: 0.4rem;"></i>
-          <span>Mural de Recados aos Noivos</span>
-        </h2>
-        <p class="mural-intro-desc">Deixe uma mensagem carinhosa para Crislayne &amp; Daniel e celebre conosco!</p>
-
-        <div class="mural-two-columns">
-          
-          <!-- COLUNA ESQUERDA: FORMULÁRIO DE ENVIO -->
-          <div class="mural-col-form">
-            <h3 class="mural-subheading">
-              <i class="fa-solid fa-pen-nib" style="color: #C59B4E; margin-right: 6px;"></i>
-              Deixe seu Recado
-            </h3>
-            
-            <form id="messageForm" class="form-styled">
-              <label for="msgAuthor">Seu Nome *</label>
-              <input type="text" id="msgAuthor" class="form-input" placeholder="Digite seu nome completo" required />
-
-              <label for="msgContent">Sua Mensagem com Carinho *</label>
-              <textarea id="msgContent" class="form-input" rows="3" placeholder="Escreva uma mensagem especial para os noivos..." required></textarea>
-
-              <button type="submit" class="btn-primary" style="margin-top: 0.4rem;">
-                <i class="fa-solid fa-heart" style="margin-right: 6px; color: #FFF8EB;"></i> Publicar Mensagem
-              </button>
-            </form>
-          </div>
-
-          <!-- COLUNA DIREITA: RECADOS DOS CONVIDADOS AO LADO -->
-          <div class="mural-col-messages">
-            <h3 class="mural-subheading">
-              <i class="fa-solid fa-comments" style="color: #C59B4E; margin-right: 6px;"></i>
-              Recados dos Convidados
-            </h3>
-            
-            <div id="mural-lista" class="mural-list-container">
-              <div class="mural-empty-box">
-                <p>Seja o primeiro a deixar um recado carinhoso para os noivos! 🤍</p>
+            <!-- LISTA DE RECADOS -->
+            <div class="mural-list-box">
+              <h3 class="mural-subheading">
+                <i class="fa-solid fa-comments" style="color: #8A422D; margin-right: 6px;"></i>
+                Recados dos Convidados
+              </h3>
+              <div id="mural-lista" class="mural-list-container">
+                <div class="mural-empty-box">
+                  <p>Seja o primeiro a deixar um recado carinhoso para os noivos! 🤍</p>
+                </div>
               </div>
             </div>
           </div>
+        </section>
 
+        <!-- RAMINHO BOTÂNICO DELICADO NA BASE DE DENTRO DO CARTÃO -->
+        <div class="card-botanical-footer-wrap">
+          <img src="assets/images/boho_terracotta_floral.png" alt="Arranjo Botânico Base" class="card-botanical-footer">
         </div>
-      </div>
+
+        <!-- ENCERRAMENTO POÉTICO DENTRO DO CARTÃO -->
+        <div class="card-footer-sign">
+          <p class="footer-verse">"O amor tudo sofre, tudo crê, tudo espera, tudo suporta."</p>
+          <span class="footer-ref">1 Coríntios 13:7</span>
+          <p class="footer-couple">Crislayne &amp; Daniel</p>
+          <p class="footer-subtext">21 de Novembro de 2026 • Recife, PE</p>
+        </div>
+
+      </article>
 
     </main>
-
-    <!-- FOOTER ELEGANTE -->
-    <footer class="main-footer">
-      <p class="footer-script">Crislayne &amp; Daniel</p>
-      <p class="footer-verse">"O amor tudo sofre, tudo crê, tudo espera, tudo suporta."</p>
-      <span class="footer-ref">1 Coríntios 13:7</span>
-      <div class="footer-divider-gold"></div>
-      <p class="footer-date">21 de Novembro de 2026 • Recife, PE</p>
-      <p class="footer-credits">Feito com muito carinho para nossos familiares e amigos 🤍</p>
-    </footer>
 
   </div>
 

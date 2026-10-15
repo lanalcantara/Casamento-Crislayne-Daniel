@@ -1,9 +1,13 @@
 /* ==========================================================================
    CONVITE DE CASAMENTO DE LUXO - CRISLAYNE & DANIEL
-   Estética: Terracota Floral Haute Couture • Alta Papelaria & Casamento Rico
-   Paleta: Terracota Nobre (#8A331E, #9C3B23), Dourado Antigo (#C59B4E, #D4AF37),
-           Marfim Acetinado (#FFFDF9, #FAF5ED), Café Espresso (#2A1812) e
-           Atmosfera Floral Botânica Terracota Escura
+   Estética: Rustic & Romantic • Cartão Central Único Unificado
+   Paleta: 
+     - Fundo da Janela/Página: Areia quente / Creme Linho Puro (#F5F2EC)
+     - Cartão Central: Marfim/Creme claro quente e limpo (#FFFDF9)
+     - Envelope: Papel artesanal areia/kraft natural (#CBBBA5, #DECDB9)
+     - Selo de Lacre: Terracota suave com relevo da Pomba da Paz
+     - Tipografia: Marrom-café escuro profundo (#2E1C12 / #3A2618)
+     - Botões Principais: Terracota nobre sólido (#8A422D) com letras brancas (#FFFFFF)
    ========================================================================== */
 
 /* --- RESET & BOX SIZING --- */
@@ -16,87 +20,85 @@
 
 html {
   scroll-behavior: smooth;
+  font-size: 16px;
+  background-color: #E8E1D3 !important;
 }
 
+/* 1. FUNDO GERAL DA PÁGINA (FORA DO CARTÃO): AREIA LINHO SUAVE (#E8E1D3) */
 body {
-  background-color: #180D0A !important;
-  background-image: 
-    radial-gradient(ellipse at 50% 25%, rgba(46, 23, 18, 0.91) 0%, rgba(18, 9, 7, 0.97) 100%),
-    url('assets/images/terracotta_floral_ref.jpg') !important;
-  background-attachment: fixed !important;
-  background-size: cover !important;
-  background-position: center !important;
+  background-color: #E8E1D3 !important;
+  background-image: none !important;
   font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-  color: #2A1812 !important;
+  color: #2E1C12 !important;
   overflow-x: hidden !important;
+  min-height: 100vh !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 /* ==========================================================================
-   HEADER NOBRE COM PLAYER DE MÚSICA (STICKY E 100% RESPONSIVO)
+   HEADER COMPACTO STICKY COM PLAYER DE MÚSICA
    ========================================================================== */
 header.main-header {
   width: 100% !important;
-  padding: 0.85rem 1.25rem !important;
-  padding-top: max(0.85rem, env(safe-area-inset-top)) !important;
-  background: rgba(26, 14, 11, 0.94) !important;
+  padding: 0.75rem 1.25rem !important;
+  padding-top: max(0.75rem, env(safe-area-inset-top)) !important;
+  background: rgba(232, 225, 211, 0.96) !important;
   backdrop-filter: blur(14px) !important;
   -webkit-backdrop-filter: blur(14px) !important;
-  border-bottom: 1px solid rgba(212, 175, 55, 0.35) !important;
+  border-bottom: 1px solid rgba(138, 66, 45, 0.18) !important;
   display: flex !important;
   justify-content: space-between !important;
   align-items: center !important;
   position: sticky !important;
   top: 0 !important;
   z-index: 1000 !important;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4) !important;
+  box-shadow: 0 4px 18px rgba(46, 28, 18, 0.05) !important;
 }
 
 .logo-header {
   font-family: 'Playfair Display', serif !important;
-  font-size: 1.35rem !important;
+  font-size: 1.25rem !important;
   font-weight: 700 !important;
-  color: #D4AF37 !important;
+  color: #8A422D !important;
   letter-spacing: 2px !important;
   text-decoration: none !important;
   flex-shrink: 0 !important;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) !important;
 }
 
 .header-music-info {
-  font-size: 0.82rem !important;
-  color: #FFF8EB !important;
+  font-size: 0.78rem !important;
+  color: #2E1C12 !important;
   display: inline-flex !important;
   align-items: center !important;
-  gap: 8px !important;
-  padding: 0.4rem 0.95rem !important;
-  background: rgba(48, 26, 20, 0.85) !important;
-  border: 1px solid rgba(212, 175, 55, 0.45) !important;
+  gap: 7px !important;
+  padding: 0.35rem 0.85rem !important;
+  background: #FAF5ED !important;
+  border: 1px solid rgba(138, 66, 45, 0.3) !important;
   border-radius: 9999px !important;
   cursor: pointer !important;
   user-select: none !important;
   transition: all 0.25s ease !important;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25) !important;
+  box-shadow: 0 2px 6px rgba(46, 28, 18, 0.05) !important;
 }
 
 .header-music-info:active {
   transform: scale(0.96) !important;
-  background: rgba(65, 34, 27, 0.95) !important;
+  background: #EAE1D3 !important;
 }
 
-/* Equalizer Bars Animadas em Ouro */
+/* Equalizer Bars Animadas */
 .music-wave-bars {
   display: inline-flex !important;
   align-items: flex-end !important;
-  gap: 2.5px !important;
-  height: 13px !important;
+  gap: 2px !important;
+  height: 12px !important;
   margin-right: 2px !important;
 }
 
 .music-wave-bars .bar {
-  width: 2.4px !important;
-  background-color: #D4AF37 !important;
+  width: 2.2px !important;
+  background-color: #8A422D !important;
   border-radius: 2px !important;
   height: 3px !important;
   transition: height 0.2s ease !important;
@@ -113,40 +115,44 @@ header.main-header {
 
 @keyframes barBounce {
   0% { height: 3px; }
-  50% { height: 13px; }
+  50% { height: 12px; }
   100% { height: 5px; }
 }
 
 /* BOTÃO FLUTUANTE DE ÁUDIO NO CANTO DA TELA */
 .floating-music-btn {
   position: fixed !important;
-  bottom: max(16px, env(safe-area-inset-bottom)) !important;
-  left: 16px !important;
+  bottom: 20px !important;
+  right: 18px !important;
   z-index: 9999 !important;
-  background: rgba(32, 17, 13, 0.95) !important;
-  backdrop-filter: blur(12px) !important;
-  -webkit-backdrop-filter: blur(12px) !important;
-  border: 1px solid #D4AF37 !important;
-  padding: 0.5rem 0.95rem !important;
+  background: #FAF5ED !important;
+  color: #2E1C12 !important;
+  border: 1.5px solid #8A422D !important;
   border-radius: 9999px !important;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45), 0 2px 8px rgba(140, 63, 43, 0.3) !important;
-  display: flex !important;
+  padding: 0.5rem 0.95rem !important;
+  display: inline-flex !important;
   align-items: center !important;
-  gap: 8px !important;
-  cursor: pointer !important;
-  color: #FFF8EB !important;
-  font-weight: 600 !important;
+  gap: 7px !important;
   font-size: 0.8rem !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  box-shadow: 0 8px 25px rgba(46, 28, 18, 0.18) !important;
   transition: all 0.25s ease !important;
+  user-select: none !important;
+}
+
+.floating-music-btn:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 10px 28px rgba(46, 28, 18, 0.24) !important;
 }
 
 .floating-music-btn:active {
-  transform: scale(0.95) !important;
+  transform: scale(0.96) !important;
 }
 
 .disc-spinning {
-  font-size: 1.1rem !important;
-  color: #D4AF37 !important;
+  color: #8A422D !important;
+  font-size: 0.95rem !important;
   animation: spinDisc 3s linear infinite !important;
 }
 
@@ -161,7 +167,7 @@ header.main-header {
 }
 
 /* ==========================================================================
-   1. CAPA INICIAL COM O ENVELOPE REALISTA FECHADO 3D (#COVER)
+   1. CAPA INICIAL COM O ENVELOPE AREIA / KRAFT NATURAL (#COVER)
    ========================================================================== */
 #cover {
   position: fixed !important;
@@ -171,6 +177,7 @@ header.main-header {
   align-items: center !important;
   justify-content: center !important;
   padding: 1.2rem 1rem !important;
+  background-color: #E8E1D3 !important;
   overflow-y: auto !important;
   -webkit-overflow-scrolling: touch !important;
   transition: opacity 0.85s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.85s cubic-bezier(0.4, 0, 0.2, 1), transform 0.85s cubic-bezier(0.4, 0, 0.2, 1) !important;
@@ -180,38 +187,28 @@ header.main-header {
   opacity: 0 !important;
   visibility: hidden !important;
   pointer-events: none !important;
-  transform: scale(1.05) !important;
-}
-
-/* Fundo Imersivo da Capa */
-.cover-backdrop-floral {
-  position: absolute !important;
-  inset: 0 !important;
-  background-image: url('assets/images/terracotta_floral_ref.jpg') !important;
-  background-size: cover !important;
-  background-position: center !important;
-  filter: brightness(0.65) saturate(1.15) !important;
   transform: scale(1.04) !important;
-  z-index: 1 !important;
 }
 
-.cover-overlay-vignette {
+/* Fundo da Capa: Areia Quente / Creme Linho Suave (#E8E1D3) sem qualquer brilho branco */
+.cover-backdrop-clean {
   position: absolute !important;
   inset: 0 !important;
-  background: radial-gradient(circle at center, rgba(38, 20, 16, 0.78) 0%, rgba(15, 8, 6, 0.95) 100%) !important;
-  z-index: 2 !important;
+  background-color: #E8E1D3 !important;
+  background-image: radial-gradient(ellipse at center, #F2EBDE 0%, #E8E1D3 65%, #DDD4C4 100%) !important;
+  z-index: 1 !important;
 }
 
 .ambient-petals {
   position: absolute !important;
   inset: 0 !important;
   pointer-events: none !important;
-  z-index: 3 !important;
+  z-index: 2 !important;
   background-image: 
-    radial-gradient(circle at 18% 22%, rgba(212, 175, 55, 0.2) 0%, transparent 8%),
-    radial-gradient(circle at 82% 78%, rgba(160, 68, 44, 0.25) 0%, transparent 10%),
-    radial-gradient(circle at 75% 15%, rgba(212, 175, 55, 0.18) 0%, transparent 6%),
-    radial-gradient(circle at 25% 85%, rgba(140, 63, 43, 0.2) 0%, transparent 7%) !important;
+    radial-gradient(circle at 18% 22%, rgba(192, 104, 76, 0.12) 0%, transparent 8%),
+    radial-gradient(circle at 82% 78%, rgba(85, 101, 74, 0.12) 0%, transparent 10%),
+    radial-gradient(circle at 75% 15%, rgba(197, 155, 78, 0.14) 0%, transparent 6%),
+    radial-gradient(circle at 25% 85%, rgba(138, 66, 45, 0.12) 0%, transparent 7%) !important;
 }
 
 /* PALCO DO ENVELOPE */
@@ -230,7 +227,7 @@ header.main-header {
 /* Apresentação superior acima do envelope */
 .envelope-top-badge {
   text-align: center !important;
-  margin-bottom: 1rem !important;
+  margin-bottom: 0.8rem !important;
 }
 
 .gold-sparkle-pill {
@@ -240,37 +237,35 @@ header.main-header {
   font-size: 0.72rem !important;
   letter-spacing: 2px !important;
   text-transform: uppercase !important;
-  color: #D4AF37 !important;
+  color: #8A422D !important;
   font-weight: 700 !important;
   padding: 4px 14px !important;
-  background: rgba(38, 20, 16, 0.8) !important;
-  border: 1px solid rgba(212, 175, 55, 0.5) !important;
+  background: #FAF5ED !important;
+  border: 1px solid rgba(138, 66, 45, 0.3) !important;
   border-radius: 9999px !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
-  margin-bottom: 0.5rem !important;
+  box-shadow: 0 2px 8px rgba(46, 28, 18, 0.06) !important;
+  margin-bottom: 0.45rem !important;
 }
 
 .envelope-top-names {
   font-family: 'Playfair Display', serif !important;
   font-size: clamp(2rem, 7vw, 2.7rem) !important;
   font-weight: 700 !important;
-  color: #FFF8EB !important;
+  color: #2E1C12 !important;
   line-height: 1.15 !important;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6) !important;
 }
 
 .envelope-top-date {
   font-family: 'Cormorant Garamond', serif !important;
-  font-size: 1.05rem !important;
+  font-size: 1.1rem !important;
   font-style: italic !important;
-  color: #E6C88A !important;
+  color: #5C3D2E !important;
   letter-spacing: 0.5px !important;
   margin-top: 0.2rem !important;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) !important;
 }
 
 /* ==========================================================================
-   ESTRUTURA FÍSICA DO ENVELOPE 3D FECHADO
+   ESTRUTURA FÍSICA DO ENVELOPE 3D EM PAPEL ARTESANAL KRAFT/AREIA
    ========================================================================== */
 .envelope-3d-box {
   position: relative !important;
@@ -280,10 +275,10 @@ header.main-header {
   perspective: 1200px !important;
   cursor: pointer !important;
   border-radius: 12px !important;
-  margin: 0.6rem 0 1.2rem 0 !important;
+  margin: 0.6rem 0 0.8rem 0 !important;
   box-shadow: 
-    0 25px 65px rgba(0, 0, 0, 0.65), 
-    0 8px 25px rgba(140, 63, 43, 0.4) !important;
+    0 22px 55px rgba(46, 28, 18, 0.22), 
+    0 6px 18px rgba(138, 66, 45, 0.12) !important;
   user-select: none !important;
   transition: transform 0.4s ease, box-shadow 0.4s ease !important;
 }
@@ -291,30 +286,31 @@ header.main-header {
 .envelope-3d-box:hover {
   transform: translateY(-4px) !important;
   box-shadow: 
-    0 30px 75px rgba(0, 0, 0, 0.75), 
-    0 10px 30px rgba(160, 68, 44, 0.5) !important;
+    0 26px 65px rgba(46, 28, 18, 0.28), 
+    0 8px 24px rgba(138, 66, 45, 0.16) !important;
 }
 
-/* 1. Parede Traseira do Envelope em Pergaminho / Linho Vintage */
-.envelope-3d-box.vintage-parchment .envelope-back-wall {
+/* Parede Traseira do Envelope em Areia/Kraft */
+.envelope-3d-box .envelope-back-wall {
   position: absolute !important;
   inset: 0 !important;
-  background: #EAE3D3 url('assets/images/linen_paper_texture.jpg') center/cover !important;
+  background: #C4B39C url('assets/images/linen_paper_texture.jpg') center/cover !important;
+  background-blend-mode: multiply !important;
   border-radius: 12px !important;
-  border: 1px solid rgba(212, 175, 55, 0.45) !important;
-  box-shadow: inset 0 0 25px rgba(180, 160, 130, 0.35) !important;
+  border: 1px solid rgba(138, 66, 45, 0.25) !important;
+  box-shadow: inset 0 0 25px rgba(100, 78, 56, 0.3) !important;
   z-index: 1 !important;
 }
 
-/* 2. Cartão Interno que desliza para fora */
+/* Cartão Interno que desliza para fora */
 .envelope-inner-card {
   position: absolute !important;
   width: 88% !important;
   height: 86% !important;
   left: 6% !important;
   top: 7% !important;
-  background: #FFFDF9 !important;
-  border: 1.5px solid #D4AF37 !important;
+  background: #F4ECE0 !important;
+  border: 1.5px solid #C59B4E !important;
   border-radius: 8px !important;
   z-index: 2 !important;
   display: flex !important;
@@ -323,7 +319,7 @@ header.main-header {
   justify-content: center !important;
   text-align: center !important;
   padding: 0.8rem !important;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25) !important;
+  box-shadow: 0 4px 15px rgba(46, 28, 18, 0.15) !important;
   transition: transform 0.95s 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
 }
 
@@ -337,8 +333,8 @@ header.main-header {
   width: 66px !important;
   height: 66px !important;
   border-radius: 50% !important;
-  border: 2px solid #D4AF37 !important;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2) !important;
+  border: 2px solid #8A422D !important;
+  box-shadow: 0 3px 8px rgba(46, 28, 18, 0.15) !important;
   overflow: hidden !important;
   margin-bottom: 0.35rem !important;
 }
@@ -355,7 +351,7 @@ header.main-header {
 .inner-card-script {
   font-family: 'Great Vibes', cursive !important;
   font-size: 1.2rem !important;
-  color: #C59B4E !important;
+  color: #8A422D !important;
   line-height: 1 !important;
 }
 
@@ -363,7 +359,7 @@ header.main-header {
   font-family: 'Playfair Display', serif !important;
   font-size: 1.15rem !important;
   font-weight: 700 !important;
-  color: #8A331E !important;
+  color: #2E1C12 !important;
   letter-spacing: 1px !important;
   margin: 0.15rem 0 !important;
 }
@@ -371,7 +367,7 @@ header.main-header {
 .inner-card-divider {
   width: 32px !important;
   height: 1px !important;
-  background: #D4AF37 !important;
+  background: #C59B4E !important;
   margin: 0.25rem 0 !important;
 }
 
@@ -379,46 +375,46 @@ header.main-header {
   font-family: 'Plus Jakarta Sans', sans-serif !important;
   font-size: 0.72rem !important;
   font-weight: 700 !important;
-  color: #78716C !important;
+  color: #5C3D2E !important;
   letter-spacing: 0.5px !important;
 }
 
-/* 3. Dobras Laterais do Envelope em Papel Artesanal Marfim/Pergaminho */
-.envelope-3d-box.vintage-parchment .envelope-side-fold.fold-left {
+/* Dobras Laterais do Envelope */
+.envelope-3d-box .envelope-side-fold.fold-left {
   position: absolute !important;
   inset: 0 !important;
   clip-path: polygon(0 0, 0 100%, 50% 50%) !important;
-  background: linear-gradient(to right, #DFD6C4, #EFE8DA), url('assets/images/linen_paper_texture.jpg') !important;
+  background: linear-gradient(to right, #BFAFA0, #D6C8B8), url('assets/images/linen_paper_texture.jpg') !important;
   background-blend-mode: multiply !important;
   border-radius: 12px 0 0 12px !important;
-  box-shadow: inset 1px 0 8px rgba(0, 0, 0, 0.1) !important;
+  box-shadow: inset 1px 0 8px rgba(46, 28, 18, 0.12) !important;
   z-index: 3 !important;
 }
 
-.envelope-3d-box.vintage-parchment .envelope-side-fold.fold-right {
+.envelope-3d-box .envelope-side-fold.fold-right {
   position: absolute !important;
   inset: 0 !important;
   clip-path: polygon(100% 0, 100% 100%, 50% 50%) !important;
-  background: linear-gradient(to left, #DFD6C4, #EFE8DA), url('assets/images/linen_paper_texture.jpg') !important;
+  background: linear-gradient(to left, #BFAFA0, #D6C8B8), url('assets/images/linen_paper_texture.jpg') !important;
   background-blend-mode: multiply !important;
   border-radius: 0 12px 12px 0 !important;
-  box-shadow: inset -1px 0 8px rgba(0, 0, 0, 0.1) !important;
+  box-shadow: inset -1px 0 8px rgba(46, 28, 18, 0.12) !important;
   z-index: 3 !important;
 }
 
-/* 4. Dobra Inferior do Envelope em Papel Artesanal Marfim */
-.envelope-3d-box.vintage-parchment .envelope-bottom-fold {
+/* Dobra Inferior do Envelope */
+.envelope-3d-box .envelope-bottom-fold {
   position: absolute !important;
   inset: 0 !important;
   clip-path: polygon(0 100%, 100% 100%, 50% 50%) !important;
-  background: linear-gradient(to top, #D6CBB7, #EDE6D8), url('assets/images/linen_paper_texture.jpg') !important;
+  background: linear-gradient(to top, #B5A492, #D0C2B0), url('assets/images/linen_paper_texture.jpg') !important;
   background-blend-mode: multiply !important;
   border-radius: 0 0 12px 12px !important;
   z-index: 4 !important;
-  filter: drop-shadow(0 -4px 8px rgba(0, 0, 0, 0.16)) !important;
+  filter: drop-shadow(0 -4px 8px rgba(46, 28, 18, 0.16)) !important;
 }
 
-/* 5. Aba Superior do Envelope (Flap 3D Dobrável) */
+/* Aba Superior do Envelope (Flap 3D Dobrável) */
 .envelope-top-flap {
   position: absolute !important;
   top: 0 !important;
@@ -430,18 +426,18 @@ header.main-header {
   transition: transform 0.85s cubic-bezier(0.4, 0, 0.2, 1), z-index 0.3s !important;
 }
 
-.envelope-3d-box.vintage-parchment .top-flap-triangle {
+.envelope-3d-box .top-flap-triangle {
   width: 100% !important;
   height: 100% !important;
   clip-path: polygon(0 0, 100% 0, 50% 50%) !important;
-  background: linear-gradient(180deg, #FAF6EE 0%, #E2D8C6 100%), url('assets/images/linen_paper_texture.jpg') !important;
+  background: linear-gradient(180deg, #DBCBB7 0%, #BDAE9B 100%), url('assets/images/linen_paper_texture.jpg') !important;
   background-blend-mode: multiply !important;
-  border-top: 1.5px solid #C59B4E !important;
-  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.35)) !important;
+  border-top: 1.5px solid #8A422D !important;
+  filter: drop-shadow(0 6px 14px rgba(46, 28, 18, 0.22)) !important;
   border-radius: 12px 12px 0 0 !important;
 }
 
-/* 6. Selo de Lacre de Cera Dourado com a Pomba da Foto */
+/* Selo de Lacre Central em Terracota Suave com Pomba */
 .wax-seal-cluster {
   position: absolute !important;
   top: 50% !important;
@@ -464,10 +460,10 @@ header.main-header {
   top: -6px !important;
   left: 50% !important;
   transform: translateX(-50%) !important;
-  width: 72px !important;
-  height: 72px !important;
+  width: 76px !important;
+  height: 76px !important;
   border-radius: 50% !important;
-  background: rgba(212, 175, 55, 0.35) !important;
+  background: rgba(192, 104, 76, 0.3) !important;
   animation: waxRadiance 2s infinite ease-out !important;
   z-index: 1 !important;
 }
@@ -478,11 +474,11 @@ header.main-header {
   100% { transform: translateX(-50%) scale(1.6); opacity: 0; }
 }
 
-.wax-seal-disc.vintage-dove-seal {
+.wax-seal-disc {
   position: relative !important;
   z-index: 2 !important;
-  width: 64px !important;
-  height: 64px !important;
+  width: 72px !important;
+  height: 72px !important;
   background: transparent !important;
   border: none !important;
   box-shadow: none !important;
@@ -495,7 +491,7 @@ header.main-header {
   width: 100% !important;
   height: 100% !important;
   object-fit: contain !important;
-  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.6)) drop-shadow(0 2px 4px rgba(212, 175, 55, 0.5)) !important;
+  filter: drop-shadow(0 6px 14px rgba(46, 28, 18, 0.35)) drop-shadow(0 2px 4px rgba(192, 104, 76, 0.35)) !important;
   transition: transform 0.25s ease !important;
 }
 
@@ -505,14 +501,14 @@ header.main-header {
 
 .wax-seal-caption {
   margin-top: 6px !important;
-  font-size: 0.72rem !important;
+  font-size: 0.74rem !important;
   font-weight: 700 !important;
   color: #FFFDF9 !important;
-  background: rgba(35, 17, 13, 0.92) !important;
-  border: 1px solid #D4AF37 !important;
+  background: #8A422D !important;
+  border: 1px solid #C59B4E !important;
   border-radius: 9999px !important;
-  padding: 3px 11px !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+  padding: 4px 12px !important;
+  box-shadow: 0 4px 12px rgba(46, 28, 18, 0.2) !important;
   white-space: nowrap !important;
   letter-spacing: 0.4px !important;
   animation: bounceHint 2s infinite ease-in-out !important;
@@ -523,36 +519,7 @@ header.main-header {
   50% { transform: translateY(-4px); }
 }
 
-/* BOTÃO DE ABERTURA DIRETA DE ALTO LUXO */
-.btn-abrir-luxo {
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  gap: 8px !important;
-  padding: 0.85rem 1.8rem !important;
-  background: linear-gradient(135deg, #A8452D 0%, #7D2D1A 100%) !important;
-  color: #FFF8EB !important;
-  border: 1.5px solid #D4AF37 !important;
-  border-radius: 9999px !important;
-  font-family: 'Plus Jakarta Sans', sans-serif !important;
-  font-weight: 700 !important;
-  font-size: 0.95rem !important;
-  letter-spacing: 0.4px !important;
-  cursor: pointer !important;
-  box-shadow: 
-    0 8px 25px rgba(0, 0, 0, 0.45), 
-    0 3px 10px rgba(168, 69, 45, 0.4) !important;
-  transition: all 0.25s ease !important;
-}
-
-.btn-abrir-luxo:active {
-  transform: scale(0.96) !important;
-  background: linear-gradient(135deg, #8E3823 0%, #662212 100%) !important;
-}
-
-/* ==========================================================================
-   ANIMAÇÃO DE ABERTURA DO ENVELOPE (QUANDO ACIONADO)
-   ========================================================================== */
+/* Animação de Abertura */
 .envelope-3d-box.opening .envelope-top-flap {
   transform: rotateX(180deg) !important;
   z-index: 1 !important;
@@ -567,150 +534,86 @@ header.main-header {
 .envelope-3d-box.opening .envelope-inner-card {
   transform: translateY(-90px) scale(1.04) !important;
   z-index: 7 !important;
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.4) !important;
+  box-shadow: 0 18px 40px rgba(46, 28, 18, 0.25) !important;
 }
 
 /* ==========================================================================
-   2. SITE PRINCIPAL: ESTRUTURA EDITORIAL & ESTÉTICA CASAMENTO RICO
+   2. O CARTÃO CENTRAL UNIFICADO: TODO O CONVITE DENTRO DE UM ÚNICO BLOCO
    ========================================================================== */
 main.container, .container {
-  max-width: 980px !important;
+  max-width: 720px !important;
   margin: 0 auto !important;
   padding: 1.5rem 1rem 3.5rem 1rem !important;
   display: block !important;
 }
 
-@media (min-width: 768px) {
-  main.container, .container {
-    padding: 2.5rem 1.5rem 4.5rem 1.5rem !important;
-  }
-}
-
-/* ==========================================================================
-   HERO SECTION COM FOTO EMOLDURADA EM OURO E ARRANJO BOTÂNICO
-   ========================================================================== */
-.hero-section {
-  background: #FFFDF9 !important;
-  border: 1px solid rgba(212, 175, 55, 0.45) !important;
+.unified-invitation-card {
+  background: #F4ECE0 !important;
+  border: 1.5px solid rgba(197, 155, 78, 0.5) !important;
   border-radius: 1.5rem !important;
-  padding: 2rem 1.2rem !important;
+  padding: 2.2rem 1.6rem 3rem 1.6rem !important;
   box-shadow: 
-    0 20px 55px rgba(0, 0, 0, 0.45), 
-    0 4px 15px rgba(140, 63, 43, 0.15) !important;
-  display: grid !important;
-  grid-template-columns: 1fr !important;
-  gap: 1.5rem !important;
-  align-items: center !important;
-  position: static !important;
-  transform: none !important;
-  margin-bottom: 2rem !important;
-}
-
-@media (min-width: 768px) {
-  .hero-section {
-    grid-template-columns: 330px 1fr !important;
-    padding: 2.5rem 2rem !important;
-    gap: 2.2rem !important;
-  }
-}
-
-/* Foto com Anel Dourado e Auréola Botânica */
-.hero-photo-container {
+    0 16px 50px rgba(60, 44, 32, 0.1), 
+    0 3px 12px rgba(138, 66, 45, 0.06) !important;
   position: relative !important;
-  width: 220px !important;
-  height: 220px !important;
+  overflow: hidden !important;
+  width: 100% !important;
   margin: 0 auto !important;
+}
+
+/* Raminho Botânico em Aquarela no Topo de Dentro do Cartão */
+.card-botanical-crest-wrap {
+  width: 100% !important;
+  max-width: 140px !important;
+  height: 65px !important;
+  margin: 0 auto 0.6rem auto !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-}
-
-@media (min-width: 768px) {
-  .hero-photo-container {
-    width: 280px !important;
-    height: 280px !important;
-  }
-}
-
-.hero-botanical-halo {
-  position: absolute !important;
-  inset: -35px !important;
-  z-index: 1 !important;
   pointer-events: none !important;
 }
 
-.hero-botanical-art {
+.card-botanical-crest {
   width: 100% !important;
   height: 100% !important;
   object-fit: contain !important;
   opacity: 0.85 !important;
-  mix-blend-mode: multiply !important;
 }
 
-.hero-gold-ring {
-  position: relative !important;
-  z-index: 2 !important;
-  width: 195px !important;
-  height: 195px !important;
-  border-radius: 50% !important;
-  border: 4px solid #D4AF37 !important;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25) !important;
-  overflow: hidden !important;
-}
-
-@media (min-width: 768px) {
-  .hero-gold-ring {
-    width: 245px !important;
-    height: 245px !important;
-  }
-}
-
-.foto-casal {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  object-position: center 20% !important;
-  display: block !important;
-}
-
-.hero-content {
+/* 1. Apresentação e Citação Poética */
+.invitation-intro {
   text-align: center !important;
+  margin-bottom: 1.6rem !important;
 }
 
-@media (min-width: 768px) {
-  .hero-content {
-    text-align: left !important;
-  }
-}
-
-.hero-tag {
-  font-size: 0.72rem !important;
+.invitation-tag {
+  font-size: 0.74rem !important;
   text-transform: uppercase !important;
   letter-spacing: 2px !important;
-  color: #C59B4E !important;
+  color: #55654A !important;
   font-weight: 700 !important;
   display: block !important;
-  margin-bottom: 0.3rem !important;
+  margin-bottom: 0.35rem !important;
 }
 
-.hero-names {
+.invitation-names {
   font-family: 'Playfair Display', serif !important;
-  font-size: clamp(2.2rem, 7vw, 3.4rem) !important;
+  font-size: clamp(2.3rem, 7.5vw, 3.4rem) !important;
   font-weight: 700 !important;
-  color: #8A331E !important;
+  color: #2E1C12 !important;
   line-height: 1.1 !important;
-  margin-bottom: 0.2rem !important;
+  margin-bottom: 0.25rem !important;
 }
 
-.hero-script-subtitle {
+.invitation-script-subtitle {
   font-family: 'Great Vibes', cursive !important;
-  font-size: clamp(1.8rem, 5vw, 2.2rem) !important;
-  color: #C59B4E !important;
+  font-size: clamp(1.8rem, 5vw, 2.3rem) !important;
+  color: #8A422D !important;
   line-height: 1 !important;
-  margin-bottom: 0.8rem !important;
+  margin-bottom: 0.7rem !important;
 }
 
-.hero-ornament-divider {
+.ornament-divider {
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
@@ -718,137 +621,220 @@ main.container, .container {
   margin: 0.6rem 0 1rem 0 !important;
 }
 
-@media (min-width: 768px) {
-  .hero-ornament-divider {
-    justify-content: flex-start !important;
-  }
-}
-
-.hero-ornament-divider .line {
+.ornament-divider .line {
   width: 45px !important;
   height: 1px !important;
-  background: #D4AF37 !important;
+  background: #C59B4E !important;
 }
 
-.hero-phrase {
+.invitation-quote {
   font-family: 'Cormorant Garamond', serif !important;
-  font-size: clamp(1.05rem, 3.5vw, 1.2rem) !important;
+  font-size: clamp(1.1rem, 3.5vw, 1.25rem) !important;
   font-style: italic !important;
-  color: #3D261C !important;
-  line-height: 1.5 !important;
-  margin-bottom: 1.3rem !important;
+  color: #2E1C12 !important;
+  line-height: 1.65 !important;
+  max-width: 520px !important;
+  margin: 0 auto !important;
 }
 
-.hero-date-badge {
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  gap: 8px !important;
-  background: #8A331E !important;
-  padding: 0.65rem 1.4rem !important;
-  border-radius: 9999px !important;
-  border: 1.5px solid #D4AF37 !important;
-  font-weight: 700 !important;
-  color: #FFF8EB !important;
-  font-size: 0.92rem !important;
-  box-shadow: 0 4px 15px rgba(138, 51, 30, 0.3) !important;
-}
-
-/* ==========================================================================
-   GRID DOS CARDS (ALTA PAPELARIA & CASAMENTO RICO)
-   ========================================================================== */
-.sections-grid {
-  display: grid !important;
-  grid-template-columns: 1fr !important;
-  gap: 1.8rem !important;
-  align-items: stretch !important;
-}
-
-@media (min-width: 768px) {
-  .sections-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 2.2rem !important;
-  }
-}
-
-.card-section {
-  background: #FFFDF9 !important;
-  border: 1px solid rgba(212, 175, 55, 0.45) !important;
-  border-radius: 1.35rem !important;
-  padding: 1.8rem 1.3rem !important;
-  box-shadow: 
-    0 18px 45px rgba(0, 0, 0, 0.38), 
-    0 2px 8px rgba(140, 63, 43, 0.12) !important;
-  width: 100% !important;
+/* 2. Foto Redonda dos Noivos */
+.couple-photo-wrap {
   position: relative !important;
-}
-
-@media (min-width: 768px) {
-  .card-section {
-    padding: 2.2rem 1.8rem !important;
-  }
-}
-
-.card-title {
-  color: #8A331E !important;
-  font-family: 'Playfair Display', serif !important;
-  font-size: 1.4rem !important;
-  font-weight: 700 !important;
-  margin-bottom: 1.1rem !important;
-  text-align: center !important;
+  width: 210px !important;
+  height: 210px !important;
+  margin: 1.5rem auto !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  gap: 8px !important;
 }
 
-/* CARD 1: RECEPÇÃO ESPECÍFICOS */
-.venue-title {
-  font-family: 'Playfair Display', serif !important;
-  color: #8A331E !important;
-  font-size: 1.5rem !important;
-  font-weight: 700 !important;
+.couple-photo-halo {
+  position: absolute !important;
+  inset: -32px !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
+}
+
+.halo-art {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  opacity: 0.8 !important;
+}
+
+.couple-photo-frame {
+  position: relative !important;
+  z-index: 2 !important;
+  width: 185px !important;
+  height: 185px !important;
+  border-radius: 50% !important;
+  border: 4px solid #C59B4E !important;
+  box-shadow: 0 10px 28px rgba(46, 28, 18, 0.15) !important;
+  overflow: hidden !important;
+}
+
+.couple-photo {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center 20% !important;
+  display: block !important;
+}
+
+/* 3. Data, Horário e Contagem Regressiva */
+.invitation-date-block {
   text-align: center !important;
+  margin-bottom: 1.8rem !important;
+}
+
+.date-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: #8A422D !important;
+  padding: 0.65rem 1.4rem !important;
+  border-radius: 9999px !important;
+  border: 1.5px solid #C59B4E !important;
+  font-weight: 700 !important;
+  color: #FFFDF9 !important;
+  font-size: 0.92rem !important;
+  box-shadow: 0 4px 15px rgba(138, 66, 45, 0.22) !important;
+}
+
+.countdown-inner-box {
+  margin-top: 1.3rem !important;
+  padding: 1.2rem !important;
+  background: #E6DDCF !important;
+  border: 1px solid rgba(197, 155, 78, 0.35) !important;
+  border-radius: 1.1rem !important;
+  box-shadow: 0 4px 14px rgba(46, 28, 18, 0.04) !important;
+  max-width: 520px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.countdown-title {
+  font-family: 'Playfair Display', serif !important;
+  font-size: 1.1rem !important;
+  font-weight: 700 !important;
+  color: #2E1C12 !important;
+  margin-bottom: 0.9rem !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.countdown-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 0.6rem !important;
+  margin-bottom: 1rem !important;
+}
+
+.count-box {
+  background: linear-gradient(145deg, #55654A, #445239) !important;
+  border: 1px solid #C59B4E !important;
+  border-radius: 0.85rem !important;
+  padding: 0.85rem 0.35rem !important;
+  text-align: center !important;
+  box-shadow: 0 4px 12px rgba(68, 82, 57, 0.2) !important;
+}
+
+.count-num {
+  font-family: 'Playfair Display', serif !important;
+  font-size: 1.65rem !important;
+  font-weight: 700 !important;
+  color: #FFFDF9 !important;
+  display: block !important;
+  line-height: 1 !important;
+}
+
+.count-lbl {
+  font-size: 0.65rem !important;
+  color: #EFE4D3 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  font-weight: 700 !important;
+  margin-top: 0.3rem !important;
+  display: block !important;
+}
+
+/* Divisores Suaves Entre Seções Dentro do Cartão */
+.card-section-divider {
+  width: 70px !important;
+  height: 1px !important;
+  background: rgba(197, 155, 78, 0.45) !important;
+  margin: 2.2rem auto !important;
+  border: none !important;
+}
+
+/* Seções Internas do Cartão */
+.card-section-item {
+  width: 100% !important;
+  text-align: center !important;
+}
+
+.section-heading {
+  color: #2E1C12 !important;
+  font-family: 'Playfair Display', serif !important;
+  font-size: 1.45rem !important;
+  font-weight: 700 !important;
+  margin-bottom: 1.1rem !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* 4. Local da Celebração (Maysa Recepções) */
+.venue-name {
+  font-family: 'Playfair Display', serif !important;
+  color: #8A422D !important;
+  font-size: 1.55rem !important;
+  font-weight: 700 !important;
   margin-bottom: 1.1rem !important;
 }
 
 .info-grid {
   display: flex !important;
-  gap: 1rem !important;
-  margin-bottom: 1.2rem !important;
+  gap: 0.85rem !important;
+  margin-bottom: 1.1rem !important;
+  max-width: 480px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 .info-box {
   flex: 1 !important;
-  background: #FAF5ED !important;
+  background: #E6DDCF !important;
   padding: 0.85rem !important;
   border-radius: 0.85rem !important;
   text-align: center !important;
-  border: 1px solid rgba(212, 175, 55, 0.35) !important;
+  border: 1px solid rgba(138, 66, 45, 0.18) !important;
 }
 
 .info-label {
-  font-size: 0.75rem !important;
-  color: #78716C !important;
+  font-size: 0.74rem !important;
+  color: #5C3D2E !important;
   font-weight: 700 !important;
   letter-spacing: 0.5px !important;
   display: block !important;
 }
 
 .info-val {
-  color: #8A331E !important;
+  color: #2E1C12 !important;
   font-size: 1.1rem !important;
   font-weight: 700 !important;
 }
 
 .venue-address-box {
-  background: #FAF5ED !important;
-  border: 1px solid rgba(212, 175, 55, 0.35) !important;
+  background: #E6DDCF !important;
+  border: 1px solid rgba(138, 66, 45, 0.18) !important;
   border-radius: 0.85rem !important;
   padding: 0.9rem 1.1rem !important;
   font-size: 0.92rem !important;
-  color: #2A1812 !important;
-  margin-bottom: 0.9rem !important;
+  color: #2E1C12 !important;
+  margin: 0 auto 0.9rem auto !important;
+  max-width: 480px !important;
   display: flex !important;
   align-items: center !important;
   gap: 10px !important;
@@ -858,73 +844,19 @@ main.container, .container {
 .venue-notice {
   font-family: 'Cormorant Garamond', serif !important;
   font-style: italic !important;
-  font-size: 1rem !important;
-  color: #5C3D31 !important;
-  text-align: center !important;
+  font-size: 1.05rem !important;
+  color: #5C3D2E !important;
   margin-bottom: 1.2rem !important;
-}
-
-.venue-sub-actions {
-  display: flex !important;
-  gap: 0.8rem !important;
-  margin-bottom: 1.2rem !important;
-}
-
-.map-embed-frame {
-  width: 100% !important;
-  border-radius: 1rem !important;
-  overflow: hidden !important;
-  border: 1px solid rgba(212, 175, 55, 0.4) !important;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08) !important;
-}
-
-.map-embed-frame iframe {
-  display: block !important;
-  width: 100% !important;
-}
-
-/* ==========================================================================
-   FORMULÁRIOS & INPUTS OTIMIZADOS
-   ========================================================================== */
-input, select, textarea, .form-input {
-  width: 100% !important;
-  font-size: 16px !important;
-  padding: 0.85rem 1rem !important;
-  min-height: 48px !important;
-  border: 1px solid #D9C3B0 !important;
-  border-radius: 0.8rem !important;
-  background-color: #FAF5ED !important;
-  color: #2A1812 !important;
-  margin-top: 0.35rem !important;
-  margin-bottom: 0.95rem !important;
-  font-family: inherit !important;
-  outline: none !important;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
-}
-
-input:focus, select:focus, textarea:focus, .form-input:focus {
-  border-color: #8A331E !important;
-  box-shadow: 0 0 0 3px rgba(138, 51, 30, 0.15) !important;
-  background-color: #FFFDF9 !important;
-}
-
-label, .form-label {
-  display: block !important;
-  text-align: left !important;
-  font-size: 0.88rem !important;
-  font-weight: 700 !important;
-  color: #2A1812 !important;
-  margin-top: 0.4rem !important;
-  margin-bottom: 0.2rem !important;
 }
 
 .btn-primary, button.btn-primary, a.btn-primary {
   width: 100% !important;
+  max-width: 480px !important;
   min-height: 50px !important;
   padding: 0.9rem 1.3rem !important;
-  background: linear-gradient(135deg, #9C3B23 0%, #752916 100%) !important;
-  color: #FFF8EB !important;
-  border: 1px solid #D4AF37 !important;
+  background: #8A422D !important;
+  color: #FFFFFF !important;
+  border: 1px solid #C59B4E !important;
   border-radius: 0.8rem !important;
   font-family: 'Plus Jakarta Sans', sans-serif !important;
   font-weight: 700 !important;
@@ -936,25 +868,30 @@ label, .form-label {
   align-items: center !important;
   justify-content: center !important;
   gap: 8px !important;
-  box-shadow: 0 6px 18px rgba(117, 41, 22, 0.35) !important;
+  box-shadow: 0 6px 18px rgba(138, 66, 45, 0.25) !important;
   touch-action: manipulation !important;
   text-decoration: none !important;
+  margin: 0 auto !important;
+}
+
+button.btn-primary:hover, .btn-primary:hover, a.btn-primary:hover {
+  background: #733422 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 22px rgba(138, 66, 45, 0.32) !important;
+  color: #FFFFFF !important;
 }
 
 button.btn-primary:active, .btn-primary:active, a.btn-primary:active {
-  background: linear-gradient(135deg, #842F19 0%, #5E1E0E 100%) !important;
+  background: #632B1B !important;
   transform: scale(0.98) !important;
+  color: #FFFFFF !important;
 }
 
-.btn-maps, a.btn-maps {
-  margin-bottom: 0.85rem !important;
-  color: #FFF8EB !important;
-  text-decoration: none !important;
-}
-
-.btn-maps:hover, .btn-maps:focus, .btn-maps:visited {
-  color: #FFF8EB !important;
-  text-decoration: none !important;
+.venue-sub-actions {
+  display: flex !important;
+  gap: 0.8rem !important;
+  margin: 0.9rem auto 1.2rem auto !important;
+  max-width: 480px !important;
 }
 
 .btn-secondary {
@@ -964,9 +901,9 @@ button.btn-primary:active, .btn-primary:active, a.btn-primary:active {
   justify-content: center !important;
   gap: 0.5rem !important;
   text-decoration: none !important;
-  background-color: #FAF5ED !important;
-  color: #8A331E !important;
-  border: 1px solid rgba(212, 175, 55, 0.45) !important;
+  background-color: #E6DDCF !important;
+  color: #2E1C12 !important;
+  border: 1px solid rgba(138, 66, 45, 0.28) !important;
   padding: 0.8rem !important;
   border-radius: 0.8rem !important;
   font-weight: 700 !important;
@@ -975,47 +912,38 @@ button.btn-primary:active, .btn-primary:active, a.btn-primary:active {
   transition: all 0.2s ease !important;
 }
 
+.btn-secondary:hover {
+  background-color: #DCCFBF !important;
+  color: #8A422D !important;
+}
+
 .btn-secondary:active {
-  background-color: #EFE4D3 !important;
+  background-color: #D2C3B1 !important;
   transform: scale(0.98) !important;
 }
 
-.rsvp-notify-hint {
-  font-size: 0.82rem !important;
-  color: #6B4E41 !important;
-  margin-bottom: 1.1rem !important;
-  text-align: center !important;
+.map-embed-frame {
+  width: 100% !important;
+  max-width: 480px !important;
+  margin: 0 auto !important;
+  border-radius: 1rem !important;
+  overflow: hidden !important;
+  border: 1px solid rgba(138, 66, 45, 0.2) !important;
+  box-shadow: 0 4px 14px rgba(46, 28, 18, 0.06) !important;
 }
 
-.rsvp-wa-direct {
-  margin-top: 1.1rem !important;
-  text-align: center !important;
-  font-size: 0.85rem !important;
-  color: #6B4E41 !important;
-  display: flex !important;
-  flex-direction: column !important;
-  gap: 4px !important;
+.map-embed-frame iframe {
+  display: block !important;
+  width: 100% !important;
 }
 
-.rsvp-wa-direct a {
-  color: #128C7E !important;
-  font-weight: 700 !important;
-  text-decoration: none !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  gap: 6px !important;
-}
-
-/* ==========================================================================
-   PIX CARD ESPECÍFICOS
-   ========================================================================== */
+/* 5. Presentes em Pix */
 .pix-intro-text {
-  font-size: 0.9rem !important;
-  color: #4A3228 !important;
-  margin-bottom: 0.9rem !important;
-  text-align: center !important;
-  line-height: 1.5 !important;
+  font-size: 0.92rem !important;
+  color: #2E1C12 !important;
+  margin: 0 auto 1rem auto !important;
+  max-width: 480px !important;
+  line-height: 1.55 !important;
 }
 
 .pix-qr-container {
@@ -1024,34 +952,35 @@ button.btn-primary:active, .btn-primary:active, a.btn-primary:active {
 }
 
 .pix-qr-img {
-  width: 175px !important;
-  height: 175px !important;
+  width: 170px !important;
+  height: 170px !important;
   border-radius: 0.85rem !important;
-  border: 2px solid #D4AF37 !important;
+  border: 2px solid #C59B4E !important;
   padding: 0.5rem !important;
-  background: #ffffff !important;
+  background: #FAF5ED !important;
   display: inline-block !important;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 0 6px 18px rgba(46, 28, 18, 0.08) !important;
 }
 
 .pix-qr-hint {
   font-size: 0.78rem !important;
-  color: #6B4E41 !important;
+  color: #5C3D2E !important;
   margin-top: 0.4rem !important;
 }
 
 .pix-box {
-  background: #FAF5ED !important;
-  border: 1.5px dashed #8A331E !important;
+  background: #E6DDCF !important;
+  border: 1.5px dashed #8A422D !important;
   padding: 0.85rem 1rem !important;
   border-radius: 0.85rem !important;
   text-align: center !important;
-  margin-bottom: 1.1rem !important;
+  margin: 0 auto 1.1rem auto !important;
+  max-width: 480px !important;
 }
 
 .pix-box-label {
   font-size: 0.78rem !important;
-  color: #78716C !important;
+  color: #5C3D2E !important;
   font-weight: 600 !important;
   margin-bottom: 0.2rem !important;
 }
@@ -1059,20 +988,21 @@ button.btn-primary:active, .btn-primary:active, a.btn-primary:active {
 .pix-box-key {
   font-size: 1.25rem !important;
   font-weight: 800 !important;
-  color: #8A331E !important;
+  color: #8A422D !important;
   margin: 0 !important;
   letter-spacing: 0.6px !important;
 }
 
 .pix-box-holder {
   font-size: 0.82rem !important;
-  color: #5C3D31 !important;
+  color: #2E1C12 !important;
   margin-top: 0.3rem !important;
 }
 
 .pix-copied-notice {
   display: none !important;
-  margin-top: 0.85rem !important;
+  margin: 0.85rem auto 0 auto !important;
+  max-width: 480px !important;
   background: #E8F5E9 !important;
   border: 1.5px solid #A5D6A7 !important;
   border-radius: 0.75rem !important;
@@ -1090,152 +1020,128 @@ button.btn-primary:active, .btn-primary:active, a.btn-primary:active {
   margin: 0.25rem 0 0 0 !important;
 }
 
-/* ==========================================================================
-   CONTAGEM REGRESSIVA NO HERO & MURAL DUPLO
-   ========================================================================== */
-.hero-countdown-box {
-  margin-top: 1.5rem !important;
-  padding: 1.3rem !important;
-  background: #FAF5ED !important;
-  border: 1px solid rgba(212, 175, 55, 0.45) !important;
-  border-radius: 1.1rem !important;
-  box-shadow: inset 0 0 15px rgba(212, 175, 55, 0.08), 0 4px 15px rgba(0, 0, 0, 0.04) !important;
-  text-align: center !important;
-}
-
-.countdown-hero-title {
-  font-family: 'Playfair Display', serif !important;
-  font-size: 1.15rem !important;
-  font-weight: 700 !important;
-  color: #8A331E !important;
-  margin-bottom: 1rem !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-}
-
-.countdown-display-grid {
-  display: grid !important;
-  grid-template-columns: repeat(4, 1fr) !important;
-  gap: 0.7rem !important;
+/* 6. Confirmação de Presença (RSVP) */
+.rsvp-notify-hint {
+  font-size: 0.82rem !important;
+  color: #5C3D2E !important;
   margin-bottom: 1.1rem !important;
 }
 
-.count-block {
-  background: linear-gradient(145deg, #8A331E, #6E2614) !important;
-  border: 1px solid #D4AF37 !important;
-  border-radius: 0.85rem !important;
-  padding: 0.9rem 0.4rem !important;
-  text-align: center !important;
-  box-shadow: 0 4px 12px rgba(110, 38, 20, 0.3) !important;
+.form-styled {
+  max-width: 480px !important;
+  margin: 0 auto !important;
+  text-align: left !important;
 }
 
-.count-number {
-  font-family: 'Playfair Display', serif !important;
-  font-size: 1.7rem !important;
-  font-weight: 700 !important;
-  color: #FFF8EB !important;
-  display: block !important;
-  line-height: 1 !important;
-}
-
-.count-text {
-  font-size: 0.68rem !important;
-  color: #E6C88A !important;
-  text-transform: uppercase !important;
-  letter-spacing: 1px !important;
-  font-weight: 700 !important;
+input, select, textarea, .form-input {
+  width: 100% !important;
+  font-size: 16px !important;
+  padding: 0.85rem 1rem !important;
+  min-height: 48px !important;
+  border: 1px solid #D6C8B7 !important;
+  border-radius: 0.8rem !important;
+  background-color: #FAF5ED !important;
+  color: #2E1C12 !important;
   margin-top: 0.35rem !important;
+  margin-bottom: 0.95rem !important;
+  font-family: inherit !important;
+  outline: none !important;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+input:focus, select:focus, textarea:focus, .form-input:focus {
+  border-color: #8A422D !important;
+  box-shadow: 0 0 0 3px rgba(138, 66, 45, 0.16) !important;
+  background-color: #F4EFE5 !important;
+}
+
+label, .form-label {
   display: block !important;
+  text-align: left !important;
+  font-size: 0.88rem !important;
+  font-weight: 700 !important;
+  color: #2E1C12 !important;
+  margin-top: 0.4rem !important;
+  margin-bottom: 0.2rem !important;
 }
 
-.btn-calendar-action {
-  width: 100% !important;
+.rsvp-wa-direct {
+  margin-top: 1.1rem !important;
+  text-align: center !important;
+  font-size: 0.85rem !important;
+  color: #5C3D2E !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 4px !important;
 }
 
-@media (min-width: 768px) {
-  .card-pix-full {
-    grid-column: 1 / -1 !important;
-    max-width: 640px !important;
-    margin: 0 auto !important;
-  }
+.rsvp-wa-direct a {
+  color: #128C7E !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
 }
 
-/* ==========================================================================
-   MURAL DE RECADOS DUPLO (FORMULÁRIO E RECADOS LADO A LADO)
-   ========================================================================== */
-.card-mural-duplo {
-  margin-top: 2.2rem !important;
-  width: 100% !important;
-}
-
+/* 7. Mural de Recados aos Noivos */
 .mural-intro-desc {
   font-family: 'Cormorant Garamond', serif !important;
   font-style: italic !important;
   font-size: 1.05rem !important;
-  color: #5C3D31 !important;
-  text-align: center !important;
-  margin-bottom: 1.6rem !important;
+  color: #5C3D2E !important;
+  margin-bottom: 1.4rem !important;
 }
 
-.mural-two-columns {
-  display: grid !important;
-  grid-template-columns: 1fr !important;
-  gap: 1.8rem !important;
-  align-items: start !important;
-}
-
-@media (min-width: 768px) {
-  .mural-two-columns {
-    grid-template-columns: 1.05fr 1fr !important;
-    gap: 2.2rem !important;
-  }
-}
-
-.mural-col-form, .mural-col-messages {
-  width: 100% !important;
+.mural-layout-container {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 1.6rem !important;
+  max-width: 480px !important;
+  margin: 0 auto !important;
 }
 
 .mural-subheading {
   font-family: 'Playfair Display', serif !important;
-  font-size: 1.25rem !important;
+  font-size: 1.2rem !important;
   font-weight: 700 !important;
-  color: #8A331E !important;
-  margin-bottom: 1rem !important;
+  color: #2E1C12 !important;
+  margin-bottom: 0.9rem !important;
   display: flex !important;
   align-items: center !important;
-  border-bottom: 1px solid rgba(212, 175, 55, 0.35) !important;
-  padding-bottom: 0.5rem !important;
+  border-bottom: 1px solid rgba(138, 66, 45, 0.18) !important;
+  padding-bottom: 0.45rem !important;
 }
 
-.mural-col-messages .mural-list-container {
-  max-height: 420px !important;
+.mural-list-container {
+  max-height: 380px !important;
   overflow-y: auto !important;
-  padding-right: 6px !important;
-  margin-top: 0 !important;
+  padding-right: 4px !important;
 }
 
 .mural-empty-box {
-  border: 2px dashed #D9C3B0 !important;
-  padding: 1.5rem 1rem !important;
+  border: 2px dashed #D6C8B7 !important;
+  padding: 1.4rem 1rem !important;
   border-radius: 0.85rem !important;
   text-align: center !important;
+  background: #E6DDCF !important;
 }
 
 .mural-empty-box p {
-  color: #78716C !important;
+  color: #5C3D2E !important;
   font-style: italic !important;
   font-size: 0.88rem !important;
 }
 
 .mural-item {
-  background: #FAF5ED !important;
-  border: 1px solid rgba(212, 175, 55, 0.4) !important;
-  padding: 1rem 1.1rem !important;
+  background: #E6DDCF !important;
+  border: 1px solid rgba(138, 66, 45, 0.18) !important;
+  padding: 0.95rem 1.05rem !important;
   border-radius: 0.85rem !important;
-  margin-bottom: 0.85rem !important;
+  margin-bottom: 0.8rem !important;
   text-align: left !important;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+  box-shadow: 0 2px 6px rgba(46, 28, 18, 0.04) !important;
 }
 
 .mural-header {
@@ -1247,83 +1153,81 @@ button.btn-primary:active, .btn-primary:active, a.btn-primary:active {
 
 .mural-author {
   font-weight: 700 !important;
-  color: #8A331E !important;
-  font-size: 0.98rem !important;
-  margin: 0 !important;
+  color: #8A422D !important;
+  font-size: 0.95rem !important;
 }
 
 .mural-date {
   font-size: 0.72rem !important;
-  color: #78716C !important;
+  color: #5C3D2E !important;
 }
 
 .mural-msg {
   font-size: 0.92rem !important;
-  color: #2A1812 !important;
+  color: #2E1C12 !important;
   line-height: 1.45 !important;
-  margin: 0 !important;
   white-space: pre-wrap !important;
 }
 
-/* ==========================================================================
-   FOOTER (MOBILE FRIENDLY DE ALTA COSTURA)
-   ========================================================================== */
-footer.main-footer {
-  background: #180D0A !important;
-  color: #FAF5ED !important;
-  padding: 3rem 1rem !important;
-  padding-bottom: max(3rem, env(safe-area-inset-bottom)) !important;
-  text-align: center !important;
-  margin-top: 3rem !important;
-  border-top: 1px solid rgba(212, 175, 55, 0.35) !important;
+/* Raminho Botânico Delicado na Base de Dentro do Cartão */
+.card-botanical-footer-wrap {
+  width: 100% !important;
+  max-width: 120px !important;
+  height: 55px !important;
+  margin: 2rem auto 0.8rem auto !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  pointer-events: none !important;
+  transform: rotate(180deg) !important;
 }
 
-.footer-script {
-  font-family: 'Great Vibes', cursive !important;
-  font-size: 2.8rem !important;
-  color: #D4AF37 !important;
-  margin-bottom: 0.4rem !important;
+.card-botanical-footer {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  opacity: 0.75 !important;
+}
+
+/* Encerramento Poético Dentro do Cartão */
+.card-footer-sign {
+  text-align: center !important;
+  padding-top: 0.5rem !important;
 }
 
 .footer-verse {
   font-family: 'Cormorant Garamond', serif !important;
   font-size: 1.15rem !important;
   font-style: italic !important;
-  color: #E5D8CC !important;
-  max-width: 460px !important;
-  margin: 0 auto !important;
+  color: #2E1C12 !important;
   line-height: 1.4 !important;
+  margin-bottom: 0.25rem !important;
 }
 
 .footer-ref {
   font-size: 0.82rem !important;
-  color: #D4AF37 !important;
+  color: #8A422D !important;
   font-weight: 700 !important;
   display: block !important;
-  margin-top: 4px !important;
+  margin-bottom: 0.8rem !important;
 }
 
-.footer-divider-gold {
-  width: 48px !important;
-  height: 1px !important;
-  background: #D4AF37 !important;
-  margin: 1.1rem auto !important;
-  opacity: 0.7 !important;
+.footer-couple {
+  font-family: 'Great Vibes', cursive !important;
+  font-size: 2.3rem !important;
+  color: #8A422D !important;
+  line-height: 1 !important;
+  margin-bottom: 0.2rem !important;
 }
 
-.footer-date {
-  font-size: 0.88rem !important;
-  color: #E5D8CC !important;
-  margin-bottom: 0.4rem !important;
-}
-
-.footer-credits {
+.footer-subtext {
   font-size: 0.82rem !important;
-  color: rgba(250, 245, 237, 0.7) !important;
+  color: #5C3D2E !important;
+  letter-spacing: 0.5px !important;
 }
 
 /* ==========================================================================
-   TOAST NOTIFICATION (CENTRALIZADO NO MOBILE & DESKTOP)
+   TOAST NOTIFICATION
    ========================================================================== */
 .toast-msg {
   position: fixed !important;
@@ -1332,13 +1236,13 @@ footer.main-footer {
   transform: translateX(-50%) translateY(30px) !important;
   width: calc(100% - 32px) !important;
   max-width: 400px !important;
-  background: #23120E !important;
+  background: #2E1C12 !important;
   color: #FFFFFF !important;
   padding: 14px 20px !important;
   border-radius: 12px !important;
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.45) !important;
-  border-left: 5px solid #2E7D32 !important;
-  border-top: 1px solid rgba(212, 175, 55, 0.4) !important;
+  box-shadow: 0 12px 35px rgba(46, 28, 18, 0.35) !important;
+  border-left: 5px solid #55654A !important;
+  border-top: 1px solid rgba(197, 155, 78, 0.4) !important;
   z-index: 9999999 !important;
   opacity: 0 !important;
   visibility: hidden !important;
@@ -1355,4 +1259,143 @@ footer.main-footer {
   visibility: visible !important;
   transform: translateX(-50%) translateY(0) !important;
   pointer-events: auto !important;
+}
+
+/* ==========================================================================
+   📱 OTIMIZAÇÕES MOBILE PROFISSIONAIS (360px - 600px)
+   ========================================================================== */
+@media (max-width: 600px) {
+  main.container, .container {
+    padding: 1rem 0.65rem 3rem 0.65rem !important;
+  }
+
+  .unified-invitation-card {
+    padding: 1.8rem 1rem 2.2rem 1rem !important;
+    border-radius: 1.25rem !important;
+  }
+
+  /* Capa no Mobile */
+  .envelope-top-names {
+    font-size: 2.15rem !important;
+  }
+  
+  .envelope-top-date {
+    font-size: 0.98rem !important;
+  }
+
+  .envelope-3d-box {
+    width: 90vw !important;
+    max-width: 340px !important;
+    height: 220px !important;
+  }
+
+  .inner-card-photo-wrap {
+    width: 54px !important;
+    height: 54px !important;
+  }
+
+  .wax-seal-disc {
+    width: 64px !important;
+    height: 64px !important;
+  }
+
+  /* Intro do Convite no Mobile */
+  .invitation-names {
+    font-size: 2.15rem !important;
+  }
+
+  .invitation-script-subtitle {
+    font-size: 1.6rem !important;
+  }
+
+  .invitation-quote {
+    font-size: 1rem !important;
+    line-height: 1.55 !important;
+  }
+
+  /* Foto dos Noivos no Mobile */
+  .couple-photo-wrap {
+    width: 175px !important;
+    height: 175px !important;
+    margin: 1.2rem auto !important;
+  }
+
+  .couple-photo-frame {
+    width: 155px !important;
+    height: 155px !important;
+  }
+
+  .date-badge {
+    font-size: 0.82rem !important;
+    padding: 0.55rem 0.95rem !important;
+    width: 100% !important;
+    max-width: 330px !important;
+  }
+
+  /* Contagem no Mobile */
+  .countdown-inner-box {
+    padding: 0.95rem 0.6rem !important;
+  }
+
+  .countdown-grid {
+    gap: 5px !important;
+  }
+
+  .count-box {
+    padding: 0.75rem 0.2rem !important;
+  }
+
+  .count-num {
+    font-size: 1.4rem !important;
+  }
+
+  .count-lbl {
+    font-size: 0.6rem !important;
+  }
+
+  /* Local e Botões no Mobile */
+  .venue-name {
+    font-size: 1.35rem !important;
+  }
+
+  .info-grid {
+    gap: 0.6rem !important;
+  }
+
+  .info-box {
+    padding: 0.7rem 0.5rem !important;
+  }
+
+  .venue-sub-actions {
+    flex-direction: column !important;
+    gap: 0.6rem !important;
+  }
+
+  .btn-secondary {
+    width: 100% !important;
+    min-height: 48px !important;
+  }
+
+  .btn-primary, button.btn-primary, a.btn-primary {
+    min-height: 48px !important;
+    font-size: 0.92rem !important;
+  }
+
+  /* Pix no Mobile */
+  .pix-qr-img {
+    width: 150px !important;
+    height: 150px !important;
+  }
+
+  .pix-box-key {
+    font-size: 1.15rem !important;
+  }
+
+  /* Floating Music Button */
+  .floating-music-btn {
+    bottom: 14px !important;
+    right: 12px !important;
+    padding: 0.45rem 0.8rem !important;
+    font-size: 0.76rem !important;
+  }
 }
